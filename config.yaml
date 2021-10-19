@@ -2,4 +2,20 @@ baseURL: "https://github.amboss-zustellung.space/"
 languageCode: "en-us"
 title: "Amboss-incoming"
 theme: "ananke"
+enableGitInfo: true
 
+frontmatter:
+  date:
+  - date
+  - publishDate
+  - lastmod
+  expiryDate:
+  - expiryDate
+  lastmod:
+  - ":git"
+  - lastmod
+  - date
+  - publishDate
+  publishDate:
+  - publishDate
+  - date
