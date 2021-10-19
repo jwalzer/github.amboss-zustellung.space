@@ -1,13 +1,69 @@
 baseURL: "https://github.amboss-zustellung.space/"
 languageCode: "en-us"
 title: "Amboss-incoming"
-theme: "ananke"
+theme: "hugo-tikva"
 enableGitInfo: true
 
+buildDrafts: true
+buildExpired: false
+buildFuture: false
+
+
+
+menu:
+  main:
+    - identifier: "root"
+      name: "Home"
+      url: "/"
+      weight: 10
+    - identifier: "about"
+      name: "About"
+      url: "/about/"
+      weight: 100
+    - identifier: "posts"
+      name: "Posts"
+      url: "/posts/"
+      weight: 20
+
+taxonomies:
+  category: "categories"
+  tag: "tags"
+  summaryLength: 250 # default 70
+
 params:
-  - AuthorName: Jan Walzer
-  - GitHubUser: jwalzer
-  - SidebarRecentLimit: 5
+  AuthorName: Jan Walzer
+  GitHubUser: jwalzer
+  SidebarRecentLimit: 5
+  twitter: janwalzer
+  github: jwalzer
+  hideMeta: false
+  theme:
+    bootstrapTheme: 'solar'
+    backgroundColor: "#D0D0C0"
+    header:
+      fontColor: "#101080"
+      linkColor: "#101080"
+      backgroundColor: "#C0C0B0"
+    footer:
+      fontColor: "#101080"
+      linkColor: "#101080"
+      backgroundColor: "#C0C0B0"
+      democolumn:
+        - text: "text1"
+        - text: "text3"
+  fonts:
+    body: "Open Sans"
+  sidebar:
+    enabled: true
+    style: "right"
+    democolumn:
+      - title: "Foo"
+        text: "bar"
+      - title: "Foo"
+        text: "bar"
+      - title: "Foo"
+        text: "bar"
+
 
 frontmatter:
   date:
@@ -26,6 +82,11 @@ frontmatter:
   - date
 
 permalinks: /archive/:year/:month/:title/
+
+sitemap:
+  changefreq: "monthly"
+  priority: 0.5
+  filename: "sitemap.xml"
 
 markup:
   asciidocExt:
@@ -68,9 +129,9 @@ markup:
       taskList: true
       typographer: true
     parser:
-#      attribute:
-#        block: false
-#        title: true
+      attribute:
+        block: false
+        title: true
       autoHeadingID: true
       autoHeadingIDType: github
     renderer:
