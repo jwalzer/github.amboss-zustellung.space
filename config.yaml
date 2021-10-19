@@ -1,0 +1,5 @@
+baseURL: "https://github.amboss-zustellung.space/"
+languageCode: "en-us"
+title: "Amboss-incoming"
+theme: "ananke"
+
