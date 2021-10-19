@@ -4,6 +4,11 @@ title: "Amboss-incoming"
 theme: "ananke"
 enableGitInfo: true
 
+params:
+  - AuthorName: Jan Walzer
+  - GitHubUser: jwalzer
+  - SidebarRecentLimit: 5
+
 frontmatter:
   date:
   - date
@@ -19,3 +24,5 @@ frontmatter:
   publishDate:
   - publishDate
   - date
+
+permalinks: /archive/:year/:month/:title/
