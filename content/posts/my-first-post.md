@@ -5,8 +5,9 @@ draft: false
 menu: ["projects","posts"]
 ---
 
-== init=/bin/true
+## init=/bin/true
 
+{{< table_of_contents >}}
 
 ++ Blubb
 
