@@ -1,8 +1,9 @@
 baseURL: "https://github.amboss-zustellung.space/"
 languageCode: "en-us"
 title: "Amboss-incoming"
-theme: "hugo-tikva"
+theme: "hugo-theme-w3css-basic"
 enableGitInfo: true
+
 
 buildDrafts: true
 buildExpired: false
@@ -16,19 +17,29 @@ menu:
       name: "Home"
       url: "/"
       weight: 10
+      pre: "fas fa-home"
     - identifier: "about"
       name: "About"
       url: "/about/"
       weight: 100
+      pre: "fas fa-info fa-fw"
     - identifier: "posts"
       name: "Posts"
       url: "/posts/"
       weight: 20
+      pre: "fas fa-list"
+    - identifier: "blog"
+      name: "Blog"
+      url: "/tags/blog/"
+      weight: 20
+      pre: "fas fa-rss"
 
 taxonomies:
   category: "categories"
   tag: "tags"
-  summaryLength: 250 # default 70
+
+
+summaryLength: 250 # default 70
 
 params:
   AuthorName: Jan Walzer
@@ -37,7 +48,33 @@ params:
   twitter: janwalzer
   github: jwalzer
   hideMeta: false
-  theme:
+  w3cssColorTheme: "/vendor/w3css/4/w3-theme-blue-grey.css"
+#  w3cssColorTheme: "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-duster-cedar.css"
+  footerContactButton: "contact/index.md"
+
+  # used in layouts/partials/footer.bottom.html
+  bottomLeft: ""
+  bottomRight: 'created with [Hugo](https://gohugo.io) '
+
+  traceFlags: "html-comment:debug-shortcodes"
+
+  fexatures:
+    # used in layouts/partials/front.features.html
+    # enable or disable features on frontpage
+    # see some examples in 'exampleSite/data/features'
+    enable: true
+    animate: false
+  options:
+    # used in layouts/partials/page.nav.breadcrump.html
+    showNavBreadcrump: true
+    navBreadcrumpTitle: true
+    navBreadcrumpHome: true
+  anchor:
+    # layouts/_default/baseof.html
+    enable: true
+    #icon: "fas fa-anchor"
+    icon: "fas fa-link"
+  themex:
     bootstrapTheme: 'solar'
     backgroundColor: "#D0D0C0"
     header:
@@ -51,6 +88,14 @@ params:
       democolumn:
         - text: "text1"
         - text: "text3"
+  recentPosts:
+    footerNumOfPosts: 5
+    enableFoorter: true
+    title: "Recent-Title-Here"
+  blog:
+    title: "Blog"
+    icon: "fas fa-rss"
+
   fonts:
     body: "Open Sans"
   sidebar:
@@ -81,7 +126,7 @@ frontmatter:
   - publishDate
   - date
 
-permalinks: /archive/:year/:month/:title/
+permalinks: /blog/:year/:month/:filename/
 
 sitemap:
   changefreq: "monthly"
