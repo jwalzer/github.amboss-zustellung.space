@@ -1,0 +1,8 @@
+weight:      3
+name:        "Consequat"
+icon:        "fas fa-globe"
+animated:    "slideInRight"
+url:         pages/front/features/03
+description: |
+  Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+  labore et dolore magna aliquyam erat.

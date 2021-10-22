@@ -1,0 +1,8 @@
+weight:      8
+title:       Blog
+resImg:
+icon:
+description: |
+  * Optional Disqus
+  * Optional privacy protection (disable count) for Disqus
+  * Lists for taxonomy and termy

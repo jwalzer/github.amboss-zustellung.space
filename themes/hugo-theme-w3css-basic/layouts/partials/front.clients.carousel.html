@@ -1,0 +1,67 @@
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+  {{ `<!-- partials/front.clients.carousel.html  -->` | safeHTML }}
+{{- end}}
+{{- if isset $.Site.Params (lower `clients` ) }}
+{{- if $.Site.Params.clients.enable }}
+{{- if gt (len .Site.Data.clients) 0 }}
+<section id="clients" class="w3-theme" >
+  <div class='w3-container {{ default `w3-theme-l3` ($.Site.Param `colorFrontClientsContainer`)}}'>
+
+    <div class='w3-card-4 w3-center w3-round-xxlarge w3-margin-bottom {{ default `w3-theme-l2` ($.Site.Param `colorFrontClientsCard`)}} '>
+      <h2 id="clients-title" >{{ $.Site.Params.clients.title }}</h2>
+      <div class="w3-small">
+        {{- if $.Site.Params.clients.subtitle }}
+        {{- $.Site.Params.clients.subtitle | markdownify }}
+        {{- end }} {{/* if .subtitle */}}
+      </div>
+    </div>
+
+    <div class="clients-owl owl-carousel owl-theme w3-margin-bottom">
+      {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+        {{ `<!-- range .Site.Data.clients  -->` | safeHTML -}}
+      {{- end}}
+      {{/*- range $index, $element := sort .Site.Data.clients `weight` */}}
+      {{- range $index, $element := .Site.Data.clients }} {{/* use filename for sort order */}}
+        <div>{{ template `front-clients-entry` (dict `site` $.Site `page` $.Page `element` $element) }}</div>
+      {{- end }}
+    </div> <!-- clients-owl -->
+
+    <noscript>
+      <div class="w3-cell-row w3-text-theme">
+        {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+          {{ `<!-- range first 3 .Site.Data.clients  -->` | safeHTML -}}
+        {{- end}}
+        {{/*- range $index, $element := first 3 (sort .Site.Data.clients `weight`) */}}
+        {{- range $index, $element := first 3 (sort .Site.Data.clients) }}
+          <div class="w3-cell w3-mobile">{{ template `front-clients-entry` (dict `site` $.Site `page` $.Page `element` $element) }}</div>
+        {{- end }} {{/* range */}}
+      </div> <!-- w3-cell -->
+    </noscript>
+
+  </div>   <!-- w3-container -->
+</section>
+{{- end }} {{/* if gt       */}}
+{{- end }} {{/* if *.enable */}}
+{{- end }} {{/* if isset    */}}
+
+{{- define `front-clients-entry` }}
+  {{- $ourSite      :=  index . `site`    }}
+  {{- $ourPage      :=  index . `page`    }}
+  {{- $ourElement   :=  index . `element` }}
+
+  {{- if $ourElement.name }} <div class="w3-large w3-center"> {{ $ourElement.name }} </div> {{ end }}
+
+  {{- $myImgClass  := `w3-image`}}
+  {{- $myImgStyle  := printf "margin:0 auto; max-width:%s; max-height:%s;" (default (index $ourSite.Params.clients (lower `imgMaxWidth`  ) ) | default `100px`) (default (index $ourSite.Params.clients (lower `imgMaxHeight` ) ) | default `100px`) }}
+  {{- $myImg       := $ourElement.resImg                       }} {{/* case sensitive ! */}}
+  {{- $myImgCmd    := $ourElement.resImgCmd | default (index $ourSite.Params.clients (lower `resImgCmd`   ) ) | default `Resize` }}
+  {{- $myImgOpt    := $ourElement.resImgOpt | default (index $ourSite.Params.clients (lower `resImgCmdOpt`) ) | default `100x`   }}
+
+  {{- if and (    $ourElement.url) ($ourElement.resImg) }}  <a href='{{ $ourElement.url }}' target="_blank">
+    {{ partial `resource.image.html` (dict `page` $ourPage `class` $myImgClass `style` $myImgStyle `img` $myImg `cmd` $myImgCmd `opt` $myImgOpt ) }}
+  </a> {{ end }}
+  {{- if and (not $ourElement.url) ($ourElement.resImg) }}
+    {{ partial `resource.image.html` (dict `page` $ourPage `class` $myImgClass `style` $myImgStyle `img` $myImg `cmd` $myImgCmd `opt` $myImgOpt ) }}
+  {{ end }}
+
+{{- end -}}

@@ -1,0 +1,185 @@
+{{/*
+http://photoswipe.com/documentation/seo.html
+Inspired by https://github.com/liwenyip/hugo-easy-gallery
+*/}}
+
+{{- $myDefaultResPagePath  :=  $.Site.Params.resGallery.defaultResPagePath  | default $.Site.Params.resources.defaultResPagePath | default `resources/images` }}
+{{- $myDefaultMatch        :=  $.Site.Params.resGallery.defaultMatch        | default `**/*`             }}
+{{- $myDefaulImgCmd        :=  $.Site.Params.resGallery.defaultmgCmd        | default `Resize`           }}
+{{- $myDefaulImgCmdOpt     :=  $.Site.Params.resGallery.defaultmgCmdOpt     | default `800x`             }}
+{{- $myDefaulThumbCmd      :=  $.Site.Params.resGallery.defaulthumbCmd      | default `Fit`              }}
+{{- $myDefaultThumbCmdOpt  :=  $.Site.Params.resGallery.defaultThumbCmdOpt  | default `120x120`          }}
+{{- $myDefaultCaptionLong  :=  $.Site.Params.resGallery.defaultCaptionLong  | default `%%F`              }}
+{{- $myDefaultCaptionShort :=  $.Site.Params.resGallery.defaultCaptionShort | default `%%N`              }}
+
+{{- $.Scratch.Set `theResPagePath`  ( (.Get `path`             ) | default $myDefaultResPagePath  ) }}
+{{- $.Scratch.Set `theMatch`        ( (.Get `match`            ) | default $myDefaultMatch        ) }}
+{{- $.Scratch.Set `theImgCmd`       ( (.Get `imgCmd`           ) ) }}
+{{- $.Scratch.Set `theImgCmdOpt`    ( (.Get `imgOpt`           ) ) }}
+{{- $.Scratch.Set `theThumbCmd`     ( (.Get `thumbCmd`         ) ) }}
+{{- $.Scratch.Set `theThumbCmdOpt`  ( (.Get `thumbOpt`         ) ) }}
+{{- $.Scratch.Set `theCaptionLong`  ( (.Get `capLng`           ) ) }}
+{{- $.Scratch.Set `theCaptionShort` ( (.Get `capSrt`           ) ) }}
+{{- $.Scratch.Set `theCapPos`       ( (.Get `caption-position` ) | default $.Site.Params.resGallery.defaultCaptionPosition | default `center` ) }} {{/* none top center bottom  */}}
+{{- $.Scratch.Set `theCapEff`       ( (.Get `caption-effect`   ) | default $.Site.Params.resGallery.defaultCaptionEffect   | default `appear` ) }} {{/* none fade appear slide */}}
+{{- $.Scratch.Set `theHovEff`       ( (.Get `hover-effect`     ) | default $.Site.Params.resGallery.defaultHoverEffect     | default `zoom`   ) }} {{/* none grow shrink slidedown slideup zoom */}}
+{{- $.Scratch.Set `theHovTra`       ( (.Get `hover-transition` ) | default $.Site.Params.resGallery.defaultHoverTransition | default ``       ) }} {{/* empty none */}}
+
+{{- $myResPagePath := $.Scratch.Get `theResPagePath` }}
+{{- if eq $myResPagePath `.`}}
+  {{- $.Scratch.Set `theResPage` .Page }}
+{{- else }}
+  {{- $.Scratch.Set `theResPage` (.Site.GetPage "page" $myResPagePath ) }}
+{{- end }}
+
+{{- $myResPage      := $.Scratch.Get `theResPage`      }}
+{{- $myResMatch     := $.Scratch.Get `theMatch`        }}
+{{- $myImgCmd       := $.Scratch.Get `theImgCmd`       }}
+{{- $myImgCmdOpt    := $.Scratch.Get `theImgCmdOpt`    }}
+{{- $myThumbCmd     := $.Scratch.Get `theThumbCmd`     }}
+{{- $myThumbCmdOpt  := $.Scratch.Get `theThumbCmdOpt`  }}
+{{- $myCaptionLong  := $.Scratch.Get `theCaptionLong`  }}
+{{- $myCaptionShort := $.Scratch.Get `theCaptionShort` }}
+
+{{- $myCapPos   := printf "caption-position-%s" ($.Scratch.Get `theCapPos`)}}
+{{- $myCapEff   := printf "caption-effect-%s"   ($.Scratch.Get `theCapEff`)}}
+{{- $myHovEff   := printf "hover-effect-%s"     ($.Scratch.Get `theHovEff`)}}
+{{- $myHovTra   := cond (ne ($.Scratch.Get `theHovTra`) `none`)  (`hover-transition`) (``) }}
+
+{{- if or $.Site.Params.debug (findRE `\bdebug-shortcode(s|-res-gallery)\b` $.Site.Params.traceFlags) -}}
+<br/>
+$myResPagePath  : {{ $myResPagePath  }} <br/>
+$myResMatch"    : {{ $myResMatch     }} <br/>
+$myResPage      : {{ $myResPage      }} <br/>
+  {{- if $myResPage }}
+$myResPage.File.Dir  : {{ $myResPage.File.Dir  }} <br/>
+  {{- end -}}
+$myResMatch     : {{ $myResMatch     }} <br/>
+$myImgCmd       : {{ $myImgCmd       }} <br/>
+$myImgCmdOpt    : {{ $myImgCmdOpt    }} <br/>
+$myThumbCmd     : {{ $myThumbCmd     }} <br/>
+$myThumbCmdOpt  : {{ $myThumbCmdOpt  }} <br/>
+$myCaptionLong  : {{ $myCaptionLong  }} <br/>
+$myCaptionShort : {{ $myCaptionShort }} <br/>
+$myCapPos       : {{ $myCapPos       }} <br/>
+$myCapEff       : {{ $myCapEff       }} <br/>
+$myHovEff       : {{ $myHovEff       }} <br/>
+$myHovTra       : {{ $myHovTra       }} <br/>
+
+{{- end -}}
+
+<div class='res-gallery {{$myCapPos}} {{$myCapEff}} {{$myHovEff}} {{$myHovTra}}' itemscope itemtype="http://schema.org/ImageGallery">
+{{- if $myResPage }}
+  {{- range $myResImage := ( ($myResPage.Resources.ByType `image`).Match (printf "%s*" $myResMatch)) }}
+    {{- if not (findRE `\.(svg)$` (lower $myResImage.Name)) }}
+
+      {{- $myImgCmd      := ( $myImgCmd        | default $myResImage.Params.imgcmd        | default $myDefaulImgCmd        ) }}
+      {{- $myImgCmdOpt   := ( $myImgCmdOpt     | default $myResImage.Params.imgopt        | default $myDefaulImgCmdOpt     ) }}
+      {{- $myThumbCmd    := ( $myThumbCmd      | default $myResImage.Params.thumbcmd      | default $myDefaulThumbCmd      ) }}
+      {{- $myThumbCmdOpt := ( $myThumbCmdOpt   | default $myResImage.Params.thumbopt      | default $myDefaultThumbCmdOpt  ) }}
+      {{- $myCapLong     := ( $myCaptionLong   | default $myResImage.Params.caption       | default $myResImage.Params.captionlong | default $myDefaultCaptionLong  ) }}
+      {{- $myCapShort    := ( $myCaptionShort  | default $myResImage.Params.captionshort  | default $myDefaultCaptionShort ) }}
+
+      {{- $myCapFileName     := replaceRE `.*/`      (``) ($myResImage.Name) }}
+      {{- $myCapFileBase     := replaceRE `\.[^.]+$` (``) ($myCapFileName)   }}
+      {{- $myCapFileHumanize := humanize $myCapFileName }}
+
+      {{- $.Scratch.Set `tmpCapLong`  $myCapLong  }}
+      {{- $.Scratch.Set `tmpCapShort` $myCapShort }}
+      {{- range $capSuffix := ( slice `Long` `Short`) }}
+        {{- $capName := printf "tmpCap%s"  $capSuffix }}
+        {{- $cap := $.Scratch.Get $capName }}
+        {{- $cap := replaceRE `%%n` (`<br/>`)               $cap }}
+        {{- $cap := replaceRE `%%f`  ($myResImage.Name)    $cap }}
+        {{- $cap := replaceRE `%%F`  ($myCapFileName)       $cap }}
+        {{- $cap := replaceRE `%%B`  ($myCapFileBase)       $cap }}
+        {{- $cap := replaceRE `%%T`  ($myResImage.Title)   $cap }}
+        {{- $cap := replaceRE `%%N`  (cond (eq $myResImage.Name $myResImage.Title) (humanize $myCapFileBase) (humanize $myResImage.Title) ) $cap }}
+        {{- $cap := replaceRE `%%l`  (cond (not (isset $myResImage.Params "licenselink") ) ($myResImage.Params.licenseabrv) (printf "<a href='%s' target='_blank'>%s</a>" ($myResImage.Params.licenselink | default "") ($myResImage.Params.licenseabrv | default "") ) ) $cap }}
+        {{- $cap := replaceRE `%%L`  (cond (not (isset $myResImage.Params "licenselink") ) ($myResImage.Params.license)     (printf "<a href='%s' target='_blank'>%s</a>" ($myResImage.Params.licenselink | default "") ($myResImage.Params.license     | default "") ) ) $cap }}
+        {{- $cap := replaceRE `%%O`  (cond (not (isset $myResImage.Params "originlink" ) ) ($myResImage.Params.origin)      (printf "<a href='%s' target='_blank'>%s</a>" ($myResImage.Params.originlink  | default "") ($myResImage.Params.origin      | default "") ) ) $cap }}
+        {{- $cap := replaceRE `%%A`  (cond (not (isset $myResImage.Params "attrlink"   ) ) ($myResImage.Params.attrby)      (printf "<a href='%s' target='_blank'>%s</a>" ($myResImage.Params.attrlink    | default "") ($myResImage.Params.attrby      | default "") ) ) $cap }}
+        {{- $cap := replaceRE `%%I`  (printf "%s '%s'" $myImgCmd $myImgCmdOpt) $cap }}
+        {{- $.Scratch.Set $capName $cap }}
+      {{- end }}
+      {{- $myCapLong  := $.Scratch.Get `tmpCapLong`  }}
+      {{- $myCapShort := $.Scratch.Get `tmpCapShort` }}
+
+      {{- if or $.Site.Params.debug (findRE `\bdebug-shortcode(s|-res-gallery)\b` $.Site.Params.traceFlags) }}
+        <br/>
+        "$myImgCmd"                       : {{ $myImgCmd                       }} <br/>
+        "$myImgCmdOpt"                    : {{ $myImgCmdOpt                    }} <br/>
+        "$myThumbCmd"                     : {{ $myThumbCmd                     }} <br/>
+        "$myThumbCmdOpt"                  : {{ $myThumbCmdOpt                  }} <br/>
+        "$myCapLong"                      : {{ $myCapLong                      }} <br/>
+        "$myCapShort"                     : {{ $myCapShort                     }} <br/>
+        "$myResImage.Name"                : {{ $myResImage.Name               }} <br/>
+        "$myResImage.Title"               : {{ $myResImage.Title              }} <br/>
+        "$myResImage.Params.origin"       : {{ $myResImage.Params.origin      }} <br/>
+        "$myResImage.Params.originlink"   : {{ $myResImage.Params.originlink  }} <br/>
+        "$myResImage.Params.license"      : {{ $myResImage.Params.license     }} <br/>
+        "$myResImage.Params.licenseAbrv"  : {{ $myResImage.Params.licenseabrv }} <br/>
+        "$myResImage.Params.licenselink"  : {{ $myResImage.Params.licenselink }} <br/>
+        "$myResImage.Params.attrby"       : {{ $myResImage.Params.attrby      }} <br/>
+        "$myResImage.Params.attrlink"     : {{ $myResImage.Params.attrlink    }} <br/>
+        "$myResImage.Params.imgcmd"       : {{ $myResImage.Params.imgcmd      }} <br/>
+        "$myResImage.Params.imgopt"       : {{ $myResImage.Params.imgopt      }} <br/>
+      {{- end }}
+
+
+      {{- range $capSuffix := ( slice (dict `type` `img` `cmd` $myImgCmd `opt` $myImgCmdOpt ) (dict `type` `thumb` `cmd` $myThumbCmd `opt` $myThumbCmdOpt) ) }}
+        {{- $converted := printf "%sConverted" .type }}
+        {{- if eq .cmd `Fill`}}
+          {{- $.Scratch.Set $converted ($myResImage.Fill .opt) }}
+        {{- else if eq .cmd `Fit`}}
+          {{- $.Scratch.Set $converted ($myResImage.Fit .opt) }}
+        {{- else if eq .cmd `Resize`}}
+          {{- $.Scratch.Set $converted ($myResImage.Resize .opt) }}
+        {{- else }}
+          {{- errorf "Invalid image processing command: '%s' for '%s'. Must be one of Fill, Fit or Resize."  .cmd $myResImage.Name}}
+        {{- end }}
+      {{- end }}
+
+      {{- $myRegGalleryImage := $.Scratch.Get `imgConverted`   }}
+      {{- $myRegGalleryThumb := $.Scratch.Get `thumbConverted` }}
+      {{- $myRegGalleryImageCaption := $myCapLong }}
+      {{- $myRegGalleryThumbCaption := $myCapShort }}
+
+      {{- $myThumCmdOptDimentions    := split $myThumbCmdOpt "x" }}
+      {{- $myThumCmdOptDimentionsMax := cond (gt (index $myThumCmdOptDimentions 0) (index $myThumCmdOptDimentions 1) ) (index $myThumCmdOptDimentions 0) (index $myThumCmdOptDimentions 1) }}
+      {{- $myThumCmdOptDimentionsW := index $myThumCmdOptDimentions 0 }}
+      {{- $myThumCmdOptDimentionsH := index $myThumCmdOptDimentions 1 }}
+
+    <div class='res-gallery-box '
+         {{/* style="width:{{$myThumCmdOptDimentionsMax}}px; height:{{$myThumCmdOptDimentionsMax}}px;" */}}
+         style="width:{{$myThumCmdOptDimentionsW}}px; height:{{$myThumCmdOptDimentionsH}}px;"
+         itemscope itemtype="http://schema.org/ImageGallery" >
+      <figure class="img"
+              data-size='{{$myRegGalleryImage.Width}}x{{$myRegGalleryImage.Height}}'
+              data-caption='{{$myRegGalleryImageCaption}}'
+              itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject"
+              title="{{$myResImage.Title | safeHTML}}"
+      >
+        <a itemprop="contentUrl" href='{{$myRegGalleryImage.RelPermalink}}' >
+          <img itemprop="thumbnail"
+               src='{{$myRegGalleryThumb.RelPermalink}}'
+               alt='{{$myRegGalleryImageCaption}}'
+               width='{{$myRegGalleryThumb.Width}}'  height='{{$myRegGalleryThumb.Height}}'
+          />
+        </a>
+        <meta itemprop="width"  content='{{$myRegGalleryImage.Width }}'>
+        <meta itemprop="height" content='{{$myRegGalleryImage.Height}}'>
+        <figcaption class="res-gallery-figcaption " itemprop="caption description" >
+          <small>{{$myRegGalleryThumbCaption | safeHTML}}</small>
+        </figcaption>
+      </figure>
+    </div> {{/* 'res-gallery-box */}}
+
+    {{- end }}
+
+  {{- end }} {{/* range */}}
+{{- else }}
+  {{- errorf "Resource page not found: '%s' in for page: '%s'" $myResPagePath .Page.File.Path }}
+{{- end }} {{/* if */}}
+
+</div>

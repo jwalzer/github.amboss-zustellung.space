@@ -1,0 +1,123 @@
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+  {{ `<!-- partials/header.nav.large_theme_color_selector.html -->` | safeHTML }}
+{{- end}}
+
+<select id="large_theme_color_selector"
+        title="This may help you to to define w3cssColorTheme in your config.toml. All color themes are taken from www.w3schools.com/w3css."
+        class="w3-bar-item w3-right w3-padding-small w3-theme-d2 w3-small"
+        style="margin-top: 6px;"
+        translate="no"
+        onchange="setStyleSheet('large_theme_color_selector')">
+  <option value="" disabled="" selected="">preview w3.css color themes</option>
+  <option value='w3-theme-amber.css'                                                > Amber       #ffc107 </option>
+  <option value='w3-theme-black.css'                                                > Black       #000000 </option>
+  <option value='w3-theme-blue-grey.css'                                            > Blue Grey   #607d8b </option>
+  <option value='w3-theme-blue.css'                                                 > Blue        #2196f3 </option>
+  <option value='w3-theme-brown.css'                                                > Brown       #795548 </option>
+  <option value='w3-theme-cyan.css'                                                 > Cyan        #00bcd4 </option>
+  <option value='w3-theme-dark-grey.css'                                            > Dark Grey   #616161 </option>
+  <option value='w3-theme-deep-orange.css'                                          > Deep Orange #ff5722 </option>
+  <option value='w3-theme-deep-purple.css'                                          > Deep Purple #673ab7 </option>
+  <option value='w3-theme-green.css'                                                > Green       #4caf50 </option>
+  <option value='w3-theme-grey.css'                                                 > Grey        #9e9e9e </option>
+  <option value='w3-theme-indigo.css'                                               > Indigo      #3f51b5 </option>
+  <option value='w3-theme-khaki.css'                                                > Khaki       #f0e68c </option>
+  <option value='w3-theme-light-blue.css'                                           > Light Blue  #87ceeb </option>
+  <option value='w3-theme-light-green.css'                                          > Light Green #8bc34a </option>
+  <option value='w3-theme-lime.css'                                                 > Lime        #cddc39 </option>
+  <option value='w3-theme-orange.css'                                               > Orange      #ff9800 </option>
+  <option value='w3-theme-pink.css'                                                 > Pink        #e91e63 </option>
+  <option value='w3-theme-purple.css'                                               > Purple      #9c27b0 </option>
+  <option value='w3-theme-red.css'                                                  > Red         #f44336 </option>
+  <option value='w3-theme-teal.css'                                                 > Teal        #009688 </option>
+  <option value='w3-theme-yellow.css'                                               > Yellow      #ffeb3b </option>
+
+  <option value="" disabled="" >preview color of the year</option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2006-sand-dollar.css'     > 2006 sand-dollar     </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2007-chili-pepper.css'    > 2007 chili-pepper    </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2008-blue-izis.css'       > 2008 blue-izis       </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2009-mimosa.css'          > 2009 mimosa          </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2010-turquise.css'        > 2010 turquise        </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2011-honeysucle.css'      > 2011 honeysucle      </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2012-tangerine-tango.css' > 2012 tangerine-tango </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2013-emerald.css'         > 2013 emerald         </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2014-radiand-orchid.css'  > 2014 radiand-orchid  </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2015-marsala.css'         > 2015 marsala         </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2016-airy-blue.css'       > 2016 airy-blue       </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2016-aurora-red.css'      > 2016 aurora-red      </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2016-bodacious.css'       > 2016 bodacious       </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2016-buttercup.css'       > 2016 buttercup       </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2016-duster-cedar.css'    > 2016 duster-cedar    </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2016-fiesta.css'          > 2016 fiesta          </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2016-green-flash.css'     > 2016 green-flash     </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2016-iced-coffe.css'      > 2016 iced-coffe      </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2016-lilac-grey.css'      > 2016 lilac-grey      </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2016-limpet-shell.css'    > 2016 limpet-shell    </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2016-lush-medow.css'      > 2016 lush-medow      </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2016-peach-echo.css'      > 2016 peach-echo      </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2016-potters-clay.css'    > 2016 potters-clay    </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2016-riverside.css'       > 2016 riverside       </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2016-rose-quarts.css'     > 2016 rose-quarts     </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2016-serenity.css'        > 2016 serenity        </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2016-sharkskin.css'       > 2016 sharkskin       </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2016-snorkel-blue.css'    > 2016 snorkel-blue    </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2016-spicy-mustard.css'   > 2016 spicy-mustard   </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2016-warm-taupe.css'      > 2016 warm-taupe      </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2017-autumn-maple.css'    > 2017 autumn-maple    </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2017-ballet-slipper.css'  > 2017 ballet-slipper  </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2017-butterum.css'        > 2017 butterum        </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2017-flame.css'           > 2017 flame           </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2017-golden-lime.css'     > 2017 golden-lime     </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2017-greenery.css'        > 2017 greenery        </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2017-grenadine.css'       > 2017 grenadine       </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2017-hazelnut.css'        > 2017 hazelnut        </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2017-island-paradise.css' > 2017 island-paradise </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2017-kale.css'            > 2017 kale            </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2017-lapis-blue.css'      > 2017 lapis-blue      </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2017-marina.css'          > 2017 marina          </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2017-navy-peony.css'      > 2017 navy-peony      </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2017-neutral-gray.css'    > 2017 neutral-gray    </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2017-niagara.css'         > 2017 niagara         </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2017-pale-dogwood.css'    > 2017 pale-dogwood    </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2017-pink-yarrow.css'     > 2017 pink-yarrow     </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2017-primrose-yellow.css' > 2017 primrose-yellow </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2017-shaded-spruce.css'   > 2017 shaded-spruce   </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2017-tawny-port.css'      > 2017 tawny-port      </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2018-almond-buff.css'     > 2018 almond-buff     </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2018-almost-mauve.css'    > 2018 almost-mauve    </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2018-arcadia.css'         > 2018 arcadia         </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2018-blooming-dahlia.css' > 2018 blooming-dahlia </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2018-ceylon-yellow.css'   > 2018 ceylon-yellow   </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2018-cherry-tomato.css'   > 2018 cherry-tomato   </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2018-chili-oil.css'       > 2018 chili-oil       </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2018-coconut-milk.css'    > 2018 coconut-milk    </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2018-crocus-petal.css'    > 2018 crocus-petal    </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2018-emperador.css'       > 2018 emperador       </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2018-harbor-mist.css'     > 2018 harbor-mist     </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2018-lime-punch.css'      > 2018 lime-punch      </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2018-limelight.css'       > 2018 limelight       </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2018-little-boy-blue.css' > 2018 little-boy-blue </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2018-martini-olive.css'   > 2018 martini-olive   </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2018-meadowlark.css'      > 2018 meadowlark      </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2018-meerkat.css'         > 2018 meerkat         </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2018-nebulas-blue.css'    > 2018 nebulas-blue    </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2018-pink-lavender.css'   > 2018 pink-lavender   </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2018-quetzal-green.css'   > 2018 quetzal-green   </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2018-quiet-gray.css'      > 2018 quiet-gray      </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2018-red-pear.css'        > 2018 red-pear        </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2018-russet-orange.css'   > 2018 russet-orange   </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2018-sailor-blue.css'     > 2018 sailor-blue     </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2018-sargasso-sea.css'    > 2018 sargasso-sea    </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2018-spring-crocus.css'   > 2018 spring-crocus   </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2018-tofu.css'            > 2018 tofu            </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2018-ultra-violet.css'    > 2018 ultra-violet    </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2018-valiant-poppy.css'   > 2018 valiant-poppy   </option>
+  <option value='color_of_the_year/w3-theme-color-of-year-2018-warm-sand.css'       > 2018 warm-sand       </option>
+
+</select>
+
+<noscript>
+  <style>
+    #large_theme_color_selector {display:none;}
+  </style>
+</noscript>

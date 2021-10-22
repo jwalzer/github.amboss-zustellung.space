@@ -1,0 +1,90 @@
+{{/*-
+  https://gohugo.io/content-management/page-resources/
+*/}}
+
+
+{{- $myDefaultCaption := $.Site.Params.resources.defaultAttachCaption | default `%%T`   }}
+{{- $thePath      := `.`                 }}
+{{- $theMatch     := `**`                }}
+{{- $theLabelText := `Attachments`       }}
+{{- $theLabelIcon := `fas fa-paperclip`  }}
+
+{{- $theResPage   := "" }}
+
+{{- if .IsNamedParams }}
+  {{- $thePath      = .Get `path`   }}
+  {{- $theMatch     = .Get `match`  }}
+  {{- $theLabelText = .Get `label`  }}
+  {{- $theLabelIcon = .Get `icon`   }}
+{{- else }}
+  {{- $myPos := 0}} {{ if gt (len .Params) $myPos }} {{$thePath      = .Get $myPos }} {{end}}
+  {{- $myPos := 1}} {{ if gt (len .Params) $myPos }} {{$theMatch     = .Get $myPos }} {{end}}
+  {{- $myPos := 2}} {{ if gt (len .Params) $myPos }} {{$theLabelText = .Get $myPos }} {{end}}
+  {{- $myPos := 3}} {{ if gt (len .Params) $myPos }} {{$theLabelIcon = .Get $myPos }} {{end}}
+{{- end }}
+
+{{- if or $.Site.Params.debug (findRE `\bdebug-shortcode(s|-res-attach)\b` $.Site.Params.traceFlags) }}
+<br/>
+"thePath"      : {{- $thePath      }} <br/>
+"theMatch"     : {{- $theMatch     }} <br/>
+"theLabelText" : {{- $theLabelText }} <br/>
+"theLabelIcon" : {{- $theLabelIcon }} <br/>
+{{- end }}
+
+{{- $myResPagePath := $thePath }}
+{{- if eq $myResPagePath `.`}}
+  {{- $theResPage = .Page }}
+{{- else }}
+  {{- $theResPage = .Site.GetPage $myResPagePath }}
+{{- end }}
+
+{{- $myResPage := $theResPage }}
+
+{{- if gt (len ($theLabelIcon)) 0 }}
+  {{printf "<span class='%s' aria-hidden='true'></span>&nbsp;" ($theLabelIcon) | safeHTML }}
+{{- end }}
+{{ default ($theLabelText) (i18n ($theLabelText)) }}
+<ul class=" " >
+{{- if $.Site.Params.debug }}
+  {{- range $myResource := ( ($myResPage.Resources.Match "**/*")) }}
+   {{ $myResource.ResourceType }} {{ $myResource.Name }}<br/>
+  {{- end }}
+{{- end }}
+
+{{- if $myResPage }}
+  {{- if $myResPage.Resources }}
+    {{ range $myMatch  := split $theMatch ";" }}
+      {{/*- range $myResource := ( $.Page.Resources.Match (printf "%s*" ($myMatch))) */}}
+      {{- range $myResource := ( ($myResPage.Resources.Match (printf "%s*" ($myMatch)) )) }}
+        {{ $icon := "" }}
+        {{- $myExt := replaceRE `.*\.` (``) ($myResource.Name) }}
+        {{-      if eq $myExt "pdf" }}  {{$icon = `far fa-file-pdf`  }}
+        {{- else if eq $myExt "docx" }} {{$icon = `far fa-file-word` }}
+        {{- else if eq $myExt "xlsx" }} {{$icon = `far fa-file-excel`}}
+        {{- else }}                     {{$icon = `far fa-file`      }}
+        {{- end}}
+
+        {{- $myLinkText := $myResource.Title }}
+        {{- $myIcon := (cond (gt (len (default "" $myResource.Params.icon)) 0) ($myResource.Params.icon) ($icon) ) }}
+
+        {{- if or $.Site.Params.debug (findRE `\bdebug-shortcode(s|-res-attach)\b` $.Site.Params.traceFlags) }}
+          <br/>
+          "$myResource.Name"               : {{ $myResource.Name               }} <br/>
+          "$myResource.Title"              : {{ $myResource.Title              }} <br/>
+          "$myResource.ResourceType"       : {{ $myResource.ResourceType       }} <br/>
+          "$myResource.Permalink"          : {{ $myResource.Permalink          }} <br/>
+          "$myResource.RelPermalink"       : {{ $myResource.RelPermalink       }} <br/>
+          "$myLinkText"                    : {{ $myLinkText                    }} <br/>
+          "$myIcon"                        : {{ $myIcon                        }} <br/>
+        {{- end }}
+
+        <li>
+        <a href="{{$myResource.RelPermalink}}">{{printf "<span class='%s' aria-hidden='true'></span>" $myIcon | safeHTML }}&nbsp;{{$myLinkText}}</a>
+        </li>
+
+      {{- end }} {{/* range $myResource */}}
+    {{- end }} {{/* range $myMatch */}}
+  {{- end }}
+{{- end }}
+
+</ul>

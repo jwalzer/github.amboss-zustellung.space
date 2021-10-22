@@ -1,0 +1,262 @@
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+  {{ `<!-- partials/header.nav.html -->` | safeHTML }}
+{{- end}}
+{{- $.Scratch.Set `smallDispMenuMaxCharsDefault` 99     }}
+{{- $.Scratch.Set `smallDispMenuCollapse`         false }}
+
+{{- if isset $.Site.Params (lower `menuConfig` ) }}
+
+  {{- if isset $.Site.Params.menuConfig (lower `smallDispMenuCollapse` ) }}
+    {{- $.Scratch.Set `smallDispMenuCollapse` ($.Site.Params.menuConfig.smallDispMenuCollapse  | default false) }}
+  {{- end}}
+
+  {{- if isset $.Site.Params.menuConfig (lower `smallDispMenuMaxChars` ) }}
+    {{- $.Scratch.Set `smallDispMenuLower` 1 }}
+  {{- else}}
+    {{- $.Scratch.Set `smallDispMenuLower` `` }}
+  {{- end}}
+
+  {{- $.Scratch.Set `smallDispMenuMaxChars`    ($.Site.Params.menuConfig.smallDispMenuMaxChars  | default ($.Scratch.Get `smallDispMenuMaxCharsDefault`) ) }}
+
+{{- else}}
+  {{- $.Scratch.Set `smallDispMenuMaxChars`    ($.Scratch.Get `smallDispMenuMaxCharsDefault`) }}
+{{- end}}
+
+{{/*
+{{- if $.Scratch.Get `smallDispMenuCollapse` }}
+  {{- $.Scratch.Set `smallDispMenuMaxChars` ($.Scratch.Get `smallDispMenuMaxCharsDefault`) }}
+  {{- $.Scratch.Set `smallDispMenuLower` false }}
+{{- end }}
+*/}}
+
+
+{{- /* ************************************************** large */}}
+<div class='w3-bar w3-hide-small w3-hide-medium {{ default `w3-theme-dark` ($.Site.Param `colorHeaderNav`)}} '>
+  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+    {{ `<!-- w3-hide-small w3-hide-medium ************************************************** -->` | safeHTML }}
+  {{- end}}
+  {{- template `header-nav-entry` . }}
+
+  {{- if .Site.Menus.topbar }}
+    {{- if $.Site.Params.menutopbar.socialEnable }}
+      {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+        {{ `<!-- range .Site.Menus.topbar.ByWeight -->` | safeHTML }}
+      {{- end}}
+      {{- range .Site.Menus.topbar.ByWeight }}
+    <a href='{{ .URL }}' target="_blank" class="w3-bar-item w3-button w3-right" ><i class='{{ .Pre }}'></i></a>
+      {{- end }}
+    {{- end }} {{/* socialEnable */}}
+
+    {{- if $.Site.Params.menutopbar.googleTranslateEnable }}
+      {{- if or (not .IsHome) $.Site.Params.menutopbar.googleTranslateShowOnHome }}
+        {{ partial `header.nav.google.translate.html` . -}}
+      {{- end }}
+    {{- end }}
+
+  {{- end }} {{/* topbar */}}
+
+  {{- if $.Site.Params.menutopbar.themeColorSelectorEnable }}
+    {{ partial `header.nav.large.theme_color_selector.html` . -}}
+  {{- end }}
+
+
+</div> <!-- w3-bar w3-hide-small w3-hide-medium  -->
+
+
+{{- /* ************************************************** medium */}}
+<div class='w3-bar w3-hide-small w3-hide-large {{ default `w3-theme-dark` ($.Site.Param `colorHeaderNav`)}} '>
+  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+    {{ `<!-- w3-hide-small w3-hide-large ************************************************** -->` | safeHTML }}
+  {{- end}}
+  {{- template `header-nav-entry` . }}
+
+  {{- if .Site.Menus.topbar }}
+    {{- if $.Site.Params.menutopbar.socialEnable }}
+      {{- if $.Site.Params.menutopbar.numOfItemsIfMediumDisplay }}
+        {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+          {{ `<!-- range first $.Site.Params.menutopbar.numOfItemsIfMediumDisplay .Site.Menus.topbar.ByWeight -->` | safeHTML }}
+        {{- end}}
+        {{- range first $.Site.Params.menutopbar.numOfItemsIfMediumDisplay .Site.Menus.topbar.ByWeight }}
+      <a href='{{ .URL }}' target="_blank" class="w3-bar-item w3-button w3-right header-nav-menu-topbar-medium" ><i class='{{ .Pre }}'></i></a>
+        {{- end }} {{/* range */}}
+      {{- end }} {{/* numOfItemsIfMediumDisplay */}}
+    {{- end }}{{/* socialEnable */}}
+
+
+  {{- end }} {{/* topbar */}}
+
+  {{- if $.Site.Params.menutopbar.themeColorSelectorEnable }}
+    {{ partial `header.nav.medium.theme_color_selector.html` . -}}
+  {{- end }}
+
+
+</div> <!-- w3-bar w3-hide-small w3-hide-large -->
+
+
+{{- /* ************************************************** small with collapsing */}}
+{{ if $.Scratch.Get `smallDispMenuCollapse` }}
+<div id='nav-small-js' class='w3-bar w3-hide-medium w3-hide-large {{ default `w3-theme-dark` ($.Site.Param `colorHeaderNav`)}} '>
+  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+    {{ `<!-- w3-hide-large w3-hide-medium ************************************************** -->` | safeHTML }}
+  {{- end}}
+
+  {{- if $.Site.Params.menutopbar.socialEnable }}
+    {{- if .Site.Menus.topbar }}
+      {{- if $.Site.Params.menutopbar.numOfItemsIfSmallDisplayCollapsed }}
+        {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+          {{ `<!-- range first $.Site.Params.menutopbar.numOfItemsIfSmallDisplay .Site.Menus.topbar.ByWeight -->` | safeHTML }}
+        {{- end}}
+        {{- range first $.Site.Params.menutopbar.numOfItemsIfSmallDisplayCollapsed .Site.Menus.topbar.ByWeight }}
+      <a href='{{ .URL }}' target="_blank" class="w3-bar-item w3-button w3-right header-nav-menu-topbar-small" ><i class='{{ .Pre }}'></i></a>
+        {{- end }}
+      {{- end }} {{/* numOfItemsIfSmallDisplayCollapsed */}}
+    {{- end }}{{/* topbar */}}
+  {{- end }}{{/* socialEnable */}}
+
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-left w3-hide-large w3-hide-medium" onclick="showMenu()"><i class="{{default `fas fa-bars` $.Site.Params.menuConfig.smallDispMenuCollapseIcon }}"></i></a>
+  {{/* &#9776; */}}
+
+  <div id="nav-small-js-bar-block" class="w3-bar-block w3-small w3-hide w3-hide-large w3-hide-medium">
+  {{- template `header-nav-entry` . }}
+  </div>
+
+
+</div> <!-- w3-bar -->
+
+{{- else }}
+
+{{- /* ************************************************** small no collapsing */}}
+<div id='nav-small-no-js' class='w3-bar w3-hide-medium w3-hide-large {{ default `w3-theme-dark` ($.Site.Param `colorHeaderNav`)}} '>
+  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+    {{ `<!-- w3-hide-large w3-hide-medium ************************************************** -->` | safeHTML }}
+  {{- end}}
+  {{- template `header-nav-entry` . }}
+
+  {{- if $.Site.Params.menutopbar.socialEnable }}
+    {{- if .Site.Menus.topbar }}
+      {{- if $.Site.Params.menutopbar.numOfItemsIfSmallDisplay }}
+        {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+          {{ `<!-- range first $.Site.Params.menutopbar.numOfItemsIfSmallDisplay .Site.Menus.topbar.ByWeight -->` | safeHTML }}
+        {{- end}}
+        {{- range first $.Site.Params.menutopbar.numOfItemsIfSmallDisplay .Site.Menus.topbar.ByWeight }}
+      <a href='{{ .URL }}' target="_blank" class="w3-bar-item w3-button w3-right header-nav-menu-topbar-small" ><i class='{{ .Pre }}'></i></a>
+        {{- end }}
+      {{- end }} {{/* numOfItemsIfSmallDisplayCollapsed */}}
+    {{- end }}{{/* topbar */}}
+  {{- end }}{{/* socialEnable */}}
+
+</div> <!-- w3-bar -->
+{{- end }}
+
+
+<script>
+  function showMenu() {
+    var x = document.getElementById('nav-small-js-bar-block');
+    if (x.className.indexOf("w3-show") == -1) {
+      x.className += " w3-show";
+    } else {
+      x.className = x.className.replace(" w3-show", "");
+    }
+  }
+</script>
+<noscript>
+  <style>
+    #nav-small-js {display:none;}
+  </style>
+
+{{- /* ************************************************** small no collapsing */}}
+<div id='nav-small-no-js' class='w3-bar w3-small w3-hide-medium w3-hide-large {{ default `w3-theme-dark` ($.Site.Param `colorHeaderNav`)}} '>
+  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+    {{ `<!-- w3-hide-large w3-hide-medium ************************************************** -->` | safeHTML }}
+  {{- end}}
+  {{- template `header-nav-entry` . }}
+
+  {{- if $.Site.Params.menutopbar.socialEnable }}
+  {{- if .Site.Menus.topbar }}
+  {{- if $.Site.Params.menutopbar.numOfItemsIfSmallDisplay }}
+    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+      {{ `<!-- range first $.Site.Params.menutopbar.numOfItemsIfSmallDisplay .Site.Menus.topbar.ByWeight -->` | safeHTML }}
+    {{- end}}
+    {{- range first $.Site.Params.menutopbar.numOfItemsIfSmallDisplay .Site.Menus.topbar.ByWeight }}
+  <a href='{{ .URL }}' target="_blank" class="w3-bar-item w3-button w3-right header-nav-menu-topbar-small" ><i class='{{ .Pre }}'></i></a>
+    {{- end }}
+  {{- end }}
+  {{- end }}
+  {{- end }}
+</div> <!-- w3-bar -->
+
+</noscript>
+
+
+{{- define `header-nav-entry` }}
+  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+    {{ `<!-- header-nav-entry -->` | safeHTML }}
+  {{- end}}
+  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+    {{ `<!-- range .Site.Menus.main -->` | safeHTML }}
+  {{- end}}
+  {{- range .Site.Menus.main }}
+    {{- if .HasChildren }}
+      {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+        {{ `<!-- .HasChildren -->` | safeHTML }}
+      {{- end}}
+
+<div class="w3-dropdown-hover">
+  <button class="w3-button          w3-hide-small w3-hide-medium header-nav-menu-dropdown-large"  ><i class='{{ .Pre }}'></i>&nbsp;{{default .Name (i18n .Name)}}</button>
+  <button class="w3-button          w3-hide-small w3-hide-large  header-nav-menu-dropdown-medium" ><i class='{{ .Pre }}'></i>&nbsp;{{default .Name (i18n .Name)}}</button>
+  <button class="w3-button w3-small w3-hide-medium w3-hide-large header-nav-menu-dropdown-small"  ><i class='{{ .Pre }}'></i>&nbsp;
+      {{- if ($.Scratch.Get `smallDispMenuCollapse` ) }}
+        {{- default .Name (i18n .Name) }}
+      {{- else }}
+        {{- if ($.Scratch.Get `smallDispMenuLower`)}}
+          {{- substr (default .Name (i18n .Name)) 0 ($.Scratch.Get `smallDispMenuMaxChars`) | lower}}
+        {{- else}}
+          {{- substr (default .Name (i18n .Name)) 0 ($.Scratch.Get `smallDispMenuMaxChars`)}}
+        {{- end -}}
+      {{- end -}}
+  </button>
+  <div class="w3-dropdown-content w3-bar-block w3-card-4" style="z-index: 2"> <!-- above owl carousel -->
+      {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+        {{ `<!-- range .Children -->` | safeHTML }}
+      {{- end}}
+      {{- range .Children }}
+        {{- $myChildrenURL :=  .URL }}
+        {{- if and (and  (not (in $myChildrenURL `.html`)) (eq (substr $myChildrenURL 0 1) `/`)) $.Site.Params.uglyURLs }}
+          {{- $.Scratch.Set `myUglyPostfix` $.Site.Params.uglyUrl }}
+        {{- else }}
+          {{- $.Scratch.Set `myUglyPostfix` `` }}
+        {{- end }}
+    <a href='{{ $myChildrenURL }}{{$.Scratch.Get `myUglyPostfix`}}' class="w3-bar-item w3-button"><i class='{{ .Pre }}'></i>&nbsp;{{default .Name (i18n .Name)}}</a>
+      {{- end }}  {{- /* range .Children        */}}
+  </div> <!-- w3-dropdown-content -->
+</div>   <!-- w3-dropdown-hover   -->
+
+    {{- else }}  {{- /* .HasChildren */}}
+      {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+        {{ `<!-- not .HasChildren -->` | safeHTML }}
+      {{- end}}
+
+      {{- if and (and  (not (in .URL `.html`)) (eq (substr .URL 0 1) `/`)) $.Site.Params.uglyURLs }}
+        {{- $.Scratch.Set `myUglyPostfix` $.Site.Params.uglyUrl }}
+      {{- else }}
+        {{- $.Scratch.Set `myUglyPostfix` `` }}
+      {{- end }}
+
+<a href='{{ .URL }}{{$.Scratch.Get `myUglyPostfix`}}' class="w3-bar-item w3-button          w3-hide-small  w3-hide-medium header-nav-menu-large "><i class='{{ .Pre }}'></i>&nbsp;{{default .Name (i18n .Name)}}</a>
+<a href='{{ .URL }}{{$.Scratch.Get `myUglyPostfix`}}' class="w3-bar-item w3-button          w3-hide-small  w3-hide-large  header-nav-menu-medium"><i class='{{ .Pre }}'></i>&nbsp;{{default .Name (i18n .Name)}}</a>
+<a href='{{ .URL }}{{$.Scratch.Get `myUglyPostfix`}}' class="w3-bar-item w3-button w3-small w3-hide-medium w3-hide-large  header-nav-menu-small" ><i class='{{ .Pre }}'></i>&nbsp;
+      {{- if ($.Scratch.Get `smallDispMenuCollapse` ) }}
+        {{- default .Name (i18n .Name) }}
+      {{- else -}}
+        {{- if ($.Scratch.Get `smallDispMenuLower`) }}
+          {{- substr (default .Name (i18n .Name)) 0 ($.Scratch.Get `smallDispMenuMaxChars`) | lower}}
+        {{- else}}
+          {{- substr (default .Name (i18n .Name)) 0 ($.Scratch.Get `smallDispMenuMaxChars`)}}
+        {{- end -}}
+      {{- end -}}
+</a>
+    {{- end  }}   {{- /* if .HasChildren        */}}
+
+  {{- end  }}     {{- /* range .Site.Menus.main */}}
+
+{{- end }}

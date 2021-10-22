@@ -1,0 +1,133 @@
+- id: Home
+  translation: "Home"
+
+- id: Contact
+  translation: "Kontakt"
+
+- id: Pages
+  translation: "Inhalt"
+
+- id: Blog
+  translation: "Blog"
+
+- id: FAQ
+  translation: "FAQ"
+
+- id: aboutUs
+  translation: "Über uns"
+
+- id: contactForm
+  translation: "Kontakt Formular"
+
+- id: contactGoTo
+  translation: "Zur Kontakt Seite"
+
+- id: contactMail
+  translation: "Ihre Email Adresse"
+
+- id: contactMessage
+  translation: "Ihre Nachricht an uns"
+
+- id: contactName
+  translation: "Ihr Name"
+
+- id: contactSend
+  translation: "Nachricht senden"
+
+- id: contactVia
+  translation: "via"
+
+- id: contactTitle
+  translation: "Kontakt"
+
+- id: continueReading
+  translation: "Weiterlesen"
+
+- id: JsNeeded
+  translation: "JavaScript wird benötigt"
+
+- id: pages
+  translation: "Klimbim2"
+
+- id: recentPosts
+  translation: "Neue Beiträge"
+
+- id: newer
+  translation: "links"
+
+- id: older
+  translation: "rechts"
+
+- id: categoryTitle
+  translation: "Kategorie"
+
+- id: categoriesTitle
+  translation: "Kategorien"
+
+- id: tagTitle
+  translation: "Tag"
+
+- id: tagsTitle
+  translation: "Tags"
+
+- id: termNotAvailable
+  translation: "leer"
+
+- id: search
+  translation: "Suche"
+
+- id: Show
+  translation: "Zeige"
+- id: Comments
+  translation: "Kommentare"
+- id: disqusVia
+  translation: "via disqus.com"
+
+- id: January
+  translation: "Januar"
+- id: February
+  translation: "Februar"
+- id: March
+  translation: "März"
+- id: April
+  translation: "April"
+- id: May
+  translation: "Mai"
+- id: June
+  translation: "Juni"
+- id: July
+  translation: "Juli"
+- id: August
+  translation: "August"
+- id: September
+  translation: "September"
+- id: October
+  translation: "Oktober"
+- id: November
+  translation: "November"
+- id: December
+  translation: "Dezember"
+
+- id: Attachments
+  translation: "Beilagen"
+
+# Disqus consent
+- id: disqusTxtAgree
+  translation: Zeige Kommentare via [disqus.com](https://disqus.com). Aber erst müssen Sie den [AGBs](https://help.disqus.com/terms-and-policies/terms-of-service) zustimmen
+
+- id: disqusBtnAgree
+  translation: Ja, ich bin einverstanden
+
+# Cookie consent
+- id: cookieMessage
+  translation: Wir verwenden Cookies, um unsere Webseite für Sie möglichst benutzerfreundlich zu gestalten.
+
+- id: cookieDismiss
+  translation: Ich bin einverstanden
+
+- id: cookieLearn
+  translation: Weitere Informationen
+
+# Related Content
+- id: "seeAlso"
+  translation: Ähnliche Seiten

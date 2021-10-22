@@ -1,0 +1,89 @@
+{{- $thePage      :=  index . `page`    }}
+{{- $theImgClass  := (index . `class`) | default ""       }}
+{{- $theImgStyle  := (index . `style`) | default ""       }}
+{{- $theResImg    := (index . `img`)   | default ``       }}
+{{- $theResImgCmd := (index . `cmd`)   | default `Resize` }}
+{{- $theResImgOpt := (index . `opt`)   | default `300x`   }}
+
+{{- $thePage.Scratch.Set `myResImg` ``}}
+{{- $thePage.Scratch.Set `myImage`  ``}}
+
+{{- if or $thePage.Site.Params.debug (findRE `\bhtml-comment\b` ($thePage.Site.Param `traceFlags`) ) }}
+  {{ `<!-- partials/resource.image.html  -->` | safeHTML }}
+{{- end}}
+
+{{- if or $thePage.Site.Params.debug (findRE `\bdebug-partial(s|-resource-image)\b` ($thePage.Site.Param `traceFlags`) ) }}
+<br/>
+thePage        : {{- $thePage        }} <br/>
+theImgClass    : {{- $theImgClass    }} <br/>
+theImgStyle    : {{- $theImgStyle    }} <br/>
+theResImg      : {{- $theResImg      }} <br/>
+theResImgCmd   : {{- $theResImgCmd   }} <br/>
+theResImgOpt   : {{- $theResImgOpt   }} <br/>
+{{- end }}
+
+{{- $myGlobalResourcePagePath := default "resources/images" ($thePage.Site.Params.resources.defaultrespagepath) }}
+{{- $myGlobalResourcePage := $thePage.Site.GetPage "page" $myGlobalResourcePagePath }}
+{{- if or $thePage.Site.Params.debug (findRE `\bdebug-partial(s|-resource-image)\b` ($thePage.Site.Param `traceFlags`) ) }}
+  <br/>
+  $myGlobalResourcePagePath: {{- $myGlobalResourcePagePath }} <br/>
+  {{- if $myGlobalResourcePage }}
+  myGlobalResources: {{- $myGlobalResourcePage.File.Path }} <br/>
+  {{- end }}
+{{- end }}
+{{- if $myGlobalResourcePage }}
+  {{- if len ($myGlobalResourcePage.Resources.ByType `image`) }}
+    {{- if ($theResImg)  }}
+      {{ $thePage.Scratch.Set `myResImg` ( ($myGlobalResourcePage.Resources.ByType `image`).GetMatch ($theResImg) ) }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+
+
+{{- if $thePage.Param `resImgRelPath`}}
+{{/*  {{- $myResourcePage := $thePage.Site.GetPage "page" ($thePage.File.Dir) ($thePage.Param `resImgRelPath`) "index.md" }} */}}
+  {{- $myResourcePage := $thePage.Site.GetPage "page" (printf "%s/%s/index.md" ($thePage.File.Dir) ($thePage.Param `resImgRelPath`) ) }}
+  {{- if $myResourcePage }}
+    {{ $thePage.Scratch.Set `myResImg` ( ( ($myResourcePage.Resources.ByType `image`).GetMatch ($theResImg))  | default ($thePage.Scratch.Get `myResImg`) ) }}
+  {{- end }} {{/* if $myResourcePage */}}
+{{- end }} {{/* if resImgRelPath */}}
+
+
+{{- if $thePage.Resources.ByType `image` }}
+  {{- if ($theResImg)  }}
+    {{ $thePage.Scratch.Set `myResImg` ( ( ($thePage.Resources.ByType `image`).GetMatch ($theResImg))  | default ($thePage.Scratch.Get `myResImg`) ) }}
+  {{- end }}
+{{- end }}
+
+{{- $myResource := $thePage.Scratch.Get `myResImg` }}
+{{- if and $myResource (ne $myResource ``) }}
+  {{- if      eq $theResImgCmd `Fill`   }}{{$thePage.Scratch.Set `myImage` ($myResource.Fill   $theResImgOpt)}}
+  {{- else if eq $theResImgCmd `Fit`    }}{{$thePage.Scratch.Set `myImage` ($myResource.Fit    $theResImgOpt)}}
+  {{- else if eq $theResImgCmd `Resize` }}{{$thePage.Scratch.Set `myImage` ($myResource.Resize $theResImgOpt)}}
+  {{- else }}
+    {{- errorf "Invalid image processing command: '%s' for '%s'. Must be one of Fill, Fit or Resize."  $myResource $theResImgCmd}}
+  {{- end }}
+{{- end }}
+{{- $myImage := $thePage.Scratch.Get `myImage` }}
+
+{{- if $myImage }}
+{{- $myBaseUrlSubDirs := replaceRE `^(http(s)?)?://(.*?)/` `` $thePage.Site.BaseURL }}
+  {{- if not (findRE (printf "^/%s" $myBaseUrlSubDirs) $myImage.RelPermalink) }}
+   {{- $thePage.Scratch.Set `myImagePermalinkWorkaround` (replaceRE `^/` `` $myImage.RelPermalink ) }}
+  {{- end }}
+  {{- $myImagePermalinkWorkaround := ($thePage.Scratch.Get `myImagePermalinkWorkaround`) | default $myImage.RelPermalink }}
+<img
+  class="{{ $theImgClass }}"
+  style="{{ $theImgStyle  | safeCSS }}"
+  src='{{ $myImagePermalinkWorkaround | absURL }}'
+  alt='{{ $myImage.RelPermalink -}}'
+{{/*
+                          data-dbg-Site.BaseURL='{{$thePage.Site.BaseURL                 }}'
+                      data-dbg-myBaseUrlSubDirs='{{$myBaseUrlSubDirs                     }}'
+            data-dbg-myImagePermalinkWorkaround='{{$myImagePermalinkWorkaround           }}'
+     data-dbg-myImagePermalinkWorkaround-absURL='{{$myImagePermalinkWorkaround  | absURL }}'
+                  data-dbg-myImage-RelPermalink='{{$myImage.RelPermalink                 }}'
+           data-dbg-myImage-RelPermalink-absURL='{{$myImage.RelPermalink  | absURL       }}'
+                     data-dbg-myImage-Permalink='{{$myImage.Permalink                    }}'
+*/}}>
+{{- end }}

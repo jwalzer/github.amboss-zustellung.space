@@ -1,0 +1,29 @@
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+{{ `<!-- partials/head.stylesheets.html -->` | safeHTML }}
+{{- end}}
+
+{{- $assetBusting := not .Site.Params.disableCSSAssetsBusting }}
+<link rel="stylesheet" href='{{ relURL `vendor/fontawesome/5.9.0/css/all.css`                            }}' />
+<link rel="stylesheet" href='{{ relURL `vendor/daneden.github.io/animate.css/animate.min.css`            }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' />
+<link rel="stylesheet" href='{{ relURL `vendor/OwlCarousel2/assets/owl.carousel.min.css`                 }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' />
+<link rel="stylesheet" href='{{ relURL `vendor/OwlCarousel2/assets/owl.theme.default.min.css`            }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' />
+
+<link rel="stylesheet" href='{{ relURL `vendor/w3css/4/4.13/w3.css`                                      }}' />
+{{- /* if and (isset $.Site.Params (lower `w3css_color_theme` )) $.Site.Params.w3css_color_theme */}}
+{{- if $.Site.Params.w3cssColorTheme }}
+<link rel="stylesheet" id="theme-colors" href='{{ relURL $.Site.Params.w3cssColorTheme }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' />
+{{- else }}
+  <link rel="stylesheet" id="theme-colors" href='{{ relURL `vendor/w3css/4/w3-theme-red.css` }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' />
+{{- end }}
+
+
+<!-- <link rel="stylesheet" href='{{ relURL `css/syntax.css`       }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' /> -->
+<!-- <link rel="stylesheet" href='{{ relURL `css/syntax.min.css`   }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' /> -->
+<link href="{{ .Site.BaseURL }}{{- with .Site.Params.syntaxStyle}}/css/syntax/syntax.{{.}}.css{{else}}/css/syntax.css{{end}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet"> {{/* Highlight */}}
+<link rel="stylesheet" href='{{ relURL `css/w3css-basic.css`    }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' />
+<link rel="stylesheet" href='{{ relURL `css/res-gallery.css  `  }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' />
+
+<link rel="stylesheet" href='{{ relURL `css/custom.css`           }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' />
+{{- range .Site.Params.custom_css }}
+<link rel="stylesheet" href='{{ . | relURL                        }}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}' />
+{{- end }}

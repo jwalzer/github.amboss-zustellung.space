@@ -1,0 +1,9 @@
+weight:      5
+title:       Cool stuff included
+resImg:
+icon:
+description: |
+  * Fontawesome version 5
+  * Owl Carousel
+  * Animate.css
+  * [PhotoSwipe](http://photoswipe.com/) based [Gallery](https://it-gro.github.io/hugo-theme-w3css-basic.github.io/pages/showcase/gallery-01/) with image processing (resource)

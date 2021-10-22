@@ -1,0 +1,33 @@
+# EditorConfig is awesome: http://EditorConfig.org
+# http://editorconfig.org/#download
+# http://editorconfig.org/#supported-properties
+
+root = true
+
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+[*.{md,html,css,js,toml,yaml}]
+charset = utf-8
+indent_style = space
+indent_size  = 2
+
+[*.{html,css,js,yaml}]
+trim_trailing_whitespace = true
+
+[**.{min.css,min.js}]
+indent_style	       = ignore
+insert_final_newline = ignore
+
+[*.{md,toml}]
+trim_trailing_whitespace = false
+max_line_length = 80
+
+[*.py]
+indent_size     = 4
+max_line_length = 80
+
+
+[Makefile]
+indent_style = tab

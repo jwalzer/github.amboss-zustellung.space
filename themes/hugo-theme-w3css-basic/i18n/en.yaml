@@ -1,0 +1,130 @@
+- id: Home
+  translation: "Home"
+
+- id: Contact
+  translation: "Contact"
+
+- id: Pages
+  translation: "Stuff"
+
+- id: Blog
+  translation: "Blog"
+
+- id: FAQ
+  translation: "FAQ"
+
+- id: aboutUs
+  translation: "About us"
+
+- id: contactForm
+  translation: "Contact form"
+
+- id: contactGoTo
+  translation: "Go to contact page"
+
+- id: contactMail
+  translation: "Your Email"
+
+- id: contactMessage
+  translation: "Your Message"
+
+- id: contactName
+  translation: "Your Name"
+
+- id: contactSend
+  translation: "Send Message"
+
+- id: contactVia
+  translation: "via"
+
+- id: contactTitle
+  translation: "Contact"
+
+- id: continueReading
+  translation: "Continue reading"
+
+- id: JsNeeded
+  translation: "JavaScript needed for this"
+
+- id: recentPosts
+  translation: "Recent Posts"
+
+- id: newer
+  translation: "Newer"
+
+- id: older
+  translation: "Older"
+
+- id: categoryTitle
+  translation: "Category"
+
+- id: categoriesTitle
+  translation: "Categories"
+
+- id: tagTitle
+  translation: "Tag"
+
+- id: tagsTitle
+  translation: "Tags"
+
+- id: termNotAvailable
+  translation: "empty"
+
+- id: search
+  translation: "Search"
+
+- id: Show
+  translation: "Show"
+- id: Comments
+  translation: "comments"
+- id: disqusVia
+  translation: "via disqus.com"
+
+- id: January
+  translation: "January"
+- id: February
+  translation: "February"
+- id: March
+  translation: "March"
+- id: April
+  translation: "April"
+- id: May
+  translation: "May"
+- id: June
+  translation: "June"
+- id: July
+  translation: "July"
+- id: August
+  translation: "August"
+- id: September
+  translation: "September"
+- id: October
+  translation: "October"
+- id: November
+  translation: "November"
+- id: December
+  translation: "December"
+
+- id: Attachments
+  translation: "Attachments"
+
+# Disqus consent
+- id: disqusTxtAgree
+  translation: Show comments for this page powered by [disqus.com](https://disqus.com). But first agree to the [Terms](https://help.disqus.com/terms-and-policies/terms-of-service)
+
+- id: disqusBtnAgree
+  translation: Yes, I agree
+
+# Cookie consent
+- id: cookieMessage
+  translation: This website uses cookies to ensure you get the best experience on our website.
+
+- id: cookieDismiss
+  translation: Yes, I agree
+
+- id: cookieLearn
+  translation: Learn more
+
+# Related Content
+- id: "seeAlso"
+  translation: See Also

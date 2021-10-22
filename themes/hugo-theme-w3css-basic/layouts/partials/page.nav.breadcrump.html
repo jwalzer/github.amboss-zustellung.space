@@ -1,0 +1,37 @@
+{{- if isset $.Site.Params (lower `options` ) -}}
+  {{- if $.Site.Params.options.showNavBreadcrump -}}
+
+    {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+      {{ `<!-- partials/page.nav.breadcrump.html -->` | safeHTML }}
+    {{- end }}
+
+    <div class="w3-bar breadcrump-button w3-small  {{ default `w3-theme-d3` ($.Site.Param `colorPageNavBreadcrumpBar`) }} ">
+      {{ template "breadcrumbnav" (dict "mySite" $.Site "p1" . "p2" .) }}
+    </div>
+
+  {{- end }} {{/* showNavBreadcrump  */}}
+{{- end }} {{/* options  */}}
+
+{{- define "breadcrumbnav" }}
+{{- if .p1.Parent }}
+  {{- template "breadcrumbnav" (dict "mySite" .mySite "p1" .p1.Parent    "p2" .p2 )  }}
+{{- else if not .p1.IsHome }}
+  {{- template "breadcrumbnav" (dict "mySite" .mySite "p1" .p1.Site.Home "p2" .p2 )  }}
+{{- end }}
+{{- if not .p1.IsHome }}
+  <div class="w3-bar-item w3-button breadcrump-button w3-small">
+  {{- if .mySite.Params.options.navbreadcrumptitle -}}
+    <a href="{{ .p1.Permalink }}">{{.p1.Title | markdownify | emojify | safeHTML }}/</a>
+  {{- else }}
+    <a href="{{ .p1.Permalink }}">{{replaceRE ".*/" "" ( (urls.Parse .p1.Permalink).Path | relURL | strings.TrimSuffix "/")  | humanize }}/</a>
+  {{- end }}
+  </div>
+{{- else }}
+  {{- if .mySite.Params.options.navbreadcrumphome -}}
+   <div class="w3-bar-item w3-button breadcrump-button w3-small">
+     <a href="{{ .p1.Permalink }}">{{.p1.Kind  | humanize }}</a>
+   </div>
+  {{- end }}
+{{- end }}
+
+{{- end }}

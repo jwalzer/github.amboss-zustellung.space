@@ -1,0 +1,10 @@
+weight:      5
+title:       Optional Google Features
+resImg:
+icon:
+description: |
+    * Fonts - either via api or via local files
+    * Translate Widget
+    * Global Site Tags with your GA_TRACKING_ID
+    * Map on Contact page
+    * Search page with google customizable search api

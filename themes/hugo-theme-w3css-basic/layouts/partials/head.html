@@ -1,0 +1,40 @@
+{{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+  {{ `<!-- partials/head.html  -->` | safeHTML }}
+{{- end}}
+<head>
+  {{ `<!-- hi there - what do you expect to see? ...  -->` | safeHTML }}
+  {{ partial `head.meta.html` . }}
+  {{ partial `head.meta.og.html` . }}
+  {{ partial `head.meta.twitter.html` . }}
+  {{- if and $.Site.Params.enableGoogleGtag $.Site.GoogleAnalytics }}
+    {{ partial `head.google.gtags.html` . }}
+  {{- end}}
+  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+    {{ `<!-- back in partials/head.html  -->` | safeHTML }}
+  {{- end}}
+
+  {{ partial "head.cookieconsent.html" . }}
+
+  <title>
+    {{- block `title` . -}}
+    {{ .Site.Title }}
+    {{- end -}}
+  </title>
+
+  {{  hugo.Generator }}
+
+  {{ partial `head.stylesheets.html`      . -}}
+  {{- if $.Site.Params.fontsUseGoogleApis }}
+    {{ partial `head.fonts.googleapis.html` . -}}
+  {{- else }}
+    {{ partial `head.fonts.local.html`      . -}}
+  {{- end }}
+  {{ partial `head.ie.html`               . -}}
+  {{ partial `head.favicon.html`          . -}}
+  {{ partial `scripts.top.html`           . -}}
+  {{ partial `head.rss.html`              . -}}
+
+  {{- if or $.Site.Params.debug (findRE `\bhtml-comment\b` $.Site.Params.traceFlags) }}
+    {{ `<!-- back in partials/head.html  -->` | safeHTML }}
+  {{- end}}
+</head>

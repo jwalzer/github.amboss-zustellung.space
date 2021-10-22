@@ -1,0 +1,8 @@
+weight:      2
+name:        "Vulputate"
+icon:        "fas fa-print"
+animated:    "rollIn"
+url:         pages/front/features/02
+description: |
+  Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
+  molestie consequat, vel illum dolore
