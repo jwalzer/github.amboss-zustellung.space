@@ -5,6 +5,16 @@
     <link>https://github.amboss-zustellung.space/tags/</link>
     <description>Recent content in Tags on Amboss-incoming</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://github.amboss-zustellung.space/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Tue, 19 Oct 2021 18:14:40 +0200</lastBuildDate><atom:link href="https://github.amboss-zustellung.space/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>blog</title>
+      <link>https://github.amboss-zustellung.space/tags/blog/</link>
+      <pubDate>Tue, 19 Oct 2021 18:14:40 +0200</pubDate>
+      
+      <guid>https://github.amboss-zustellung.space/tags/blog/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

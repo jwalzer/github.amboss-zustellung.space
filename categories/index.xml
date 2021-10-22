@@ -5,6 +5,25 @@
     <link>https://github.amboss-zustellung.space/categories/</link>
     <description>Recent content in Categories on Amboss-incoming</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://github.amboss-zustellung.space/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Tue, 19 Oct 2021 18:14:40 +0200</lastBuildDate><atom:link href="https://github.amboss-zustellung.space/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Categorie 2</title>
+      <link>https://github.amboss-zustellung.space/categories/categorie-2/</link>
+      <pubDate>Tue, 19 Oct 2021 18:14:40 +0200</pubDate>
+      
+      <guid>https://github.amboss-zustellung.space/categories/categorie-2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Categorie 1</title>
+      <link>https://github.amboss-zustellung.space/categories/categorie-1/</link>
+      <pubDate>Tue, 19 Oct 2021 17:57:25 +0200</pubDate>
+      
+      <guid>https://github.amboss-zustellung.space/categories/categorie-1/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

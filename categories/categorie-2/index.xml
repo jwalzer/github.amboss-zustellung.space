@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categorie 2 on Amboss-incoming</title>
+    <link>https://github.amboss-zustellung.space/categories/categorie-2/</link>
+    <description>Recent content in Categorie 2 on Amboss-incoming</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 19 Oct 2021 18:14:40 +0200</lastBuildDate><atom:link href="https://github.amboss-zustellung.space/categories/categorie-2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Second Post</title>
+      <link>https://github.amboss-zustellung.space/posts/my-second-post/</link>
+      <pubDate>Tue, 19 Oct 2021 18:14:40 +0200</pubDate>
+      
+      <guid>https://github.amboss-zustellung.space/posts/my-second-post/</guid>
+      <description>This is another test text
+TestText abc def foo </description>
+    </item>
+    
+  </channel>
+</rss>

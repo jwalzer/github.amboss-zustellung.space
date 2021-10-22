@@ -24,7 +24,8 @@ TestText abc def foo </description>
       
       <guid>https://github.amboss-zustellung.space/posts/my-first-post/</guid>
       <description>init=/bin/true  init=/bin/true    ++ Blubb
-test BlaFasel</description>
+test BlaFasel
+COde message: &amp;#34;Eingehender Anruf von {{ state_attr(&amp;#39;sensor.telefon&amp;#39;, &amp;#39;from_name&amp;#39;) }} ({{ state_attr(&amp;#39;sensor.telefon&amp;#39;, &amp;#39;from&amp;#39;) }})&amp;#34; </description>
     </item>
     
   </channel>
