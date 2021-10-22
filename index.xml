@@ -27,16 +27,6 @@ TestText abc def foo </description>
     </item>
     
     <item>
-      <title>Index</title>
-      <link>https://github.amboss-zustellung.space/index_old/</link>
-      <pubDate>Tue, 19 Oct 2021 17:57:25 +0200</pubDate>
-      
-      <guid>https://github.amboss-zustellung.space/index_old/</guid>
-      <description>Welcome &amp;hellip;
-&amp;hellip; blafasel</description>
-    </item>
-    
-    <item>
       <title>My First Post</title>
       <link>https://github.amboss-zustellung.space/posts/my-first-post/</link>
       <pubDate>Tue, 19 Oct 2021 17:57:25 +0200</pubDate>
