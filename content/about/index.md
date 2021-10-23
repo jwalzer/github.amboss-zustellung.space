@@ -8,4 +8,7 @@ description: >
   About page
 ---
 
+
+{{ jumbotron }}
+
 Whats this all **About** ??!?

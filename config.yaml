@@ -18,11 +18,6 @@ menu:
       url: "/"
       weight: 10
       pre: "fas fa-home"
-    - identifier: "about"
-      name: "About"
-      url: "/about/"
-      weight: 100
-      pre: "fas fa-info fa-fw"
     - identifier: "posts"
       name: "Posts"
       url: "/posts/"
@@ -33,6 +28,30 @@ menu:
       url: "/tags/blog/"
       weight: 20
       pre: "fas fa-rss"
+    - identifier: "categories"
+      name: "Categories"
+      url: "/categories"
+      weight: 20
+      pre: "fas fa-rss"
+      parent: "posts"
+    - identifier: "tags"
+      name: "Tags"
+      url: "/tags"
+      weight: 20
+      pre: "fas fa-rss"
+      parent: "posts"
+
+    - identifier: "about"
+      name: "About"
+      url: "/about/"
+      weight: 100
+      pre: "fas fa-info fa-fw"
+    - identifier: "contact"
+      name: "Contact"
+      url: "/contact/"
+      weight: 100
+#      pre: "fas fa-info fa-fw"
+      parent: "about"
 
 taxonomies:
   category: "categories"
@@ -49,7 +68,6 @@ params:
   github: jwalzer
   hideMeta: false
   w3cssColorTheme: "/vendor/w3css/4/w3-theme-blue-grey.css"
-#  w3cssColorTheme: "/vendor/w3css/4/color_of_the_year/w3-theme-color-of-year-2016-duster-cedar.css"
   footerContactButton: "contact/index.md"
 
   # used in layouts/partials/footer.bottom.html
@@ -57,7 +75,11 @@ params:
   bottomRight: 'created with [Hugo](https://gohugo.io) '
 
   traceFlags: "html-comment:debug-shortcodes"
-
+  jxumbotrons:
+    # used in layouts/partials/front.jumbotrons.carousel.html
+    # enable or disable jumbotrons on frontpage
+    # see some examples in 'exampleSite/data/jumbotron'
+    enable: true
   fexatures:
     # used in layouts/partials/front.features.html
     # enable or disable features on frontpage

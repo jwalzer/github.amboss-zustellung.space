@@ -8,16 +8,23 @@ categories: [ "Categorie 1" ]
 toc: true
 ---
 
-## init=/bin/true
+# init=/bin/true
 
-{{< table_of_contents >}}
+{ x {< table_of_contents >}}
 
-++ Blubb
+## Blubb
 
 test BlaFasel
 
-```SQL
-COde
+### code
 
- message: "Eingehender Anruf von {{ state_attr('sensor.telefon', 'from_name') }} ({{ state_attr('sensor.telefon', 'from') }})"
+```bash
+git commit -a -m "testing $(date)" && git push ; (cd ../github.amboss-zustellung.space%gh-pages && git pull)
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+Warning: Permanently added the RSA host key for IP address '140.82.112.4' to the list of known hosts.
+Already up to date.
+ 
 ```
