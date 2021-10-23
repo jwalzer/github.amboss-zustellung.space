@@ -24,7 +24,8 @@
       <description>
         
         
-        &lt;p&gt;Whats this all &lt;strong&gt;About&lt;/strong&gt; ??!?&lt;/p&gt;
+        &lt;p&gt;{{ jumbotron }}&lt;/p&gt;
+&lt;p&gt;Whats this all &lt;strong&gt;About&lt;/strong&gt; ??!?&lt;/p&gt;
 
       </description>
     </item>

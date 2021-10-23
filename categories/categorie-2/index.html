@@ -40,21 +40,21 @@
   
 <!-- partials/head.stylesheets.html -->
 <link rel="stylesheet" href='/vendor/fontawesome/5.9.0/css/all.css' />
-<link rel="stylesheet" href='/vendor/daneden.github.io/animate.css/animate.min.css?1634943414' />
-<link rel="stylesheet" href='/vendor/OwlCarousel2/assets/owl.carousel.min.css?1634943414' />
-<link rel="stylesheet" href='/vendor/OwlCarousel2/assets/owl.theme.default.min.css?1634943414' />
+<link rel="stylesheet" href='/vendor/daneden.github.io/animate.css/animate.min.css?1634953259' />
+<link rel="stylesheet" href='/vendor/OwlCarousel2/assets/owl.carousel.min.css?1634953259' />
+<link rel="stylesheet" href='/vendor/OwlCarousel2/assets/owl.theme.default.min.css?1634953259' />
 
 <link rel="stylesheet" href='/vendor/w3css/4/4.13/w3.css' />
-<link rel="stylesheet" id="theme-colors" href='/vendor/w3css/4/w3-theme-blue-grey.css?1634943414' />
+<link rel="stylesheet" id="theme-colors" href='/vendor/w3css/4/w3-theme-blue-grey.css?1634953259' />
 
 
 
 
-<link href="https://github.amboss-zustellung.space//css/syntax.css?1634943414" rel="stylesheet"> 
-<link rel="stylesheet" href='/css/w3css-basic.css?1634943414' />
-<link rel="stylesheet" href='/css/res-gallery.css%20%20?1634943414' />
+<link href="https://github.amboss-zustellung.space//css/syntax.css?1634953259" rel="stylesheet"> 
+<link rel="stylesheet" href='/css/w3css-basic.css?1634953259' />
+<link rel="stylesheet" href='/css/res-gallery.css%20%20?1634953259' />
 
-<link rel="stylesheet" href='/css/custom.css?1634943414' />
+<link rel="stylesheet" href='/css/custom.css?1634953259' />
 
     
   <!-- partials/head.fonts.local.html -->
@@ -244,7 +244,7 @@
   <!-- partials/head.favicon.html --> 
 
 <!-- partials/scripts.top.html -->
-<script src='/js/custom.top.js?1634943414'></script>
+<script src='/js/custom.top.js?1634953259'></script>
 
 <!-- partials/head.rss.html -->
 <link href='https://github.amboss-zustellung.space/index.xml' rel="alternate" type="application/rss+xml" title='Amboss-incoming (rss+xml alternate)' />
@@ -277,16 +277,29 @@
 <a href='/tags/blog/' class="w3-bar-item w3-button          w3-hide-small  w3-hide-medium header-nav-menu-large "><i class='fas fa-rss'></i>&nbsp;Blog</a>
 <a href='/tags/blog/' class="w3-bar-item w3-button          w3-hide-small  w3-hide-large  header-nav-menu-medium"><i class='fas fa-rss'></i>&nbsp;Blog</a>
 <a href='/tags/blog/' class="w3-bar-item w3-button w3-small w3-hide-medium w3-hide-large  header-nav-menu-small" ><i class='fas fa-rss'></i>&nbsp;Blog</a>
-        <!-- not .HasChildren -->
+        <!-- .HasChildren -->
 
-<a href='/posts/' class="w3-bar-item w3-button          w3-hide-small  w3-hide-medium header-nav-menu-large "><i class='fas fa-list'></i>&nbsp;Posts</a>
-<a href='/posts/' class="w3-bar-item w3-button          w3-hide-small  w3-hide-large  header-nav-menu-medium"><i class='fas fa-list'></i>&nbsp;Posts</a>
-<a href='/posts/' class="w3-bar-item w3-button w3-small w3-hide-medium w3-hide-large  header-nav-menu-small" ><i class='fas fa-list'></i>&nbsp;Posts</a>
-        <!-- not .HasChildren -->
+<div class="w3-dropdown-hover">
+  <button class="w3-button          w3-hide-small w3-hide-medium header-nav-menu-dropdown-large"  ><i class='fas fa-list'></i>&nbsp;Posts</button>
+  <button class="w3-button          w3-hide-small w3-hide-large  header-nav-menu-dropdown-medium" ><i class='fas fa-list'></i>&nbsp;Posts</button>
+  <button class="w3-button w3-small w3-hide-medium w3-hide-large header-nav-menu-dropdown-small"  ><i class='fas fa-list'></i>&nbsp;Posts</button>
+  <div class="w3-dropdown-content w3-bar-block w3-card-4" style="z-index: 2"> 
+        <!-- range .Children -->
+    <a href='/categories' class="w3-bar-item w3-button"><i class='fas fa-rss'></i>&nbsp;Categories</a>
+    <a href='/tags' class="w3-bar-item w3-button"><i class='fas fa-rss'></i>&nbsp;Tags</a>
+  </div> 
+</div>   
+        <!-- .HasChildren -->
 
-<a href='/about/' class="w3-bar-item w3-button          w3-hide-small  w3-hide-medium header-nav-menu-large "><i class='fas fa-info fa-fw'></i>&nbsp;About</a>
-<a href='/about/' class="w3-bar-item w3-button          w3-hide-small  w3-hide-large  header-nav-menu-medium"><i class='fas fa-info fa-fw'></i>&nbsp;About</a>
-<a href='/about/' class="w3-bar-item w3-button w3-small w3-hide-medium w3-hide-large  header-nav-menu-small" ><i class='fas fa-info fa-fw'></i>&nbsp;About</a> 
+<div class="w3-dropdown-hover">
+  <button class="w3-button          w3-hide-small w3-hide-medium header-nav-menu-dropdown-large"  ><i class='fas fa-info fa-fw'></i>&nbsp;About</button>
+  <button class="w3-button          w3-hide-small w3-hide-large  header-nav-menu-dropdown-medium" ><i class='fas fa-info fa-fw'></i>&nbsp;About</button>
+  <button class="w3-button w3-small w3-hide-medium w3-hide-large header-nav-menu-dropdown-small"  ><i class='fas fa-info fa-fw'></i>&nbsp;About</button>
+  <div class="w3-dropdown-content w3-bar-block w3-card-4" style="z-index: 2"> 
+        <!-- range .Children -->
+    <a href='/contact/' class="w3-bar-item w3-button"><i class=''></i>&nbsp;Contact</a>
+  </div> 
+</div>    
 
 
 </div> 
@@ -304,16 +317,29 @@
 <a href='/tags/blog/' class="w3-bar-item w3-button          w3-hide-small  w3-hide-medium header-nav-menu-large "><i class='fas fa-rss'></i>&nbsp;Blog</a>
 <a href='/tags/blog/' class="w3-bar-item w3-button          w3-hide-small  w3-hide-large  header-nav-menu-medium"><i class='fas fa-rss'></i>&nbsp;Blog</a>
 <a href='/tags/blog/' class="w3-bar-item w3-button w3-small w3-hide-medium w3-hide-large  header-nav-menu-small" ><i class='fas fa-rss'></i>&nbsp;Blog</a>
-        <!-- not .HasChildren -->
+        <!-- .HasChildren -->
 
-<a href='/posts/' class="w3-bar-item w3-button          w3-hide-small  w3-hide-medium header-nav-menu-large "><i class='fas fa-list'></i>&nbsp;Posts</a>
-<a href='/posts/' class="w3-bar-item w3-button          w3-hide-small  w3-hide-large  header-nav-menu-medium"><i class='fas fa-list'></i>&nbsp;Posts</a>
-<a href='/posts/' class="w3-bar-item w3-button w3-small w3-hide-medium w3-hide-large  header-nav-menu-small" ><i class='fas fa-list'></i>&nbsp;Posts</a>
-        <!-- not .HasChildren -->
+<div class="w3-dropdown-hover">
+  <button class="w3-button          w3-hide-small w3-hide-medium header-nav-menu-dropdown-large"  ><i class='fas fa-list'></i>&nbsp;Posts</button>
+  <button class="w3-button          w3-hide-small w3-hide-large  header-nav-menu-dropdown-medium" ><i class='fas fa-list'></i>&nbsp;Posts</button>
+  <button class="w3-button w3-small w3-hide-medium w3-hide-large header-nav-menu-dropdown-small"  ><i class='fas fa-list'></i>&nbsp;Posts</button>
+  <div class="w3-dropdown-content w3-bar-block w3-card-4" style="z-index: 2"> 
+        <!-- range .Children -->
+    <a href='/categories' class="w3-bar-item w3-button"><i class='fas fa-rss'></i>&nbsp;Categories</a>
+    <a href='/tags' class="w3-bar-item w3-button"><i class='fas fa-rss'></i>&nbsp;Tags</a>
+  </div> 
+</div>   
+        <!-- .HasChildren -->
 
-<a href='/about/' class="w3-bar-item w3-button          w3-hide-small  w3-hide-medium header-nav-menu-large "><i class='fas fa-info fa-fw'></i>&nbsp;About</a>
-<a href='/about/' class="w3-bar-item w3-button          w3-hide-small  w3-hide-large  header-nav-menu-medium"><i class='fas fa-info fa-fw'></i>&nbsp;About</a>
-<a href='/about/' class="w3-bar-item w3-button w3-small w3-hide-medium w3-hide-large  header-nav-menu-small" ><i class='fas fa-info fa-fw'></i>&nbsp;About</a> 
+<div class="w3-dropdown-hover">
+  <button class="w3-button          w3-hide-small w3-hide-medium header-nav-menu-dropdown-large"  ><i class='fas fa-info fa-fw'></i>&nbsp;About</button>
+  <button class="w3-button          w3-hide-small w3-hide-large  header-nav-menu-dropdown-medium" ><i class='fas fa-info fa-fw'></i>&nbsp;About</button>
+  <button class="w3-button w3-small w3-hide-medium w3-hide-large header-nav-menu-dropdown-small"  ><i class='fas fa-info fa-fw'></i>&nbsp;About</button>
+  <div class="w3-dropdown-content w3-bar-block w3-card-4" style="z-index: 2"> 
+        <!-- range .Children -->
+    <a href='/contact/' class="w3-bar-item w3-button"><i class=''></i>&nbsp;Contact</a>
+  </div> 
+</div>    
 
 
 </div> 
@@ -332,16 +358,29 @@
 <a href='/tags/blog/' class="w3-bar-item w3-button          w3-hide-small  w3-hide-medium header-nav-menu-large "><i class='fas fa-rss'></i>&nbsp;Blog</a>
 <a href='/tags/blog/' class="w3-bar-item w3-button          w3-hide-small  w3-hide-large  header-nav-menu-medium"><i class='fas fa-rss'></i>&nbsp;Blog</a>
 <a href='/tags/blog/' class="w3-bar-item w3-button w3-small w3-hide-medium w3-hide-large  header-nav-menu-small" ><i class='fas fa-rss'></i>&nbsp;Blog</a>
-        <!-- not .HasChildren -->
+        <!-- .HasChildren -->
 
-<a href='/posts/' class="w3-bar-item w3-button          w3-hide-small  w3-hide-medium header-nav-menu-large "><i class='fas fa-list'></i>&nbsp;Posts</a>
-<a href='/posts/' class="w3-bar-item w3-button          w3-hide-small  w3-hide-large  header-nav-menu-medium"><i class='fas fa-list'></i>&nbsp;Posts</a>
-<a href='/posts/' class="w3-bar-item w3-button w3-small w3-hide-medium w3-hide-large  header-nav-menu-small" ><i class='fas fa-list'></i>&nbsp;Posts</a>
-        <!-- not .HasChildren -->
+<div class="w3-dropdown-hover">
+  <button class="w3-button          w3-hide-small w3-hide-medium header-nav-menu-dropdown-large"  ><i class='fas fa-list'></i>&nbsp;Posts</button>
+  <button class="w3-button          w3-hide-small w3-hide-large  header-nav-menu-dropdown-medium" ><i class='fas fa-list'></i>&nbsp;Posts</button>
+  <button class="w3-button w3-small w3-hide-medium w3-hide-large header-nav-menu-dropdown-small"  ><i class='fas fa-list'></i>&nbsp;Posts</button>
+  <div class="w3-dropdown-content w3-bar-block w3-card-4" style="z-index: 2"> 
+        <!-- range .Children -->
+    <a href='/categories' class="w3-bar-item w3-button"><i class='fas fa-rss'></i>&nbsp;Categories</a>
+    <a href='/tags' class="w3-bar-item w3-button"><i class='fas fa-rss'></i>&nbsp;Tags</a>
+  </div> 
+</div>   
+        <!-- .HasChildren -->
 
-<a href='/about/' class="w3-bar-item w3-button          w3-hide-small  w3-hide-medium header-nav-menu-large "><i class='fas fa-info fa-fw'></i>&nbsp;About</a>
-<a href='/about/' class="w3-bar-item w3-button          w3-hide-small  w3-hide-large  header-nav-menu-medium"><i class='fas fa-info fa-fw'></i>&nbsp;About</a>
-<a href='/about/' class="w3-bar-item w3-button w3-small w3-hide-medium w3-hide-large  header-nav-menu-small" ><i class='fas fa-info fa-fw'></i>&nbsp;About</a>
+<div class="w3-dropdown-hover">
+  <button class="w3-button          w3-hide-small w3-hide-medium header-nav-menu-dropdown-large"  ><i class='fas fa-info fa-fw'></i>&nbsp;About</button>
+  <button class="w3-button          w3-hide-small w3-hide-large  header-nav-menu-dropdown-medium" ><i class='fas fa-info fa-fw'></i>&nbsp;About</button>
+  <button class="w3-button w3-small w3-hide-medium w3-hide-large header-nav-menu-dropdown-small"  ><i class='fas fa-info fa-fw'></i>&nbsp;About</button>
+  <div class="w3-dropdown-content w3-bar-block w3-card-4" style="z-index: 2"> 
+        <!-- range .Children -->
+    <a href='/contact/' class="w3-bar-item w3-button"><i class=''></i>&nbsp;Contact</a>
+  </div> 
+</div>   
 
 </div> 
 
@@ -374,16 +413,29 @@
 <a href='/tags/blog/' class="w3-bar-item w3-button          w3-hide-small  w3-hide-medium header-nav-menu-large "><i class='fas fa-rss'></i>&nbsp;Blog</a>
 <a href='/tags/blog/' class="w3-bar-item w3-button          w3-hide-small  w3-hide-large  header-nav-menu-medium"><i class='fas fa-rss'></i>&nbsp;Blog</a>
 <a href='/tags/blog/' class="w3-bar-item w3-button w3-small w3-hide-medium w3-hide-large  header-nav-menu-small" ><i class='fas fa-rss'></i>&nbsp;Blog</a>
-        <!-- not .HasChildren -->
+        <!-- .HasChildren -->
 
-<a href='/posts/' class="w3-bar-item w3-button          w3-hide-small  w3-hide-medium header-nav-menu-large "><i class='fas fa-list'></i>&nbsp;Posts</a>
-<a href='/posts/' class="w3-bar-item w3-button          w3-hide-small  w3-hide-large  header-nav-menu-medium"><i class='fas fa-list'></i>&nbsp;Posts</a>
-<a href='/posts/' class="w3-bar-item w3-button w3-small w3-hide-medium w3-hide-large  header-nav-menu-small" ><i class='fas fa-list'></i>&nbsp;Posts</a>
-        <!-- not .HasChildren -->
+<div class="w3-dropdown-hover">
+  <button class="w3-button          w3-hide-small w3-hide-medium header-nav-menu-dropdown-large"  ><i class='fas fa-list'></i>&nbsp;Posts</button>
+  <button class="w3-button          w3-hide-small w3-hide-large  header-nav-menu-dropdown-medium" ><i class='fas fa-list'></i>&nbsp;Posts</button>
+  <button class="w3-button w3-small w3-hide-medium w3-hide-large header-nav-menu-dropdown-small"  ><i class='fas fa-list'></i>&nbsp;Posts</button>
+  <div class="w3-dropdown-content w3-bar-block w3-card-4" style="z-index: 2"> 
+        <!-- range .Children -->
+    <a href='/categories' class="w3-bar-item w3-button"><i class='fas fa-rss'></i>&nbsp;Categories</a>
+    <a href='/tags' class="w3-bar-item w3-button"><i class='fas fa-rss'></i>&nbsp;Tags</a>
+  </div> 
+</div>   
+        <!-- .HasChildren -->
 
-<a href='/about/' class="w3-bar-item w3-button          w3-hide-small  w3-hide-medium header-nav-menu-large "><i class='fas fa-info fa-fw'></i>&nbsp;About</a>
-<a href='/about/' class="w3-bar-item w3-button          w3-hide-small  w3-hide-large  header-nav-menu-medium"><i class='fas fa-info fa-fw'></i>&nbsp;About</a>
-<a href='/about/' class="w3-bar-item w3-button w3-small w3-hide-medium w3-hide-large  header-nav-menu-small" ><i class='fas fa-info fa-fw'></i>&nbsp;About</a>
+<div class="w3-dropdown-hover">
+  <button class="w3-button          w3-hide-small w3-hide-medium header-nav-menu-dropdown-large"  ><i class='fas fa-info fa-fw'></i>&nbsp;About</button>
+  <button class="w3-button          w3-hide-small w3-hide-large  header-nav-menu-dropdown-medium" ><i class='fas fa-info fa-fw'></i>&nbsp;About</button>
+  <button class="w3-button w3-small w3-hide-medium w3-hide-large header-nav-menu-dropdown-small"  ><i class='fas fa-info fa-fw'></i>&nbsp;About</button>
+  <div class="w3-dropdown-content w3-bar-block w3-card-4" style="z-index: 2"> 
+        <!-- range .Children -->
+    <a href='/contact/' class="w3-bar-item w3-button"><i class=''></i>&nbsp;Contact</a>
+  </div> 
+</div>   
 </div> 
 
 </noscript>
@@ -436,7 +488,7 @@
   <!-- partials/resource.image.html  --> 
 
 This is another test text
-TestText abc def foo
+TestText abc def foo ┌─[jwalzer@jwmbp] - [~/src/github.amboss-zustellung.space] - [Sat Oct 23, 01:33] └─[$]  hugo help new  Create a …
 
   </div>
 </a>
@@ -519,7 +571,7 @@ TestText abc def foo
 
 <script src='/vendor/jquery/jquery-3.4.1.slim.min.js'></script> 
 
-<script src='/js/custom.bottom.js?1634943414'></script>
+<script src='/js/custom.bottom.js?1634953259'></script>
 
 
     <script>

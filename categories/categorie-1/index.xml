@@ -13,9 +13,9 @@
       <pubDate>Tue, 19 Oct 2021 17:57:25 +0200</pubDate>
       
       <guid>https://github.amboss-zustellung.space/posts/my-first-post/</guid>
-      <description>init=/bin/true  init=/bin/true    ++ Blubb
-test BlaFasel
-COde message: &amp;#34;Eingehender Anruf von {{ state_attr(&amp;#39;sensor.telefon&amp;#39;, &amp;#39;from_name&amp;#39;) }} ({{ state_attr(&amp;#39;sensor.telefon&amp;#39;, &amp;#39;from&amp;#39;) }})&amp;#34; </description>
+      <description>init=/bin/true { x {&amp;lt; table_of_contents &amp;gt;}}
+Blubb test BlaFasel
+code git commit -a -m &amp;#34;testing $(date)&amp;#34; &amp;amp;&amp;amp; git push ; (cd ../github.amboss-zustellung.space%gh-pages &amp;amp;&amp;amp; git pull) On branch master Your branch is up to date with &amp;#39;origin/master&amp;#39;. nothing to commit, working tree clean Warning: Permanently added the RSA host key for IP address &amp;#39;140.82.112.4&amp;#39; to the list of known hosts. Already up to date. </description>
     </item>
     
   </channel>

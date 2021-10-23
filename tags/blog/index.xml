@@ -14,7 +14,7 @@
       
       <guid>https://github.amboss-zustellung.space/posts/my-second-post/</guid>
       <description>This is another test text
-TestText abc def foo </description>
+TestText abc def foo ┌─[jwalzer@jwmbp] - [~/src/github.amboss-zustellung.space] - [Sat Oct 23, 01:33] └─[$]  hugo help new  Create a new content file and automatically set the date and title. It will guess which kind of file to create based on the path provided. You can also specify the kind with `-k KIND`. If archetypes are provided in your theme or site, they will be used. Ensure you run this within the root directory of your site. Usage: hugo new [path] [flags] hugo new [command] Available Commands: site Create a new site (skeleton) theme Create a new theme Flags: -b, --baseURL string hostname (and path) to the root, e.g. http://spf13.com/ -D, --buildDrafts include content marked as draft -E, --buildExpired include expired content -F, --buildFuture include content with publishdate in the future --cacheDir string filesystem path to cache directory. Defaults: $TMPDIR/hugo_cache/ --cleanDestinationDir remove files from destination not found in static directories -c, --contentDir string filesystem path to content directory -d, --destination string filesystem path to write files to --disableKinds strings disable different kind of pages (home, RSS etc.) --editor string edit new content with this editor, if provided --enableGitInfo add Git revision, date and author info to the pages --forceSyncStatic copy all files when static is changed. --gc enable to run some cleanup tasks (remove unused cache files) after the build -h, --help help for new --i18n-warnings print missing translations --ignoreCache ignores the cache directory -k, --kind string content type to create -l, --layoutDir string filesystem path to layout directory --minify minify any supported output format (HTML, XML etc.</description>
     </item>
     
     <item>
@@ -23,9 +23,9 @@ TestText abc def foo </description>
       <pubDate>Tue, 19 Oct 2021 17:57:25 +0200</pubDate>
       
       <guid>https://github.amboss-zustellung.space/posts/my-first-post/</guid>
-      <description>init=/bin/true  init=/bin/true    ++ Blubb
-test BlaFasel
-COde message: &amp;#34;Eingehender Anruf von {{ state_attr(&amp;#39;sensor.telefon&amp;#39;, &amp;#39;from_name&amp;#39;) }} ({{ state_attr(&amp;#39;sensor.telefon&amp;#39;, &amp;#39;from&amp;#39;) }})&amp;#34; </description>
+      <description>init=/bin/true { x {&amp;lt; table_of_contents &amp;gt;}}
+Blubb test BlaFasel
+code git commit -a -m &amp;#34;testing $(date)&amp;#34; &amp;amp;&amp;amp; git push ; (cd ../github.amboss-zustellung.space%gh-pages &amp;amp;&amp;amp; git pull) On branch master Your branch is up to date with &amp;#39;origin/master&amp;#39;. nothing to commit, working tree clean Warning: Permanently added the RSA host key for IP address &amp;#39;140.82.112.4&amp;#39; to the list of known hosts. Already up to date. </description>
     </item>
     
   </channel>
