@@ -17,7 +17,7 @@ title: We are running out of IP-Adresses!
 
 A nice video ... and its even from Cisco ...
 
-{{< youtube vid="eYffYT2y-Iw" >}}
+{{< youtube id="eYffYT2y-Iw" >}}
 
 
 

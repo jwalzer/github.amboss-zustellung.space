@@ -12,7 +12,7 @@ title: IPv6 - For the Kids
 
 # APNIC - IPv6 for the Kids
 
-{{< youtube vid="VNk8Frb9BcA" >}}
+{{< youtube id="VNk8Frb9BcA" >}}
 
 
 

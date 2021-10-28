@@ -13,7 +13,7 @@ title: About_motivation
 
 #About Motivation
 
-{{< youtube vid="u6XAPnuFjJc" >}}
+{{< youtube id="u6XAPnuFjJc" >}}
 
 via [Kris](http://blog.koehntopp.de/archives/2889-Wieso-wir-Helden-sein-wollen.html)
 

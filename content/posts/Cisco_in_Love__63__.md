@@ -17,7 +17,7 @@ title: Cisco in Love?
 # What the h....?
 
 
-{{< youtube vid="3pffeMdDSoY" >}}
+{{< youtube id="3pffeMdDSoY" >}}
 
 
 
