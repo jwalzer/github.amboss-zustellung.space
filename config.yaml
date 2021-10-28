@@ -1,7 +1,7 @@
 baseURL: "https://github.amboss-zustellung.space/"
 languageCode: "en-us"
 title: "Amboss-incoming"
-theme: "hugo-theme-w3css-basic"
+theme: "hugo-theme-bootstrap"
 enableGitInfo: true
 
 
@@ -27,18 +27,18 @@ menu:
       name: "Blog"
       url: "/tags/blog/"
       weight: 20
-      pre: "fas fa-rss"
+      pre: '<i class="fab fa-fw fa-rss"></i>'
     - identifier: "categories"
       name: "Categories"
       url: "/categories"
       weight: 20
-      pre: "fas fa-rss"
+      pre: '<i class="fab fa-fw fa-rss"></i>'
       parent: "posts"
     - identifier: "tags"
       name: "Tags"
       url: "/tags"
       weight: 20
-      pre: "fas fa-rss"
+      pre: '<i class="fab fa-fw fa-rss"></i>'
       parent: "posts"
 
     - identifier: "about"
@@ -53,12 +53,23 @@ menu:
 #      pre: "fas fa-info fa-fw"
       parent: "about"
 
+
+    - name: "Github"
+      url: "https://github.com/jwalzer/github.amboss-zustellung.de"
+      pre: '<i class="fab fa-fw fa-github"></i>'
+
 taxonomies:
   category: "categories"
   tag: "tags"
 
 
 summaryLength: 250 # default 70
+
+social:
+  email: "info@amboss-zustellung.space"
+  github: "jwalzer"
+  twitter: "janwalzer"
+
 
 params:
   AuthorName: Jan Walzer
@@ -67,7 +78,6 @@ params:
   twitter: janwalzer
   github: jwalzer
   hideMeta: false
-  w3cssColorTheme: "/vendor/w3css/4/w3-theme-blue-grey.css"
   footerContactButton: "contact/index.md"
 
   # used in layouts/partials/footer.bottom.html
@@ -75,12 +85,12 @@ params:
   bottomRight: 'created with [Hugo](https://gohugo.io) '
 
   traceFlags: "html-comment:debug-shortcodes"
-  jxumbotrons:
+  jumbotrons:
     # used in layouts/partials/front.jumbotrons.carousel.html
     # enable or disable jumbotrons on frontpage
     # see some examples in 'exampleSite/data/jumbotron'
     enable: true
-  fexatures:
+  features:
     # used in layouts/partials/front.features.html
     # enable or disable features on frontpage
     # see some examples in 'exampleSite/data/features'
@@ -94,9 +104,9 @@ params:
   anchor:
     # layouts/_default/baseof.html
     enable: true
-    #icon: "fas fa-anchor"
-    icon: "fas fa-link"
-  themex:
+    icon: "fas fa-anchor"
+    #icon: "fas fa-link"
+  theme:
     bootstrapTheme: 'solar'
     backgroundColor: "#D0D0C0"
     header:
@@ -112,7 +122,7 @@ params:
         - text: "text3"
   recentPosts:
     footerNumOfPosts: 5
-    enableFoorter: true
+    enableFooter: true
     title: "Recent-Title-Here"
   blog:
     title: "Blog"

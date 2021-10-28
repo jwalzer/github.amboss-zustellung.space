@@ -1,0 +1,58 @@
+{{/*-
+  inspired by https://github.com/gohugoio/hugo/blob/master/docs/layouts/shortcodes/readfile.html
+*/}}
+
+{{- $myFile          := `.`  }}
+{{- $myMarkdownify   := ``   }}
+{{- $myHighlightLang := `md` }}
+{{- $myTheme         := ``   }}
+
+{{- if .IsNamedParams -}}
+  {{- $myFile          = default $myFile          (.Get `file`  ) }}
+  {{- $myMarkdownify   = default $myMarkdownify   (.Get `md`    ) }}
+  {{- $myHighlightLang = default $myHighlightLang (.Get `hll`   ) }}
+  {{- $myTheme         = default $myTheme         (.Get `theme` ) }}
+{{- else -}}
+  {{- $myPos := 0}} {{- if gt (len .Params) $myPos }} {{- $myFile          = .Get $myPos }} {{- end -}}
+  {{- $myPos := 1}} {{- if gt (len .Params) $myPos }} {{- $myMarkdownify   = .Get $myPos }} {{- end -}}
+  {{- $myPos := 2}} {{- if gt (len .Params) $myPos }} {{- $myHighlightLang = .Get $myPos }} {{- end -}}
+  {{- $myPos := 3}} {{- if gt (len .Params) $myPos }} {{- $myTheme         = .Get $myPos }} {{- end -}}
+{{- end -}}
+
+{{- if eq $myTheme "default" -}}
+  {{ $myTheme = (default "w3-theme-l3" ($.Site.Param `colorShortcodeReadfile`) ) }}
+{{- end -}}
+
+{{- if in $myTheme "w3-theme" -}}
+<div class="w3-container {{ $myTheme }}" >
+{{- end -}}
+
+
+{{- if or $.Site.Params.debug (findRE `\bdebug-shortcode(s|-readfile)\b` $.Site.Params.traceFlags) -}}
+<br/>
+"myFile"          : {{- $myFile          }} <br/>
+"myMarkdownify"   : {{- $myMarkdownify   }} <br/>
+"myHighlightLang" : {{- $myHighlightLang }} <br/>
+"myTheme"         : {{- $myTheme         }} <br/>
+{{- end -}}
+
+{{- if (findRE `((\.)|(\\\.))$` $myFile ) -}}
+<pre class="w3-code notranslate">
+  {{- printf "%s" $myFile -}}
+  {{- range readDir $myFile }}
+     {{- printf "\n%s %s %10s %s" .Mode (.ModTime.Format "2006-01-02") (cond .Mode.IsDir "" (string .Size) ) .Name }}
+  {{- end }}
+</pre>
+{{- else }}
+  {{- if eq ($myMarkdownify) "true" -}}
+    {{- $myFile  | readFile | markdownify -}}
+  {{- else if $myHighlightLang -}}
+    {{- highlight ($myFile  | readFile) $myHighlightLang "" -}}
+  {{- else -}}
+    {{- $myFile  | readFile | safeHTML }}
+  {{- end -}}
+{{- end -}}
+
+{{- if in $myTheme "w3-theme" -}}
+</div>
+{{- end -}}
