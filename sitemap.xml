@@ -2,17 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://github.amboss-zustellung.space/about/</loc>
-    <lastmod>2021-10-23T03:40:39+02:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://github.amboss-zustellung.space/</loc>
-    <lastmod>2021-10-23T03:40:39+02:00</lastmod>
+    <lastmod>2021-10-28T14:36:26+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://github.amboss-zustellung.space/tags/blog/</loc>
+    <lastmod>2021-10-28T14:36:26+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://github.amboss-zustellung.space/blog/</loc>
+    <lastmod>2021-10-28T14:36:26+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://github.amboss-zustellung.space/tags/</loc>
+    <lastmod>2021-10-28T14:36:26+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://github.amboss-zustellung.space/blog/2020/10/test/</loc>
+    <lastmod>2021-10-28T14:36:26+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://github.amboss-zustellung.space/about/</loc>
     <lastmod>2021-10-23T03:40:39+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -23,21 +38,11 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://github.amboss-zustellung.space/categories/</loc>
-    <lastmod>2021-10-23T03:40:39+02:00</lastmod>
+    <lastmod>2021-10-28T14:36:26+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://github.amboss-zustellung.space/posts/my-second-post/</loc>
-    <lastmod>2021-10-23T03:40:39+02:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://github.amboss-zustellung.space/posts/</loc>
-    <lastmod>2021-10-23T03:40:39+02:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://github.amboss-zustellung.space/tags/</loc>
     <lastmod>2021-10-23T03:40:39+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -49,6 +54,21 @@
   </url><url>
     <loc>https://github.amboss-zustellung.space/posts/my-first-post/</loc>
     <lastmod>2021-10-23T03:40:39+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://github.amboss-zustellung.space/categories/overview/</loc>
+    <lastmod>2021-10-28T14:36:26+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://github.amboss-zustellung.space/tags/posts/</loc>
+    <lastmod>2021-10-28T14:36:26+02:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://github.amboss-zustellung.space/posts/</loc>
+    <lastmod>2021-10-28T14:36:26+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
