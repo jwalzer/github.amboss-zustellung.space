@@ -23,34 +23,36 @@ menu:
       url: "/posts/"
       weight: 20
       pre: "fas fa-list"
+      pre: '<i class="fas fa-fw fa-folder"></i>'
     - identifier: "blog"
       name: "Blog"
       url: "/tags/blog/"
       weight: 20
-      pre: '<i class="fab fa-fw fa-rss"></i>'
+      pre: '<i class="fas fa-rss-square"></i>'
     - identifier: "categories"
       name: "Categories"
       url: "/categories"
       weight: 20
-      pre: '<i class="fab fa-fw fa-rss"></i>'
+      pre: '<i class="fas fa-fw fa-cubes"></i>'
       parent: "posts"
     - identifier: "tags"
       name: "Tags"
       url: "/tags"
       weight: 20
-      pre: '<i class="fab fa-fw fa-rss"></i>'
+      pre: '<i class="fab fa-fw fa-tags"></i>'
       parent: "posts"
 
     - identifier: "about"
       name: "About"
       url: "/about/"
       weight: 100
-      pre: "fas fa-info fa-fw"
+      pre: '<i class="fas fa-fw fa-user"></i>'
+
     - identifier: "contact"
       name: "Contact"
       url: "/contact/"
       weight: 100
-#      pre: "fas fa-info fa-fw"
+      pre: '<i class="fas fa-fw fa-contact"></i>'
       parent: "about"
 
 

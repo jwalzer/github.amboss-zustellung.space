@@ -1,0 +1,1 @@
+<a href="https://{{ with .Get "lang"}}{{.}}{{ else }}en{{ end }}.wikipedia.org/wiki/{{.Get "title"}}">{{ with .Get "description"}}{{.}}{{ else }}{{.Get "title"}}{{ end }}</a>
