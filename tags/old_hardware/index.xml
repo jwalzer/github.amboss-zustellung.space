@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>old_hardware on Amboss-incoming</title>
+    <link>https://github.amboss-zustellung.space/tags/old_hardware/</link>
+    <description>Recent content in old_hardware on Amboss-incoming</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 07 Jan 2009 23:07:22 +0000</lastBuildDate><atom:link href="https://github.amboss-zustellung.space/tags/old_hardware/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>migrating_from_old_hardware</title>
+      <link>https://github.amboss-zustellung.space/posts/migrating_from_old_hardware/</link>
+      <pubDate>Wed, 07 Jan 2009 23:07:22 +0000</pubDate>
+      
+      <guid>https://github.amboss-zustellung.space/posts/migrating_from_old_hardware/</guid>
+      <description>[[!meta title=&amp;ldquo;migrating_from_old_hardware&amp;rdquo; ]]
+dear lazyweb &amp;hellip;  what does it mean, when memtest86+ suddenly stops in a test? what does it mean, if it is always the same test? what does it mean, when I even shuffle around the memorymodules and the slots, and ALWAYS memtest86+ stops when doing Test#7 (Random number sequence )?  I mean, I&amp;rsquo;ve read a lot stuff now on the net (because memtest runs take a lot time) and found NOTHING on such an issue. Some single reports that state that mem86+ shouldn&amp;rsquo;t crash but rather report an error when it finds a problem.
+All the other tests were running fine without problems.
+In the meanwhile I&amp;rsquo;ve disabled anything that could hide the effect, such as legacy on-board sound, usb, and even disabled L1 and L2 cache.
+Et voila &amp;ndash; now I just selected Test#7 directly and it gives me nice red lines of wrong data &amp;hellip; yeah, so far I assume the first half MByte was okay, but so far I dont&amp;rsquo;t believe there was anything correct at all in this test.
+Should I conclude now, that there&amp;rsquo;s a problem with the processor? with the mainboard?
+But Why ? What the heck do I care at all for this &amp;ldquo;old&amp;rdquo; Athlon 1.3GHz ?
+Now; This one is faster than the &amp;ldquo;old server&amp;rdquo;. I need to shutdown Zion . Zion was old and served me well the last 8 years. Its hardware was shiny new when I bought it 10 years ago. But today its old.</description>
+    </item>
+    
+  </channel>
+</rss>

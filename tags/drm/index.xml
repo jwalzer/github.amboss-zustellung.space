@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>drm on Amboss-incoming</title>
+    <link>https://github.amboss-zustellung.space/tags/drm/</link>
+    <description>Recent content in drm on Amboss-incoming</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 07 Mar 2010 14:08:22 +0000</lastBuildDate><atom:link href="https://github.amboss-zustellung.space/tags/drm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DRM vs torrent</title>
+      <link>https://github.amboss-zustellung.space/posts/drm_vs_torrent/</link>
+      <pubDate>Sun, 07 Mar 2010 14:08:22 +0000</pubDate>
+      
+      <guid>https://github.amboss-zustellung.space/posts/drm_vs_torrent/</guid>
+      <description>[[!meta title=&amp;ldquo;DRM vs torrent&amp;rdquo; ]]
+##Isotopp sagt : Die Leute sind nicht dumm genug fuer DRM &amp;hellip;
+  Comparing DRM and Torrent   Der Effekt, den man in der Grafik schoen sehen kann, wird inzwischen von genuegend Endnutzern wahrgenommen. Endnutzer, die gerne fuer das Produkt auch das Geld ausgeben wuerden. Kris ist der Meinung, dass die, die es nicht verstanden haben, vom Markt ge-darwin-ed werden. Zaehlt dabei auch eine Reihe Unternehmen auf:
+ Yahoo  Fictionwise  Migros  Netflix und Microsoft   Ich mag&#39; Microsoft ungern in Schutz nehmen, oder Ihnen gar Gutes unterstellen,aber Microsoft hat durch die DCMA-Vorgaben und der Implementierung von DRM in Vista einen riesigen Schuh zu tragen. Peter Gutmann hatte im Juni 2007 die Kosten fuer DRM in Vista analysiert und hat in einem umfangreichen Paper die Nachteile offengelegt. Microsofts hat auch eine offizielle Antwort dazu, die Hardwareindustrie jedenfalls freut sich ueber die Verbrennung von Taktzyklen und die quasi kuenstliche Verlangsamung der Anwendungen. Der Endnutzer wird naemlich wieder neue Hardware draufwerfen.
+Leider finde ich gerade keine Referenz dafuer, aber ich hatte einen Kommentar gelesen, in dem Bill Gates sinngemaess zitiert wurde mit: &amp;ldquo;Wenn ihr schmerzfrei eure Musik ueberall hoeren wollt, dann rippt euch doch zu MP3&amp;rdquo;.
+Ich glaube schon, dass der Grosskonzern sich da bewusst ist, dass DRM fuer den Endnutzer kein Usability-Gewinn ist, aber sie aufgrund von politischen Entscheidungen das ganze Geraffel in die Systeme einbauen muessen.
+Ich fuer meinen Teil, freue mich dass der Internationaler Tag gegen DRM  auf den 4.</description>
+    </item>
+    
+  </channel>
+</rss>

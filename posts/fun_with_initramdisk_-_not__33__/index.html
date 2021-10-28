@@ -1,0 +1,386 @@
+<!doctype html><html lang="en"
+  >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fun with initramdisk - NOT! - Amboss-incoming</title><link rel="apple-touch-icon" href="https://github.amboss-zustellung.space/images/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="https://github.amboss-zustellung.space/images/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="https://github.amboss-zustellung.space/images/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="https://github.amboss-zustellung.space/images/favicons/manifest.json">
+<link rel="icon" href="https://github.amboss-zustellung.space/images/favicons/favicon.ico">
+<meta name="keywords" content="" />
+<meta name="description" content="" /><meta itemprop="name" content="Fun with initramdisk - NOT!">
+<meta itemprop="description" content="[[!meta title=&ldquo;Fun with initramdisk - NOT!&rdquo; ]]
+#The Phenomenon
+I just inherited the care for a system. The system of SWSBO was setup by a good friend, a so called Debian-Developer, who knows what he does and has to do. Because of some ugly hardware issues he supplied the system with a custom build kernel because a year ago or so, some drivers for the suspicious hardware was not in mainline. The system is setup with LVM on the lower layer and having the single LVs encrypted with luks. I normally setup my systems the other way around(puting the encryption below the LVM) but this gives equivalent security and should work equally well, if not even better.
+Nevertheless the system looked quite goot in shape but meanwhile needed some updating.
+So I did.
+Imagine, your system refuses to build any new initramdisk. &ldquo;WTF&rdquo; I thought.
+Yes, update-initramfs and mkinitramfs barfs out.
+ mkinitramfs: for root /dev/mapper/marte-c_root_crypt missing dm- /sys/block/ entry mkinitramfs: workaround is MODULES=most mkinitramfs: Error please report the bug  Wow! &hellip; thats a thing. Of course what I can see is, that it seems to have the opinion the root-device is depending on &ldquo;dm-&rdquo; &ndash; obviously missing a number at the end. But where does that come from? No information is available on how to debug this. How does mkinitramfs come to this value at all? Neither /proc/mounts nor /etc/{crypt,m,fs}tab had a rouge entry that could lead to this.
+#is the source with me
+So what&rsquo;s happening here? Diving into updateinitramfs doesn&rsquo;t bring any clue, because it&rsquo;s simply calling mkintramfs with some parameters.">
+<meta itemprop="dateModified" content="2021-10-29T00:21:36+02:00" />
+<meta itemprop="wordCount" content="616">
+<meta itemprop="keywords" content="debian,linux,initramfs,shellscript,rant,blog,WTF,tech,shell,trouble," /><meta property="og:title" content="Fun with initramdisk - NOT!" />
+<meta property="og:description" content="[[!meta title=&ldquo;Fun with initramdisk - NOT!&rdquo; ]]
+#The Phenomenon
+I just inherited the care for a system. The system of SWSBO was setup by a good friend, a so called Debian-Developer, who knows what he does and has to do. Because of some ugly hardware issues he supplied the system with a custom build kernel because a year ago or so, some drivers for the suspicious hardware was not in mainline. The system is setup with LVM on the lower layer and having the single LVs encrypted with luks. I normally setup my systems the other way around(puting the encryption below the LVM) but this gives equivalent security and should work equally well, if not even better.
+Nevertheless the system looked quite goot in shape but meanwhile needed some updating.
+So I did.
+Imagine, your system refuses to build any new initramdisk. &ldquo;WTF&rdquo; I thought.
+Yes, update-initramfs and mkinitramfs barfs out.
+ mkinitramfs: for root /dev/mapper/marte-c_root_crypt missing dm- /sys/block/ entry mkinitramfs: workaround is MODULES=most mkinitramfs: Error please report the bug  Wow! &hellip; thats a thing. Of course what I can see is, that it seems to have the opinion the root-device is depending on &ldquo;dm-&rdquo; &ndash; obviously missing a number at the end. But where does that come from? No information is available on how to debug this. How does mkinitramfs come to this value at all? Neither /proc/mounts nor /etc/{crypt,m,fs}tab had a rouge entry that could lead to this.
+#is the source with me
+So what&rsquo;s happening here? Diving into updateinitramfs doesn&rsquo;t bring any clue, because it&rsquo;s simply calling mkintramfs with some parameters." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://github.amboss-zustellung.space/posts/fun_with_initramdisk_-_not__33__/" /><meta property="article:section" content="posts" />
+
+<meta property="article:modified_time" content="2021-10-29T00:21:36+02:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Fun with initramdisk - NOT!"/>
+<meta name="twitter:description" content="[[!meta title=&ldquo;Fun with initramdisk - NOT!&rdquo; ]]
+#The Phenomenon
+I just inherited the care for a system. The system of SWSBO was setup by a good friend, a so called Debian-Developer, who knows what he does and has to do. Because of some ugly hardware issues he supplied the system with a custom build kernel because a year ago or so, some drivers for the suspicious hardware was not in mainline. The system is setup with LVM on the lower layer and having the single LVs encrypted with luks. I normally setup my systems the other way around(puting the encryption below the LVM) but this gives equivalent security and should work equally well, if not even better.
+Nevertheless the system looked quite goot in shape but meanwhile needed some updating.
+So I did.
+Imagine, your system refuses to build any new initramdisk. &ldquo;WTF&rdquo; I thought.
+Yes, update-initramfs and mkinitramfs barfs out.
+ mkinitramfs: for root /dev/mapper/marte-c_root_crypt missing dm- /sys/block/ entry mkinitramfs: workaround is MODULES=most mkinitramfs: Error please report the bug  Wow! &hellip; thats a thing. Of course what I can see is, that it seems to have the opinion the root-device is depending on &ldquo;dm-&rdquo; &ndash; obviously missing a number at the end. But where does that come from? No information is available on how to debug this. How does mkinitramfs come to this value at all? Neither /proc/mounts nor /etc/{crypt,m,fs}tab had a rouge entry that could lead to this.
+#is the source with me
+So what&rsquo;s happening here? Diving into updateinitramfs doesn&rsquo;t bring any clue, because it&rsquo;s simply calling mkintramfs with some parameters."/>
+<meta name="twitter:site" content="@janwalzer"/>
+<link rel="preload" href="https://github.amboss-zustellung.space/css/bundle.min.56f818f19e58c97481c8333650e24bf131abfada62c954646a72ae940adb3bf5.css" integrity="sha256-VvgY8Z5YyXSByDM2UOJL8TGr&#43;tpiyVRkanKulArbO/U=" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://github.amboss-zustellung.space/css/bundle.min.56f818f19e58c97481c8333650e24bf131abfada62c954646a72ae940adb3bf5.css" integrity="sha256-VvgY8Z5YyXSByDM2UOJL8TGr&#43;tpiyVRkanKulArbO/U=" crossorigin="anonymous"></noscript></head>
+  <body><script src="https://github.amboss-zustellung.space/js/bootstrap.min.b5d86dd3a5f60c90be38a252bb65fc1a2732f32e71dc12c051720f0c7aef3cde.js" integrity="sha256-tdht06X2DJC&#43;OKJSu2X8Gicy8y5x3BLAUXIPDHrvPN4=" crossorigin="anonymous"></script><header><nav class="navbar top-app-bar top-app-bar-expand-lg fixed-top">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button><a class="navbar-brand me-3" href="https://github.amboss-zustellung.space/"><img class="logo" alt="Logo" src="" loading="lazy"
+  
+   />
+Amboss-incoming
+    </a>
+    <button class="navbar-social-share" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSocialShare"
+  aria-controls="offcanvasSocialShare" aria-label="Toggle social share">
+  <i class="fas fa-share-alt"></i>
+</button>
+
+<div class="offcanvas offcanvas-bottom surface" tabindex="-1" id="offcanvasSocialShare" aria-labelledby="offcanvasSocialShare">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">Share</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Twitter Share Button"
+      target="_blank" href="https://twitter.com/intent/tweet?title=Fun%20with%20initramdisk%20-%20NOT%21&url=https%3a%2f%2fgithub.amboss-zustellung.space%2fposts%2ffun_with_initramdisk_-_not__33__%2f">
+      <i class="fab fa-fw fa-twitter"></i> Twitter
+    </a>
+    <a class="btn btn-sm btn-outline-primary social-share-button" rel="noopener noreferrer" aria-label="Facebook Share Button"
+      target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fgithub.amboss-zustellung.space%2fposts%2ffun_with_initramdisk_-_not__33__%2f">
+      <i class="fab fa-fw fa-facebook-f"></i> Facebook
+    </a>
+  </div>
+</div>
+
+    <button class="navbar-settings" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSettings"
+  aria-controls="offcanvasSettings" aria-label="Toggle settings">
+  <i class="fas fa-ellipsis-v"></i>
+</button>
+
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasSettings" aria-labelledby="offcanvasSettings">
+  <div class="offcanvas-header">
+    <h3 class="offcanvas-title">Settings</h3>
+    <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="offcanvas" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="offcanvas-body">
+
+<section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-adjust"></i> Mode</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="modeSwitcher">
+      </div>
+    </div>
+  </form>
+</section>
+
+
+<section class="setting palettes">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-palette"></i> Palette</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <a id="btnPalette" class="btn btn-sm btn-outline-primary" role="button" aria-label="palettePicker">
+        <i class="fas fa-eye-dropper"></i>
+      </a>
+    </div>
+  </form>
+  <div class="mt-2 d-flex visually-hidden" id="palettePicker"><button type="button" id="palette-blue" aria-label="Blue"
+        class="btn btn-sm palette" data-palette="blue">
+      </button><button type="button" id="palette-blue-gray" aria-label="Blue Gray"
+        class="btn btn-sm palette" data-palette="blue-gray">
+      </button><button type="button" id="palette-brown" aria-label="Brown"
+        class="btn btn-sm palette" data-palette="brown">
+      </button><button type="button" id="palette-cyan" aria-label="Cyan"
+        class="btn btn-sm palette" data-palette="cyan">
+      </button><button type="button" id="palette-green" aria-label="Green"
+        class="btn btn-sm palette" data-palette="green">
+      </button><button type="button" id="palette-indigo" aria-label="Indigo"
+        class="btn btn-sm palette" data-palette="indigo">
+      </button><button type="button" id="palette-orange" aria-label="Orange"
+        class="btn btn-sm palette" data-palette="orange">
+      </button><button type="button" id="palette-pink" aria-label="Pink"
+        class="btn btn-sm palette" data-palette="pink">
+      </button><button type="button" id="palette-purple" aria-label="Purple"
+        class="btn btn-sm palette" data-palette="purple">
+      </button><button type="button" id="palette-red" aria-label="Red"
+        class="btn btn-sm palette" data-palette="red">
+      </button><button type="button" id="palette-teal" aria-label="Teal"
+        class="btn btn-sm palette" data-palette="teal">
+      </button><button type="button" id="palette-yellow" aria-label="Yellow"
+        class="btn btn-sm palette" data-palette="yellow">
+      </button></div>
+</section>
+</div>
+</div>
+
+    <div class="collapse navbar-collapse" tabindex="-1" id="navbarSupportedContent" aria-labelledby="navbarSupportedContent">
+      <form class="search-bar my-1" action="https://github.amboss-zustellung.space/search">
+  <div class="input-group input-group-sm">
+    <span class="btn btn-search disabled position-absolute left-0"><i class="fas fa-fw fa-search"></i></span>
+    <input class="form-control rounded-pill" name="q" type="search" aria-label="Search">
+  </div>
+</form>
+
+      <ul class="navbar-nav ms-auto"><li class="nav-item">
+          <a class="nav-link" href="https://github.amboss-zustellung.space/">
+            fas fa-homeHome
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://github.amboss-zustellung.space/tags/blog/">
+            <i class="fas fa-rss-square"></i>Blog
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://github.amboss-zustellung.space/categories/">
+            <i class="fas fa-fw fa-cubes"></i>Categories
+          </a>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link" id="navbarDropdown-posts" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-fw fa-folder"></i>Posts
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown-posts"><li>
+              <a class="dropdown-item"
+                href="https://github.amboss-zustellung.space/categories">
+                <i class="fas fa-fw fa-cubes"></i>Categories
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://github.amboss-zustellung.space/tags">
+                <i class="fab fa-fw fa-tags"></i>Tags
+              </a>
+            </li></ul>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link" id="navbarDropdown-about" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-fw fa-user"></i>About
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown-about"><li>
+              <a class="dropdown-item"
+                href="https://github.amboss-zustellung.space/contact/">
+                <i class="fas fa-fw fa-contact"></i>Contact
+              </a>
+            </li></ul>
+        </li><li class="nav-item">
+          <a class="nav-link" href="https://github.com/jwalzer/github.amboss-zustellung.de" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-fw fa-github"></i>Github
+          </a>
+        </li></ul>
+    </div>
+  </div>
+</nav>
+</header>
+<main role="main" class="container">
+      <div class="row content">
+<div class="col-lg-8">
+  <div class="container"><nav class="row card component" aria-label="breadcrumb">
+  <div class="card-body">
+    <ol class="breadcrumb "><li class="breadcrumb-item"><a href="https://github.amboss-zustellung.space/">Home</a></li><li class="breadcrumb-item"><a href="https://github.amboss-zustellung.space/posts/">Posts</a></li><li class="breadcrumb-item active">Fun with initramdisk - NOT!</li></ol>
+  </div>
+</nav>    <article class="row card component mb-4 post"><div class="post-panel-wrapper">
+  <div class="d-flex flex-column component rounded post-panel">
+    
+    <a id="sidebarToggler" class="action d-none d-lg-block" role="button">
+  <i class="fas fa-fw fa-expand-alt" data-fa-transform="rotate-45"></i>
+</a>
+  
+    
+
+    
+    
+    
+    
+  </div>
+</div>
+<div class="card-body">
+        <h1 class="card-title my-3">Fun with initramdisk - NOT!
+</h1><div class="post-meta"><span class="post-date" title="created on">
+    <i class="fas fa-fw fa-calendar-alt"></i>Apr 11, 2010
+  </span>
+  <span class="post-date me-2" title="updated on">
+      <i class="fas fa-sync-alt"></i>
+      Oct 29, 2021
+    </span>
+  <span class="post-reading-time" title="reading time">
+    <i class="fas fa-fw fa-coffee"></i>3 min read
+  </span><a href="https://github.amboss-zustellung.space/tags/debian/" class="badge rounded-pill text-white bg-primary post-taxonomy">debian</a><a href="https://github.amboss-zustellung.space/tags/linux/" class="badge rounded-pill text-white bg-primary post-taxonomy">linux</a><a href="https://github.amboss-zustellung.space/tags/initramfs/" class="badge rounded-pill text-white bg-primary post-taxonomy">initramfs</a><a href="https://github.amboss-zustellung.space/tags/shellscript/" class="badge rounded-pill text-white bg-primary post-taxonomy">shellscript</a><a href="https://github.amboss-zustellung.space/tags/rant/" class="badge rounded-pill text-white bg-primary post-taxonomy">rant</a><a href="https://github.amboss-zustellung.space/tags/blog/" class="badge rounded-pill text-white bg-primary post-taxonomy">blog</a><a href="https://github.amboss-zustellung.space/tags/wtf/" class="badge rounded-pill text-white bg-primary post-taxonomy">WTF</a><a href="https://github.amboss-zustellung.space/tags/tech/" class="badge rounded-pill text-white bg-primary post-taxonomy">tech</a><a href="https://github.amboss-zustellung.space/tags/shell/" class="badge rounded-pill text-white bg-primary post-taxonomy">shell</a><a href="https://github.amboss-zustellung.space/tags/trouble/" class="badge rounded-pill text-white bg-primary post-taxonomy">trouble</a></div>
+<div class="post-content mb-3"><p>[[!meta title=&ldquo;Fun with initramdisk - NOT!&rdquo; ]]</p>
+<p>#The Phenomenon</p>
+<p>I just inherited the care for a system. The system of <a href="http://acronyms.thefreedictionary.com/SWSBO" target="_blank" rel="noopener noreferrer">SWSBO</a>
+ was setup by a good friend, a so called <strong>Debian-Developer</strong>, who knows what he does and has to do. Because of some ugly hardware issues he supplied the system with a custom build kernel because a year ago or so, some drivers for the suspicious hardware was not in mainline. The system is setup with LVM on the lower layer and having the single LVs encrypted with luks.  I normally setup my systems the other way around(puting the encryption below the LVM) but this gives equivalent security and should work equally well, if not even better.</p>
+<p>Nevertheless the system looked quite goot in shape but meanwhile needed some updating.</p>
+<p>So I did.</p>
+<p>Imagine, your system refuses to build any new initramdisk. &ldquo;<strong>WTF</strong>&rdquo; I thought.</p>
+<p>Yes, update-initramfs  and mkinitramfs barfs out.</p>
+<pre><code>      mkinitramfs: for root /dev/mapper/marte-c_root_crypt missing dm- /sys/block/ entry
+      mkinitramfs: workaround is MODULES=most
+      mkinitramfs: Error please report the bug
+</code></pre>
+<p>Wow! &hellip; thats a thing. Of course what I can see is, that it seems to have the opinion the root-device is depending on &ldquo;dm-&rdquo; &ndash; obviously missing a number at the end. But where does that come from?
+No information is available on how to debug this. How does mkinitramfs come to this value at all?
+Neither /proc/mounts nor /etc/{crypt,m,fs}tab had a rouge entry that could lead to this.</p>
+<p>#is the source with me</p>
+<p>So what&rsquo;s happening here? Diving into updateinitramfs doesn&rsquo;t bring any clue, because it&rsquo;s simply calling mkintramfs with some parameters.</p>
+<p>Next try:</p>
+<pre><code>      sh -x mkinitramfs .......
+</code></pre>
+<p>shows us the flow of the execution and where it barfs out. Not in mkinitramfs.</p>
+<p>You can find it in /usr/share/initramfs-tools/hook-funktions &ndash; Who would have thougt that &hellip;</p>
+<p>So I found the source, and, couldn&rsquo;t really believe. It&rsquo;s absolutely doing what the author intended. There seems no bug, or strange case here.</p>
+<p>The Author didn&rsquo;t think of encrypting an logical volume. I was even told in IRC that this code can&rsquo;t deal with more than 2 Layers  of devicemapper-dependencies. I don&rsquo;t quite understand, where the difference in Nr-of-Layers is in comparision to having the crypt below the LVM, but I didn&rsquo;t care any longer at that moment for a discussion. I wanted a solution.</p>
+<p>#Finding the Solution</p>
+<p>Now, even the error mentions the solution: &ldquo;MODULES=most&rdquo; &ndash; This should disable the &ldquo;<em>pseudointelligent</em>&rdquo; algorithm thats not able to find the correct rootdevice, but instead put nearly all sensible modules into the ramdisk.</p>
+<p>&ldquo;Strange: Didn&rsquo;t I already configure that?&rdquo;</p>
+<pre><code>      ~# grep MODULES /etc/initramfs-tools/initramfs.conf 
+      # MODULES: [ most | netboot | dep | list ]
+      MODULES=most
+</code></pre>
+<p>Indeed! &hellip; so what&rsquo;s the matter here?</p>
+<p>A slight modification made my head slap for another hour against the wall.</p>
+<pre><code>      ~# grep **-r** MODULES /etc/initramfs-tools/*
+      /etc/initramfs-tools/initramfs.com:# MODULES: [ most | netboot | dep | list ]
+      /etc/initramfs-tools/initramfs.com:MODULES=most
+      /etc/initramfs-tools/conf.d/driver-policy:MODULES=dep
+</code></pre>
+<p>So we can see, that some obscure script, put this file there, and happily overwriting my manual changes in the default configuration-location.</p>
+<p>#The Solution</p>
+<p>The problem was solved with:</p>
+<pre><code>      rm /etc/initramfs-tools/conf.d/driver-policy
+</code></pre>
+<p>Of course, I verified, that this file only consisted of this very line and some comments &ldquo;Attention, this will override global config!&rdquo; &ndash; No! Indeed! Who would have thought!</p>
+<p>#Resume</p>
+<p>I still haven´t quite understood how the code in mkinitramfs should work, but somehow it seems a bit flawed. A can imagine a lot other setups that would lead to to stranger problems.
+I will see, if I can manage to write a bugreport, and will update here when I have a BTS#. Meanwhile I&rsquo;m wondering, how fragile this whole kernel/Boot-Infrastructure is, and why I am the one who happens to stumble over these uggly problems.</p>
+</div><hr /><div class="post-navs d-flex mb-3 justify-content-evenly">
+  <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
+    <a href="https://github.amboss-zustellung.space/posts/panik_am_bahnsteig/">
+</a>
+  </div><div class="post-nav post-next">
+    <a href="https://github.amboss-zustellung.space/posts/cisco_in_love__63__/">Cisco in Love?
+</a>
+    <i class="fas fa-fw fa-chevron-right"></i>
+  </div></div><section class="related-posts-wrapper">
+    <h3>Related Posts</h3>
+    <ul class="related-posts"><li><a href="https://github.amboss-zustellung.space/posts/doing_videomessaging_between_windows_and_linux/">Doing Videomessaging between Windows and Linux
+</a></li><li><a href="https://github.amboss-zustellung.space/posts/behaviour_of_softraid-1_and_unreliability_of_harddrives/">Behaviour of SoftRAID-1 and unreliability of Harddrives
+</a></li><li><a href="https://github.amboss-zustellung.space/posts/ab18/">Ab 18 ...
+</a></li><li><a href="https://github.amboss-zustellung.space/posts/autobahnkollaps/">Autobahnkollaps
+</a></li><li><a href="https://github.amboss-zustellung.space/posts/commerzbank_gehts_noch__63__/">Commerzbank: Gehts noch?
+</a></li></ul>
+  </section></div>
+    </article><div class="card component row post-comments">
+  <div class="card-body"></div>
+</div></div>
+</div><aside class="col-lg-4 sidebar d-flex">
+  <div class="container">
+    
+    <section class="recent-posts row card component">
+  <div class="card-body">
+    <h2 class="card-title">Recent Posts</h2>
+    <ul><li><a href="https://github.amboss-zustellung.space/posts/my-second-post/">My Second Post
+</a></li><li><a href="https://github.amboss-zustellung.space/posts/my-first-post/">My First Post
+</a></li><li><a href="https://github.amboss-zustellung.space/posts/monitoring_puppet_with_munin/">Monitoring_Puppet_with_Munin
+</a></li><li><a href="https://github.amboss-zustellung.space/posts/keinewerbung/">Keine Werbung
+</a></li><li><a href="https://github.amboss-zustellung.space/posts/facts_about_introverts/">Facts_about_Introverts
+</a></li></ul>
+  </div>
+</section><section class="taxonomies row card component">
+      <div class="card-body">
+        <h2 class="card-title">
+          <a href="https://github.amboss-zustellung.space/categories">Categories</a>
+        </h2>
+        <div><a href="https://github.amboss-zustellung.space/categories/categorie-1/" class="badge bg-primary text-white rounded post-taxonomy" title="Categorie 1">
+            Categorie 1
+          </a><a href="https://github.amboss-zustellung.space/categories/categorie-2/" class="badge bg-primary text-white rounded post-taxonomy" title="Categorie 2">
+            Categorie 2
+          </a><a href="https://github.amboss-zustellung.space/categories/overview/" class="badge bg-primary text-white rounded post-taxonomy" title="Overview">
+            Overview
+          </a></div>
+      </div>
+    </section><section class="taxonomies row card component">
+      <div class="card-body">
+        <h2 class="card-title">
+          <a href="https://github.amboss-zustellung.space/tags">Tags</a>
+        </h2>
+        <div><a href="https://github.amboss-zustellung.space/tags/blog/" class="badge bg-primary text-white rounded post-taxonomy" title="blog">
+            blog
+          </a><a href="https://github.amboss-zustellung.space/tags/rant/" class="badge bg-primary text-white rounded post-taxonomy" title="rant">
+            rant
+          </a><a href="https://github.amboss-zustellung.space/tags/language/de/" class="badge bg-primary text-white rounded post-taxonomy" title="language/de">
+            language/de
+          </a><a href="https://github.amboss-zustellung.space/tags/fun/" class="badge bg-primary text-white rounded post-taxonomy" title="fun">
+            fun
+          </a><a href="https://github.amboss-zustellung.space/tags/linux/" class="badge bg-primary text-white rounded post-taxonomy" title="linux">
+            linux
+          </a><a href="https://github.amboss-zustellung.space/tags/video/" class="badge bg-primary text-white rounded post-taxonomy" title="Video">
+            Video
+          </a><a href="https://github.amboss-zustellung.space/tags/internet/" class="badge bg-primary text-white rounded post-taxonomy" title="internet">
+            internet
+          </a><a href="https://github.amboss-zustellung.space/tags/ipv6/" class="badge bg-primary text-white rounded post-taxonomy" title="ipv6">
+            ipv6
+          </a><a href="https://github.amboss-zustellung.space/tags/language/en/" class="badge bg-primary text-white rounded post-taxonomy" title="language/en">
+            language/en
+          </a><a href="https://github.amboss-zustellung.space/tags/zensur/" class="badge bg-primary text-white rounded post-taxonomy" title="zensur">
+            zensur
+          </a></div>
+      </div>
+    </section>
+    
+  </div>
+</aside>
+</div>
+    </main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav my-2 justify-content-center"><a class="nav-link social-link" href="mailto:info@amboss-zustellung.space" title="Email">
+      <i class="fas fa-fw fa-2x fa-envelope"></i>
+    </a><a class="nav-link social-link" target="_blank" href="https://github.com/jwalzer" title="GitHub" rel="noopener noreferrer">
+        <i class="fa-fw fa-2x fab fa-github"></i>
+      </a><a class="nav-link social-link" target="_blank" href="https://twitter.com/janwalzer" title="Twitter" rel="noopener noreferrer">
+        <i class="fa-fw fa-2x fab fa-twitter"></i>
+      </a></nav>
+<div class="copyright mb-2">
+  
+</div>
+<div class="powered-by mb-2">
+  Powered by <a href="https://gohugo.io" target="_blank" rel="noopener noreferrer">Hugo</a> and the <a href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank" rel="noopener noreferrer">Bootstrap</a> theme.
+</div></footer>
+<script src="https://github.amboss-zustellung.space/js/bundle.min.425550fc2a278561fe029578aa420a6953a8c62479f57ea3cbd6b0fc8557b403.js" integrity="sha256-QlVQ/ConhWH&#43;ApV4qkIKaVOoxiR59X6jy9aw/IVXtAM=" crossorigin="anonymous" defer></script><script defer src="https://github.amboss-zustellung.space/js/viewer.min.2f6511f1e2b87cdacb7bdeedeadc1dcf2fc9f22db69f89b70fd5d91224f892a4.js" integrity="sha256-L2UR8eK4fNrLe97t6twdzy/J8i22n4m3D9XZEiT4kqQ=" crossorigin="anonymous"></script>
+</body>
+</html>

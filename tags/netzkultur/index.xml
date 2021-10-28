@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>netzkultur on Amboss-incoming</title>
+    <link>https://github.amboss-zustellung.space/tags/netzkultur/</link>
+    <description>Recent content in netzkultur on Amboss-incoming</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 03 Jun 2009 10:57:51 +0000</lastBuildDate><atom:link href="https://github.amboss-zustellung.space/tags/netzkultur/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Generation C64</title>
+      <link>https://github.amboss-zustellung.space/posts/generation_c64/</link>
+      <pubDate>Wed, 03 Jun 2009 10:57:51 +0000</pubDate>
+      
+      <guid>https://github.amboss-zustellung.space/posts/generation_c64/</guid>
+      <description>[[!meta title=&amp;ldquo;Generation C64&amp;rdquo; ]]
+Aufschrei der 64&amp;rsquo;er Bin ich Generation C64?
+Eigentlich ja eher Generation KC85 , aber es läuft auf was ähnliches hinaus.
+Selbst der Spiegel berichtet mal recht ordentlich.</description>
+    </item>
+    
+  </channel>
+</rss>

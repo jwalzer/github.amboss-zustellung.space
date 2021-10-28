@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>harddrive on Amboss-incoming</title>
+    <link>https://github.amboss-zustellung.space/tags/harddrive/</link>
+    <description>Recent content in harddrive on Amboss-incoming</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 Jan 2009 21:58:12 +0000</lastBuildDate><atom:link href="https://github.amboss-zustellung.space/tags/harddrive/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Samsung Spinpoint und SMART</title>
+      <link>https://github.amboss-zustellung.space/posts/samsung_spinpoint_und_smart/</link>
+      <pubDate>Thu, 15 Jan 2009 21:58:12 +0000</pubDate>
+      
+      <guid>https://github.amboss-zustellung.space/posts/samsung_spinpoint_und_smart/</guid>
+      <description>[[!meta title=&amp;ldquo;Samsung Spinpoint und SMART&amp;rdquo; ]]
+Samsung Spinpoint mit 1TB &amp;ldquo;Naja, man gönnt sich ja sonst nix. Und Billig ist es heutzutage auch.&amp;rdquo; dachte ich noch letztes Jahr, als ich beschloss, mir ein QNAP TS-409 zuzulegen.
+Das ist so ein schönes, nettes, schniekes Netzwerk-Speicher-Gerät, welches Out-Of-Box einfach mal mit einer Menge Services funktioniert (OK, für NFS brauchte es mangels der Pro-Version einen kleinen Hack)
+Das Gerät unterstützt bis zu vier SATA-Festplatten und kann diese als Raid 0,1,5,6 oder JBOD betreiben. Ursprünglich hatte ich mit Raid6 geliebäugelt, aber damit ist der kleine Prozessor ein wenig überfordert und liefert mir schreibraten unterhalb der 1MB/s Grenze &amp;hellip; sorry, das kann man sich sparen.
+Zähneknirschend nutze ich jetzt Raid5 mit einer (fehlenden) Spare. Warum fehlend? &amp;hellip; genau deshalb schreibe ich grad &amp;lsquo;den Artikel.
+Vier Festplatten sollen es sein &amp;ldquo;&amp;hellip; Jede 1TB groß&amp;rdquo;, war die Devise. Also doch mal durch die einschlägigen Onlineversender durchgeschaut, Kundenbewertungen gelesen, das Offizielle von QNAP nach der Kompatibilitätsliste abgeklappert.
+Ergebnis: Western Digital und Samsung haben beide sowohl spitzen als auch mieseste Bewertungen bekommen. Ich weiß selbst, daß jemand enttäuschtes lauter und böser seine Meinung kundtuen wird, als jemand zufriedenes &amp;hellip; und Ausreißer passieren &amp;hellip; also unentschieden.
+Um Ausfallwahrscheinlichkeiten zu verringern, hab&amp;rsquo; ich dann 2 mal die WDC WD10EACS-65D6B0 01.0 und zweimal die SAMSUNG HD103UJ 1AA0 bestellt.
+Und dann fing die Odyssee an &amp;hellip; Die Samsungs melden sich dem Kernel soweit ich das sehe identisch. Allerdings liefert die eine Platte SMART-Daten, und die andere nicht.
+&amp;ldquo;Naja, umtausch halt &amp;hellip; &amp;quot; Tja, mit dem Gedanken, spiele ich das Spiel jetzt schon seit Ende Oktober.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>raid on Amboss-incoming</title>
+    <link>https://github.amboss-zustellung.space/tags/raid/</link>
+    <description>Recent content in raid on Amboss-incoming</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 09 Oct 2008 13:13:38 +0000</lastBuildDate><atom:link href="https://github.amboss-zustellung.space/tags/raid/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Behaviour of SoftRAID-1 and unreliability of Harddrives</title>
+      <link>https://github.amboss-zustellung.space/posts/behaviour_of_softraid-1_and_unreliability_of_harddrives/</link>
+      <pubDate>Thu, 09 Oct 2008 13:13:38 +0000</pubDate>
+      
+      <guid>https://github.amboss-zustellung.space/posts/behaviour_of_softraid-1_and_unreliability_of_harddrives/</guid>
+      <description>[[!meta title=&amp;ldquo;Behaviour of SoftRAID-1 and unreliability of Harddrives&amp;rdquo; ]]
+Here a guy has written an article about the probability that you can&amp;rsquo;t read your complete disks without errors, and the handling of this event in the Software-RAID &amp;hellip;
+This makes me sorrow ;(
+[[!inline pages=&amp;quot;./discussion*&amp;quot; rootpage=&amp;quot;./discussion&amp;quot;]]</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>site on Amboss-incoming</title>
+    <link>https://github.amboss-zustellung.space/tags/site/</link>
+    <description>Recent content in site on Amboss-incoming</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 02 Jun 2010 16:20:34 +0000</lastBuildDate><atom:link href="https://github.amboss-zustellung.space/tags/site/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>some small Layout changes</title>
+      <link>https://github.amboss-zustellung.space/posts/some_small_layout_changes/</link>
+      <pubDate>Wed, 02 Jun 2010 16:20:34 +0000</pubDate>
+      
+      <guid>https://github.amboss-zustellung.space/posts/some_small_layout_changes/</guid>
+      <description>[[!meta title=&amp;ldquo;some small Layout changes&amp;rdquo; ]]
+This is not interesting for visitors, that are using a feedreader
+I took the time to fix the pagetemplate so that in the layout the footer is seemless again. Also I changed the Font-Descriptions in the stylesheet, so that the reader can decide which fonts to use for rendering, because I only defined: &amp;ldquo;sans-serif&amp;rdquo; and no longer a specific typeface. Whats still annoying me is the search-inputbox at the top, thats hanging there around&amp;hellip; I&amp;rsquo;ll fix that later&amp;hellip;</description>
+    </item>
+    
+  </channel>
+</rss>

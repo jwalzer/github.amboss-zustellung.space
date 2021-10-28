@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dhcp on Amboss-incoming</title>
+    <link>https://github.amboss-zustellung.space/tags/dhcp/</link>
+    <description>Recent content in dhcp on Amboss-incoming</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 07 Oct 2008 16:31:46 +0000</lastBuildDate><atom:link href="https://github.amboss-zustellung.space/tags/dhcp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>komplexe Systeme - Netzwerktroubles</title>
+      <link>https://github.amboss-zustellung.space/posts/komplexe_systeme_-_netzwerktroubles/</link>
+      <pubDate>Tue, 07 Oct 2008 16:31:46 +0000</pubDate>
+      
+      <guid>https://github.amboss-zustellung.space/posts/komplexe_systeme_-_netzwerktroubles/</guid>
+      <description>[[!meta title=&amp;ldquo;komplexe Systeme - Netzwerktroubles&amp;rdquo; ]] [[!meta description=&amp;ldquo;Bericht aus dem Leben&amp;rdquo; ]]
+Komplexe Systeme haben das Problem das sie komplex sind. Im Ernst!
+Die letzte Woche war ich dabei, ein Kundenprojekt gerade zu ziehen, welches sich bereits über mehrere Monate gezogen hat.
+Eigentlich war alles ganz einfach:
+Der Kunde hatte ein bestehendes Netz und wollte mit der Zeit gehen und bei sich eine Logische Trennung zwischen verschiedenen Abteilungen und Netzen einführen. Seine bestehenden Server wollte er in eine neue VMware-ESX-Cluster-Umgebung umgezogen haben. &amp;ldquo;Wenn schon neu, dann richtig Flexibel&amp;rdquo; dachte sich der Kunde und entschied sich, seinen Clients anhand der MAC-Adressen in die passenden Netze zu verschieben. Statische Portkonfiguration kam bei der vorhandenen Hausverkabelung (und deren Dokumentation) nicht in Frage.
+Dummerweise lief die Projektsteuerung suboptimal, was dazu führte, daß das Aufsetzen der ESX-Cluster und die Virtualisierung von einem VMWare-Spezialisten passieren sollte, bevor ein Netzwerker das Netzwerk am laufen hat. Außerdem wird natürlich alles schön sauber voneinander abgegrenzt, so daß die VM-&amp;ldquo;Spezies&amp;rdquo; keine Switche konfigurieren, und die Netzwerker keine VMs anfassen &amp;hellip; fast!
+Also finde ich vor Ort ein Netzwerksetup vor, welches daraus besteht, daß der VM-Kollege einfach mal alle Switche, die er gefunden hat, zusammen gesteckt hat.
+ &amp;quot;Dadurch konnte ich schonmal anfangen zu arbeiten, und hatte Netzwerk zum Einrichten der VMs&amp;quot;  Lustigerweise waren da nun zwei ESX-Server, jeweils mit 6GBit-Ports. Der Plan wahr wohl, je 1 Managment-Port (für die ESX) und 2 Datenports (für die VM-Kommunikation) pro Switch zu haben. Dummerweise fliegt einem dann einiges mit der Redundanz um die Ohren, wenn man zwei Switche einfach nur verbindet, und dann das &amp;ldquo;NIC-Teaming&amp;rdquo;(In etwa wie LinkAggregation, nur ohne Negotiation) dafür benutzt, den Traffic wie beschrieben aus den Karten rauszupusten.</description>
+    </item>
+    
+  </channel>
+</rss>

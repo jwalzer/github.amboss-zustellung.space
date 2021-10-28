@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>shell on Amboss-incoming</title>
+    <link>https://github.amboss-zustellung.space/tags/shell/</link>
+    <description>Recent content in shell on Amboss-incoming</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 11 Apr 2010 08:22:44 +0000</lastBuildDate><atom:link href="https://github.amboss-zustellung.space/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fun with initramdisk - NOT!</title>
+      <link>https://github.amboss-zustellung.space/posts/fun_with_initramdisk_-_not__33__/</link>
+      <pubDate>Sun, 11 Apr 2010 08:22:44 +0000</pubDate>
+      
+      <guid>https://github.amboss-zustellung.space/posts/fun_with_initramdisk_-_not__33__/</guid>
+      <description>[[!meta title=&amp;ldquo;Fun with initramdisk - NOT!&amp;rdquo; ]]
+#The Phenomenon
+I just inherited the care for a system. The system of SWSBO was setup by a good friend, a so called Debian-Developer, who knows what he does and has to do. Because of some ugly hardware issues he supplied the system with a custom build kernel because a year ago or so, some drivers for the suspicious hardware was not in mainline. The system is setup with LVM on the lower layer and having the single LVs encrypted with luks. I normally setup my systems the other way around(puting the encryption below the LVM) but this gives equivalent security and should work equally well, if not even better.
+Nevertheless the system looked quite goot in shape but meanwhile needed some updating.
+So I did.
+Imagine, your system refuses to build any new initramdisk. &amp;ldquo;WTF&amp;rdquo; I thought.
+Yes, update-initramfs and mkinitramfs barfs out.
+ mkinitramfs: for root /dev/mapper/marte-c_root_crypt missing dm- /sys/block/ entry mkinitramfs: workaround is MODULES=most mkinitramfs: Error please report the bug  Wow! &amp;hellip; thats a thing. Of course what I can see is, that it seems to have the opinion the root-device is depending on &amp;ldquo;dm-&amp;rdquo; &amp;ndash; obviously missing a number at the end. But where does that come from? No information is available on how to debug this. How does mkinitramfs come to this value at all? Neither /proc/mounts nor /etc/{crypt,m,fs}tab had a rouge entry that could lead to this.
+#is the source with me
+So what&amp;rsquo;s happening here? Diving into updateinitramfs doesn&amp;rsquo;t bring any clue, because it&amp;rsquo;s simply calling mkintramfs with some parameters.</description>
+    </item>
+    
+  </channel>
+</rss>

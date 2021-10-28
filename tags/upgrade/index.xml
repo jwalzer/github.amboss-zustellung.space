@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>upgrade on Amboss-incoming</title>
+    <link>https://github.amboss-zustellung.space/tags/upgrade/</link>
+    <description>Recent content in upgrade on Amboss-incoming</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 10 Nov 2010 14:32:28 +0000</lastBuildDate><atom:link href="https://github.amboss-zustellung.space/tags/upgrade/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Upgrading Ubuntu to version 10.04 LTS</title>
+      <link>https://github.amboss-zustellung.space/posts/upgrading_ubuntu_to_10.04_lts/</link>
+      <pubDate>Wed, 10 Nov 2010 14:32:28 +0000</pubDate>
+      
+      <guid>https://github.amboss-zustellung.space/posts/upgrading_ubuntu_to_10.04_lts/</guid>
+      <description>[[!meta title=&amp;ldquo;Upgrading Ubuntu to version 10.04 LTS&amp;rdquo; ]]
+#Upgrading Ubuntu to version 10.04 LTS
+I have one laptop here(mjolnir), that I&amp;rsquo;m using for my work. I installed them ~2years ago, with an Ubuntu system, because it simply worked. I tried debian, but it didn&amp;rsquo;t support all the hardware.
+I did an upgrade to 9.* once and it worked quite well. Ubuntu has an Dist-Upgrade-Application, that does all the stuff for you.
+When Ubuntu 10 was released, I tried the same again, but because in the meantime I installed some 3rd-party Software, I couldn&amp;rsquo;t upgrade the system without conflicts.
+Because I didn&amp;rsquo;t have the time to analyze these, I postponed the upgrade.
+Today I started it again, and I found out, which Applications issued the conflicts. I removed them and now the upgrade is running. ~3h still left</description>
+    </item>
+    
+  </channel>
+</rss>

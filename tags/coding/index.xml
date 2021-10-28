@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Coding on Amboss-incoming</title>
+    <link>https://github.amboss-zustellung.space/tags/coding/</link>
+    <description>Recent content in Coding on Amboss-incoming</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 25 Jul 2010 19:01:00 +0000</lastBuildDate><atom:link href="https://github.amboss-zustellung.space/tags/coding/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>If programmers wrote songlyrics</title>
+      <link>https://github.amboss-zustellung.space/posts/if_programmers_wrote_songlyrics/</link>
+      <pubDate>Sun, 25 Jul 2010 19:01:00 +0000</pubDate>
+      
+      <guid>https://github.amboss-zustellung.space/posts/if_programmers_wrote_songlyrics/</guid>
+      <description>[[!meta title=&amp;ldquo;If programmers wrote songlyrics&amp;rdquo; ]]
+#What would happen, if programmers wrote songlyrics?
+Found via kaFux http://songsincodedb.com/  if tonight in jungle ; then lion.sleep; end  oder
+ if ( !woman ) { cry = false; }  &amp;hellip; oder auch:
+foreach(person in Persons.getAll()){person.setDomicile(yellowSubmarine);}  </description>
+    </item>
+    
+  </channel>
+</rss>

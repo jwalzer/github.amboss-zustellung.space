@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>language/en on Amboss-incoming</title>
+    <link>https://github.amboss-zustellung.space/tags/language/en/</link>
+    <description>Recent content in language/en on Amboss-incoming</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://github.amboss-zustellung.space/tags/language/en/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Facts_about_Introverts</title>
+      <link>https://github.amboss-zustellung.space/posts/facts_about_introverts/</link>
+      <pubDate>Mon, 02 May 2011 23:07:26 +0000</pubDate>
+      
+      <guid>https://github.amboss-zustellung.space/posts/facts_about_introverts/</guid>
+      <description>[[!meta title=&amp;ldquo;Facts_about_Introverts&amp;rdquo; ]]
+10 Facts about Introverts Myth #1 – Introverts don’t like to talk. This is not true. Introverts just don’t talk unless they have something to say. They hate small talk. Get an introvert talking about something they are interested in, and they won’t shut up for days.
+Myth #2 – Introverts are shy. Shyness has nothing to do with being an Introvert. Introverts are not necessarily afraid of people. What they need is a reason to interact. They don’t interact for the sake of interacting. If you want to talk to an Introvert, just start talking. Don’t worry about being polite.
+Myth #3 – Introverts are rude. Introverts often don’t see a reason for beating around the bush with social pleasantries. They want everyone to just be real and honest. Unfortunately, this is not acceptable in most settings, so Introverts can feel a lot of pressure to fit in, which they find exhausting.
+Myth #4 – Introverts don’t like people. On the contrary, Introverts intensely value the few friends they have. They can count their close friends on one hand. If you are lucky enough for an introvert to consider you a friend, you probably have a loyal ally for life. Once you have earned their respect as being a person of substance, you’re in.
+Myth #5 – Introverts don’t like to go out in public. Nonsense. Introverts just don’t like to go out in public FOR AS LONG. They also like to avoid the complications that are involved in public activities.</description>
+    </item>
+    
+    <item>
+      <title>Upgrading Ubuntu to version 10.04 LTS</title>
+      <link>https://github.amboss-zustellung.space/posts/upgrading_ubuntu_to_10.04_lts/</link>
+      <pubDate>Wed, 10 Nov 2010 14:32:28 +0000</pubDate>
+      
+      <guid>https://github.amboss-zustellung.space/posts/upgrading_ubuntu_to_10.04_lts/</guid>
+      <description>[[!meta title=&amp;ldquo;Upgrading Ubuntu to version 10.04 LTS&amp;rdquo; ]]
+#Upgrading Ubuntu to version 10.04 LTS
+I have one laptop here(mjolnir), that I&amp;rsquo;m using for my work. I installed them ~2years ago, with an Ubuntu system, because it simply worked. I tried debian, but it didn&amp;rsquo;t support all the hardware.
+I did an upgrade to 9.* once and it worked quite well. Ubuntu has an Dist-Upgrade-Application, that does all the stuff for you.
+When Ubuntu 10 was released, I tried the same again, but because in the meantime I installed some 3rd-party Software, I couldn&amp;rsquo;t upgrade the system without conflicts.
+Because I didn&amp;rsquo;t have the time to analyze these, I postponed the upgrade.
+Today I started it again, and I found out, which Applications issued the conflicts. I removed them and now the upgrade is running. ~3h still left</description>
+    </item>
+    
+    <item>
+      <title>If programmers wrote songlyrics</title>
+      <link>https://github.amboss-zustellung.space/posts/if_programmers_wrote_songlyrics/</link>
+      <pubDate>Sun, 25 Jul 2010 19:01:00 +0000</pubDate>
+      
+      <guid>https://github.amboss-zustellung.space/posts/if_programmers_wrote_songlyrics/</guid>
+      <description>[[!meta title=&amp;ldquo;If programmers wrote songlyrics&amp;rdquo; ]]
+#What would happen, if programmers wrote songlyrics?
+Found via kaFux http://songsincodedb.com/  if tonight in jungle ; then lion.sleep; end  oder
+ if ( !woman ) { cry = false; }  &amp;hellip; oder auch:
+foreach(person in Persons.getAll()){person.setDomicile(yellowSubmarine);}  </description>
+    </item>
+    
+  </channel>
+</rss>

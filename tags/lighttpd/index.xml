@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lighttpd on Amboss-incoming</title>
+    <link>https://github.amboss-zustellung.space/tags/lighttpd/</link>
+    <description>Recent content in lighttpd on Amboss-incoming</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 21 Nov 2010 14:40:44 +0000</lastBuildDate><atom:link href="https://github.amboss-zustellung.space/tags/lighttpd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Deep Linking images from foreign domains</title>
+      <link>https://github.amboss-zustellung.space/posts/deep-linking_images_from_foreign_domains/</link>
+      <pubDate>Sun, 21 Nov 2010 14:40:44 +0000</pubDate>
+      
+      <guid>https://github.amboss-zustellung.space/posts/deep-linking_images_from_foreign_domains/</guid>
+      <description>[[!meta title=&amp;ldquo;Deep Linking images from foreign domains&amp;rdquo; ]]
+Deep Linking images from foreign domains  The theory The Webserver The Script   Last week I found in my webstatistics, that I had some spike in the traffic.
+A foreign weblog or forum in hungarian language had one of the pictures on my site linked directly into their comments.
+I have no Problems with people using my pictures on their Website, even less if its not a workfrom me, but from someone else, and I also only have a copy.
+But what buggs me, is that other ones are reading forums and are seeing images on a foreign website and noone notices, that the image is delivered from my webserver, while on the other hand, my connection is filled up with 3000 requests in 2hours.
+The theory To limit this behaviour for the next time, I did some configuration of the webserver(lighttpd) and some php-scripting.
+In future I&amp;rsquo;ll decide for every request to an image if the referrer is either empty or from my website (at least lzer.net). If thats the case, then normally either someone is reading my site, or he got a direct link to an article or an image. Thats fine with me. But if an image is embedded from another website, then the browser must have send (at least in 95% of the cases, geeks don&amp;rsquo;t count) an referrer thats completely different.
+In this case I&amp;rsquo;ll be redirecting them to another version of the image that will have the prefix &amp;lsquo;/img/cached&amp;rsquo; in front of the original image path.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>windows on Amboss-incoming</title>
+    <link>https://github.amboss-zustellung.space/tags/windows/</link>
+    <description>Recent content in windows on Amboss-incoming</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 15 Feb 2010 11:16:27 +0000</lastBuildDate><atom:link href="https://github.amboss-zustellung.space/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Doing Videomessaging between Windows and Linux</title>
+      <link>https://github.amboss-zustellung.space/posts/doing_videomessaging_between_windows_and_linux/</link>
+      <pubDate>Mon, 15 Feb 2010 11:16:27 +0000</pubDate>
+      
+      <guid>https://github.amboss-zustellung.space/posts/doing_videomessaging_between_windows_and_linux/</guid>
+      <description>[[!meta title=&amp;ldquo;Doing Videomessaging between Windows and Linux&amp;rdquo; ]]
+#Dear Lazyweb &amp;hellip;
+I don&amp;rsquo;t like skype. It&amp;rsquo;s closed source. The protocol has been barely reverse engineered.
+So I&amp;rsquo;d rather go with xmpp(jabber). Jabber is an quite cool protocol and there are enough clients out there, that are able to speak xmpp.
+But: there has been at least 5 years in between the first Instant Messengers that could do Voice and even Videochats.
+Why is it so complicated to find an xmpp-Client for Windows that&amp;rsquo;s able to do that?
+I mean, come on: Windows is the base of the &amp;ldquo;just want it to work&amp;rdquo;-userbase. Skype simply does. Even MSN simply works and is preinstalled.
+How can I explain a &amp;ldquo;standarduser&amp;rdquo; we have to sort out and test different xmpp-clients to have webcam and phone?
+I&amp;rsquo;m using myself pidgin on linux. It has support for Voice and Audio &amp;hellip; great. Even works really well between two linux machines. But pidgin on windows? No support. Yes, there may be some reasons. Pidgin has build in Multimedia-Stuff via gstreamer subsystems. These are not available on windows &amp;hellip;
+OK, look for an other xmpp-client, thats available for windows. Even tried the complete Wikipedia List of XMPP-Clients .
+ Pidgin has all the plugins I&amp;rsquo;m using but can&amp;rsquo;t support Video/Audio on Windows because of no gstreamer support Miranda had a chance, but Videosupport was only proprietary and from 2006(?) &amp;hellip; Psi has only audio support, but couldn&amp;rsquo;t negotiate with linux (but it tried, at least) (BTW: This support is by an gstreamer.</description>
+    </item>
+    
+  </channel>
+</rss>
