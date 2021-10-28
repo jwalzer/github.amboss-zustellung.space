@@ -7,7 +7,7 @@ tags:
 - blog
 title: The future will be a game ... hopefully not
 ---
-[[!meta title="The future will be a game ... hopefully not" ]]
+
 
 Ein insider spricht ueber die Gemeinsamkeiten der erfolgreichen (Computer-)Spiele der letzten Jahre, denen niemand **das** zugetraut haette. Warum hatten Guitar-Hero, Wii, Farmville und Co **SOooo** viel Erfolg?
 

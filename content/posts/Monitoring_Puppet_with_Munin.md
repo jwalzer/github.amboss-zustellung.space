@@ -8,7 +8,7 @@ tags:
 - munin
 title: Monitoring_Puppet_with_Munin
 ---
-[[!meta title="Monitoring_Puppet_with_Munin" ]]
+
 
 #Monitoring Puppet with Munin
 

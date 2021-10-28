@@ -16,7 +16,7 @@ tags:
 - Tonalrausch
 title: Acapella in Mannheim
 ---
-[[!meta title="Acapella in Mannheim" ]]
+
 
 {{< img src="img/Acapella_in_Mannheim/Eintrittskarte.png" link="img/Acapella_in_Mannheim/Eintrittskarte.jpg" >}}
 # Acapella in Mannheim

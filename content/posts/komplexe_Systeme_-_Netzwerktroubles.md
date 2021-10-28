@@ -12,8 +12,8 @@ tags:
 - language/de
 title: komplexe Systeme - Netzwerktroubles
 ---
-[[!meta title="komplexe Systeme - Netzwerktroubles" ]]
-[[!meta description="Bericht aus dem Leben" ]]
+
+
 
 Komplexe Systeme haben das Problem das sie komplex sind. Im Ernst!
 

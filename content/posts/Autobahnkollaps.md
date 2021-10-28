@@ -10,7 +10,7 @@ tags:
 - reisen
 title: Autobahnkollaps
 ---
-[[!meta title="Autobahnkollaps" ]]
+
 
 Normalerweise benötige ich, zum Besuch meiner Eltern in der Heimat 5 Autobahnen+5km andere Straßen. Eigentlich eine KFZ-technisch gut angebundene Strecke. Von der Haustür ca. 1km bis zur A659, ca 5km bis zur A5. Danach A5, A4, A9, A38. Dann nochmal 4km Landstraße, fertig. 
 Normalerweise eine Strecke, die in ~4h zu schaffen ist.

@@ -11,7 +11,7 @@ tags:
 - language/DE
 title: FFG 2010
 ---
-[[!meta title="FFG 2010" ]]
+
 
 {{< img src="img/GUUG-FFG2010/GuugFFG2010Logo.png" >}}
 # Die Frühjahrsfachgespräch 2010 der German Unix User Group in Köln

@@ -15,7 +15,7 @@ tags:
 - trouble
 title: Fun with initramdisk - NOT!
 ---
-[[!meta title="Fun with initramdisk - NOT!" ]]
+
 
 #The Phenomenon
 

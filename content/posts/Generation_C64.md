@@ -12,7 +12,7 @@ tags:
 - language/de
 title: Generation C64
 ---
-[[!meta title="Generation C64" ]]
+
 
 # Aufschrei der 64'er
 

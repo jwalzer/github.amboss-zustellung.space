@@ -9,7 +9,7 @@ tags:
 - site
 title: some small Layout changes
 ---
-[[!meta title="some small Layout changes" ]]
+
 
 *This is not interesting for visitors, that are using a feedreader*
 

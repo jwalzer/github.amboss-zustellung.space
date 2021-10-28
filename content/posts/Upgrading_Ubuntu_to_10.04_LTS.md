@@ -9,7 +9,7 @@ tags:
 - upgrade
 title: Upgrading Ubuntu to version 10.04 LTS
 ---
-[[!meta title="Upgrading Ubuntu to version 10.04 LTS" ]]
+
 
 
 

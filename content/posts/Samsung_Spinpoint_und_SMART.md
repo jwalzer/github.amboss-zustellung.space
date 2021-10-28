@@ -12,7 +12,7 @@ tags:
 - smart
 title: Samsung Spinpoint und SMART
 ---
-[[!meta title="Samsung Spinpoint und SMART" ]]
+
 
 # Samsung Spinpoint mit 1TB
 

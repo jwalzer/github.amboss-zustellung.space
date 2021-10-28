@@ -11,7 +11,7 @@ tags:
 - lyrics
 title: If programmers wrote songlyrics
 ---
-[[!meta title="If programmers wrote songlyrics" ]]
+
 
 #What would happen, if programmers wrote songlyrics?
 

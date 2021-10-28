@@ -9,11 +9,11 @@ tags:
 - Youtube
 title: About_motivation
 ---
-[[!meta title="About_motivation" ]]
+
 
 #About Motivation
 
-[[!template  id=youtube v="u6XAPnuFjJc"]]
+{{< youtube vid="u6XAPnuFjJc" >}}
 
 via [Kris](http://blog.koehntopp.de/archives/2889-Wieso-wir-Helden-sein-wollen.html)
 

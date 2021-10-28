@@ -8,11 +8,11 @@ tags:
 - video
 title: IPv6 - For the Kids
 ---
-[[!meta title="IPv6 - For the Kids" ]]
+
 
 # APNIC - IPv6 for the Kids
 
-[[!template  id=youtube v="VNk8Frb9BcA"]]
+{{< youtube vid="VNk8Frb9BcA" >}}
 
 
 

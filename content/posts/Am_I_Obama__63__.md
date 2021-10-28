@@ -9,7 +9,7 @@ tags:
 - blog
 title: Am I Obama?
 ---
-[[!meta title="Am I Obama?" ]]
+
 
 ## Browser Wars
 

@@ -10,7 +10,7 @@ tags:
 - HE
 title: Now with IPv6
 ---
-[[!meta title="Now with IPv6" ]]
+
 
 # This Blog is now available via IPv6
 

@@ -12,7 +12,7 @@ tags:
 - language/DE
 title: FFG 2010 - Teil 2
 ---
-[[!meta title="FFG 2010 - Teil 2" ]]
+
 
 {{< img src="img/GUUG-FFG2010/GuugFFG2010Logo.png" >}}
 # Die Frühjahrsfachgespraech 2010 der German Unix User Group in Köln (Teil 2)

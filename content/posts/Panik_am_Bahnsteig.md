@@ -5,6 +5,7 @@ stylesheets: []
 tags:
 - language/de
 - rant
+title: Panik_am_Bahnsteig
 ---
 Es ist einfach unglaublich wieviele Zugreisende heutzutage professionelle Panik und Angst haben ihren Zug zu verpassen.
 

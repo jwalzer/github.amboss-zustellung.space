@@ -11,7 +11,7 @@ tags:
 - media
 title: DRM vs torrent
 ---
-[[!meta title="DRM vs torrent" ]]
+
 
 
 ##[Isotopp](http://blog.koehntopp.de/) [sagt](http://blog.koehntopp.de/archives/2790-Die-Leute-sind-nicht-dumm-genug-fuer-DRM....html): Die Leute sind nicht dumm genug fuer DRM ...

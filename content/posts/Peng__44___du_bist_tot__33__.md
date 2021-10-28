@@ -8,7 +8,7 @@ tags:
 - language/de
 title: Peng, du bist tot!
 ---
-[[!meta title="Peng, du bist tot!" ]]
+
 
 Ein Artikel zum alldiskutierten Thema, mit der passenden Prise Ironie.
 

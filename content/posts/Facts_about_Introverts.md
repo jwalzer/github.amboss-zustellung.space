@@ -8,7 +8,7 @@ tags:
 - 10Things
 title: Facts_about_Introverts
 ---
-[[!meta title="Facts_about_Introverts" ]]
+
 
 # 10 Facts about Introverts
 

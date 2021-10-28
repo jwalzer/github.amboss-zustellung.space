@@ -12,12 +12,12 @@ tags:
 - Youtube
 title: Cisco in Love?
 ---
-[[!meta title="Cisco in Love?" ]]
+
 
 # What the h....?
 
 
-[[!template  id=youtube v="3pffeMdDSoY"]]
+{{< youtube vid="3pffeMdDSoY" >}}
 
 
 

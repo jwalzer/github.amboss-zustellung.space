@@ -9,7 +9,7 @@ tags:
 - IPv6
 title: We are running out of IP-Adresses!
 ---
-[[!meta title="We are running out of IP-Adresses!" ]]
+
 
 # We are running out of IP Adresses
 
@@ -17,7 +17,7 @@ title: We are running out of IP-Adresses!
 
 A nice video ... and its even from Cisco ...
 
-[[!template  id=youtube v="eYffYT2y-Iw"]]
+{{< youtube vid="eYffYT2y-Iw" >}}
 
 
 

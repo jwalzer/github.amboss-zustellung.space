@@ -7,7 +7,7 @@ tags:
 - blog
 title: Keine Werbung
 ---
-[[!meta title="Keine Werbung" ]]
+
 
 # Keine Werbung!
 
