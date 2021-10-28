@@ -10,8 +10,7 @@
 <link rel="icon" href="https://github.amboss-zustellung.space/images/favicons/favicon.ico">
 <meta name="keywords" content="" />
 <meta name="description" content="" /><meta itemprop="name" content="Fun with initramdisk - NOT!">
-<meta itemprop="description" content="[[!meta title=&ldquo;Fun with initramdisk - NOT!&rdquo; ]]
-#The Phenomenon
+<meta itemprop="description" content="#The Phenomenon
 I just inherited the care for a system. The system of SWSBO was setup by a good friend, a so called Debian-Developer, who knows what he does and has to do. Because of some ugly hardware issues he supplied the system with a custom build kernel because a year ago or so, some drivers for the suspicious hardware was not in mainline. The system is setup with LVM on the lower layer and having the single LVs encrypted with luks. I normally setup my systems the other way around(puting the encryption below the LVM) but this gives equivalent security and should work equally well, if not even better.
 Nevertheless the system looked quite goot in shape but meanwhile needed some updating.
 So I did.
@@ -20,11 +19,10 @@ Yes, update-initramfs and mkinitramfs barfs out.
  mkinitramfs: for root /dev/mapper/marte-c_root_crypt missing dm- /sys/block/ entry mkinitramfs: workaround is MODULES=most mkinitramfs: Error please report the bug  Wow! &hellip; thats a thing. Of course what I can see is, that it seems to have the opinion the root-device is depending on &ldquo;dm-&rdquo; &ndash; obviously missing a number at the end. But where does that come from? No information is available on how to debug this. How does mkinitramfs come to this value at all? Neither /proc/mounts nor /etc/{crypt,m,fs}tab had a rouge entry that could lead to this.
 #is the source with me
 So what&rsquo;s happening here? Diving into updateinitramfs doesn&rsquo;t bring any clue, because it&rsquo;s simply calling mkintramfs with some parameters.">
-<meta itemprop="dateModified" content="2021-10-29T00:21:36+02:00" />
-<meta itemprop="wordCount" content="616">
+<meta itemprop="dateModified" content="2021-10-29T01:37:00+02:00" />
+<meta itemprop="wordCount" content="609">
 <meta itemprop="keywords" content="debian,linux,initramfs,shellscript,rant,blog,WTF,tech,shell,trouble," /><meta property="og:title" content="Fun with initramdisk - NOT!" />
-<meta property="og:description" content="[[!meta title=&ldquo;Fun with initramdisk - NOT!&rdquo; ]]
-#The Phenomenon
+<meta property="og:description" content="#The Phenomenon
 I just inherited the care for a system. The system of SWSBO was setup by a good friend, a so called Debian-Developer, who knows what he does and has to do. Because of some ugly hardware issues he supplied the system with a custom build kernel because a year ago or so, some drivers for the suspicious hardware was not in mainline. The system is setup with LVM on the lower layer and having the single LVs encrypted with luks. I normally setup my systems the other way around(puting the encryption below the LVM) but this gives equivalent security and should work equally well, if not even better.
 Nevertheless the system looked quite goot in shape but meanwhile needed some updating.
 So I did.
@@ -36,12 +34,11 @@ So what&rsquo;s happening here? Diving into updateinitramfs doesn&rsquo;t bring 
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://github.amboss-zustellung.space/posts/fun_with_initramdisk_-_not__33__/" /><meta property="article:section" content="posts" />
 
-<meta property="article:modified_time" content="2021-10-29T00:21:36+02:00" />
+<meta property="article:modified_time" content="2021-10-29T01:37:00+02:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Fun with initramdisk - NOT!"/>
-<meta name="twitter:description" content="[[!meta title=&ldquo;Fun with initramdisk - NOT!&rdquo; ]]
-#The Phenomenon
+<meta name="twitter:description" content="#The Phenomenon
 I just inherited the care for a system. The system of SWSBO was setup by a good friend, a so called Debian-Developer, who knows what he does and has to do. Because of some ugly hardware issues he supplied the system with a custom build kernel because a year ago or so, some drivers for the suspicious hardware was not in mainline. The system is setup with LVM on the lower layer and having the single LVs encrypted with luks. I normally setup my systems the other way around(puting the encryption below the LVM) but this gives equivalent security and should work equally well, if not even better.
 Nevertheless the system looked quite goot in shape but meanwhile needed some updating.
 So I did.
@@ -243,8 +240,7 @@ Amboss-incoming
   <span class="post-reading-time" title="reading time">
     <i class="fas fa-fw fa-coffee"></i>3 min read
   </span><a href="https://github.amboss-zustellung.space/tags/debian/" class="badge rounded-pill text-white bg-primary post-taxonomy">debian</a><a href="https://github.amboss-zustellung.space/tags/linux/" class="badge rounded-pill text-white bg-primary post-taxonomy">linux</a><a href="https://github.amboss-zustellung.space/tags/initramfs/" class="badge rounded-pill text-white bg-primary post-taxonomy">initramfs</a><a href="https://github.amboss-zustellung.space/tags/shellscript/" class="badge rounded-pill text-white bg-primary post-taxonomy">shellscript</a><a href="https://github.amboss-zustellung.space/tags/rant/" class="badge rounded-pill text-white bg-primary post-taxonomy">rant</a><a href="https://github.amboss-zustellung.space/tags/blog/" class="badge rounded-pill text-white bg-primary post-taxonomy">blog</a><a href="https://github.amboss-zustellung.space/tags/wtf/" class="badge rounded-pill text-white bg-primary post-taxonomy">WTF</a><a href="https://github.amboss-zustellung.space/tags/tech/" class="badge rounded-pill text-white bg-primary post-taxonomy">tech</a><a href="https://github.amboss-zustellung.space/tags/shell/" class="badge rounded-pill text-white bg-primary post-taxonomy">shell</a><a href="https://github.amboss-zustellung.space/tags/trouble/" class="badge rounded-pill text-white bg-primary post-taxonomy">trouble</a></div>
-<div class="post-content mb-3"><p>[[!meta title=&ldquo;Fun with initramdisk - NOT!&rdquo; ]]</p>
-<p>#The Phenomenon</p>
+<div class="post-content mb-3"><p>#The Phenomenon</p>
 <p>I just inherited the care for a system. The system of <a href="http://acronyms.thefreedictionary.com/SWSBO" target="_blank" rel="noopener noreferrer">SWSBO</a>
  was setup by a good friend, a so called <strong>Debian-Developer</strong>, who knows what he does and has to do. Because of some ugly hardware issues he supplied the system with a custom build kernel because a year ago or so, some drivers for the suspicious hardware was not in mainline. The system is setup with LVM on the lower layer and having the single LVs encrypted with luks.  I normally setup my systems the other way around(puting the encryption below the LVM) but this gives equivalent security and should work equally well, if not even better.</p>
 <p>Nevertheless the system looked quite goot in shape but meanwhile needed some updating.</p>
@@ -292,7 +288,7 @@ Neither /proc/mounts nor /etc/{crypt,m,fs}tab had a rouge entry that could lead 
 I will see, if I can manage to write a bugreport, and will update here when I have a BTS#. Meanwhile I&rsquo;m wondering, how fragile this whole kernel/Boot-Infrastructure is, and why I am the one who happens to stumble over these uggly problems.</p>
 </div><hr /><div class="post-navs d-flex mb-3 justify-content-evenly">
   <div class="post-nav post-prev"><i class="fas fa-fw fa-chevron-left"></i>
-    <a href="https://github.amboss-zustellung.space/posts/panik_am_bahnsteig/">
+    <a href="https://github.amboss-zustellung.space/posts/autobahnkollaps/">Autobahnkollaps
 </a>
   </div><div class="post-nav post-next">
     <a href="https://github.amboss-zustellung.space/posts/cisco_in_love__63__/">Cisco in Love?

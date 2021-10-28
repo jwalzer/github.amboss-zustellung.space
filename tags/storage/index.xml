@@ -13,8 +13,7 @@
       <pubDate>Thu, 15 Jan 2009 21:58:12 +0000</pubDate>
       
       <guid>https://github.amboss-zustellung.space/posts/samsung_spinpoint_und_smart/</guid>
-      <description>[[!meta title=&amp;ldquo;Samsung Spinpoint und SMART&amp;rdquo; ]]
-Samsung Spinpoint mit 1TB &amp;ldquo;Naja, man gönnt sich ja sonst nix. Und Billig ist es heutzutage auch.&amp;rdquo; dachte ich noch letztes Jahr, als ich beschloss, mir ein QNAP TS-409 zuzulegen.
+      <description>Samsung Spinpoint mit 1TB &amp;ldquo;Naja, man gönnt sich ja sonst nix. Und Billig ist es heutzutage auch.&amp;rdquo; dachte ich noch letztes Jahr, als ich beschloss, mir ein QNAP TS-409 zuzulegen.
 Das ist so ein schönes, nettes, schniekes Netzwerk-Speicher-Gerät, welches Out-Of-Box einfach mal mit einer Menge Services funktioniert (OK, für NFS brauchte es mangels der Pro-Version einen kleinen Hack)
 Das Gerät unterstützt bis zu vier SATA-Festplatten und kann diese als Raid 0,1,5,6 oder JBOD betreiben. Ursprünglich hatte ich mit Raid6 geliebäugelt, aber damit ist der kleine Prozessor ein wenig überfordert und liefert mir schreibraten unterhalb der 1MB/s Grenze &amp;hellip; sorry, das kann man sich sparen.
 Zähneknirschend nutze ich jetzt Raid5 mit einer (fehlenden) Spare. Warum fehlend? &amp;hellip; genau deshalb schreibe ich grad &amp;lsquo;den Artikel.

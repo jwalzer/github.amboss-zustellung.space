@@ -13,8 +13,7 @@
       <pubDate>Tue, 07 Oct 2008 16:31:46 +0000</pubDate>
       
       <guid>https://github.amboss-zustellung.space/posts/komplexe_systeme_-_netzwerktroubles/</guid>
-      <description>[[!meta title=&amp;ldquo;komplexe Systeme - Netzwerktroubles&amp;rdquo; ]] [[!meta description=&amp;ldquo;Bericht aus dem Leben&amp;rdquo; ]]
-Komplexe Systeme haben das Problem das sie komplex sind. Im Ernst!
+      <description>Komplexe Systeme haben das Problem das sie komplex sind. Im Ernst!
 Die letzte Woche war ich dabei, ein Kundenprojekt gerade zu ziehen, welches sich bereits über mehrere Monate gezogen hat.
 Eigentlich war alles ganz einfach:
 Der Kunde hatte ein bestehendes Netz und wollte mit der Zeit gehen und bei sich eine Logische Trennung zwischen verschiedenen Abteilungen und Netzen einführen. Seine bestehenden Server wollte er in eine neue VMware-ESX-Cluster-Umgebung umgezogen haben. &amp;ldquo;Wenn schon neu, dann richtig Flexibel&amp;rdquo; dachte sich der Kunde und entschied sich, seinen Clients anhand der MAC-Adressen in die passenden Netze zu verschieben. Statische Portkonfiguration kam bei der vorhandenen Hausverkabelung (und deren Dokumentation) nicht in Frage.

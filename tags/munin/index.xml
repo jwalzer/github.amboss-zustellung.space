@@ -13,8 +13,7 @@
       <pubDate>Tue, 05 Nov 2013 14:14:54 +0000</pubDate>
       
       <guid>https://github.amboss-zustellung.space/posts/monitoring_puppet_with_munin/</guid>
-      <description>[[!meta title=&amp;ldquo;Monitoring_Puppet_with_Munin&amp;rdquo; ]]
-#Monitoring Puppet with Munin
+      <description>#Monitoring Puppet with Munin
 Just recently we had some hickups in our puppet infrastructure.
 The question we were facing afterwards was, if all the nodes are regularily getting their updates. The specific problem is, that the infrastructure of the puppet and svn system is maintained by another department and so we don&amp;rsquo;t have access to their exact monitoring data.
 So the idea was to write a munin plugin, that will alarm me, when one or many hosts are late for their updates.

@@ -13,8 +13,7 @@
       <pubDate>Sun, 21 Nov 2010 14:40:44 +0000</pubDate>
       
       <guid>https://github.amboss-zustellung.space/posts/deep-linking_images_from_foreign_domains/</guid>
-      <description>[[!meta title=&amp;ldquo;Deep Linking images from foreign domains&amp;rdquo; ]]
-Deep Linking images from foreign domains  The theory The Webserver The Script   Last week I found in my webstatistics, that I had some spike in the traffic.
+      <description>Deep Linking images from foreign domains  The theory The Webserver The Script   Last week I found in my webstatistics, that I had some spike in the traffic.
 A foreign weblog or forum in hungarian language had one of the pictures on my site linked directly into their comments.
 I have no Problems with people using my pictures on their Website, even less if its not a workfrom me, but from someone else, and I also only have a copy.
 But what buggs me, is that other ones are reading forums and are seeing images on a foreign website and noone notices, that the image is delivered from my webserver, while on the other hand, my connection is filled up with 3000 requests in 2hours.

@@ -13,8 +13,7 @@
       <pubDate>Sun, 11 Apr 2010 08:22:44 +0000</pubDate>
       
       <guid>https://github.amboss-zustellung.space/posts/fun_with_initramdisk_-_not__33__/</guid>
-      <description>[[!meta title=&amp;ldquo;Fun with initramdisk - NOT!&amp;rdquo; ]]
-#The Phenomenon
+      <description>#The Phenomenon
 I just inherited the care for a system. The system of SWSBO was setup by a good friend, a so called Debian-Developer, who knows what he does and has to do. Because of some ugly hardware issues he supplied the system with a custom build kernel because a year ago or so, some drivers for the suspicious hardware was not in mainline. The system is setup with LVM on the lower layer and having the single LVs encrypted with luks. I normally setup my systems the other way around(puting the encryption below the LVM) but this gives equivalent security and should work equally well, if not even better.
 Nevertheless the system looked quite goot in shape but meanwhile needed some updating.
 So I did.
@@ -31,8 +30,7 @@ So what&amp;rsquo;s happening here? Diving into updateinitramfs doesn&amp;rsquo;
       <pubDate>Thu, 09 Oct 2008 13:13:38 +0000</pubDate>
       
       <guid>https://github.amboss-zustellung.space/posts/behaviour_of_softraid-1_and_unreliability_of_harddrives/</guid>
-      <description>[[!meta title=&amp;ldquo;Behaviour of SoftRAID-1 and unreliability of Harddrives&amp;rdquo; ]]
-Here a guy has written an article about the probability that you can&amp;rsquo;t read your complete disks without errors, and the handling of this event in the Software-RAID &amp;hellip;
+      <description>Here a guy has written an article about the probability that you can&amp;rsquo;t read your complete disks without errors, and the handling of this event in the Software-RAID &amp;hellip;
 This makes me sorrow ;(
 [[!inline pages=&amp;quot;./discussion*&amp;quot; rootpage=&amp;quot;./discussion&amp;quot;]]</description>
     </item>

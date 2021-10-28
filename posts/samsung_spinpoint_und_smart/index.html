@@ -10,8 +10,7 @@
 <link rel="icon" href="https://github.amboss-zustellung.space/images/favicons/favicon.ico">
 <meta name="keywords" content="" />
 <meta name="description" content="" /><meta itemprop="name" content="Samsung Spinpoint und SMART">
-<meta itemprop="description" content="[[!meta title=&ldquo;Samsung Spinpoint und SMART&rdquo; ]]
-Samsung Spinpoint mit 1TB &ldquo;Naja, man gönnt sich ja sonst nix. Und Billig ist es heutzutage auch.&rdquo; dachte ich noch letztes Jahr, als ich beschloss, mir ein QNAP TS-409 zuzulegen.
+<meta itemprop="description" content="Samsung Spinpoint mit 1TB &ldquo;Naja, man gönnt sich ja sonst nix. Und Billig ist es heutzutage auch.&rdquo; dachte ich noch letztes Jahr, als ich beschloss, mir ein QNAP TS-409 zuzulegen.
 Das ist so ein schönes, nettes, schniekes Netzwerk-Speicher-Gerät, welches Out-Of-Box einfach mal mit einer Menge Services funktioniert (OK, für NFS brauchte es mangels der Pro-Version einen kleinen Hack)
 Das Gerät unterstützt bis zu vier SATA-Festplatten und kann diese als Raid 0,1,5,6 oder JBOD betreiben. Ursprünglich hatte ich mit Raid6 geliebäugelt, aber damit ist der kleine Prozessor ein wenig überfordert und liefert mir schreibraten unterhalb der 1MB/s Grenze &hellip; sorry, das kann man sich sparen.
 Zähneknirschend nutze ich jetzt Raid5 mit einer (fehlenden) Spare. Warum fehlend? &hellip; genau deshalb schreibe ich grad &lsquo;den Artikel.
@@ -20,11 +19,10 @@ Ergebnis: Western Digital und Samsung haben beide sowohl spitzen als auch mieses
 Um Ausfallwahrscheinlichkeiten zu verringern, hab&rsquo; ich dann 2 mal die WDC WD10EACS-65D6B0 01.0 und zweimal die SAMSUNG HD103UJ 1AA0 bestellt.
 Und dann fing die Odyssee an &hellip; Die Samsungs melden sich dem Kernel soweit ich das sehe identisch. Allerdings liefert die eine Platte SMART-Daten, und die andere nicht.
 &ldquo;Naja, umtausch halt &hellip; &quot; Tja, mit dem Gedanken, spiele ich das Spiel jetzt schon seit Ende Oktober.">
-<meta itemprop="dateModified" content="2021-10-29T00:21:36+02:00" />
-<meta itemprop="wordCount" content="488">
+<meta itemprop="dateModified" content="2021-10-29T01:37:00+02:00" />
+<meta itemprop="wordCount" content="482">
 <meta itemprop="keywords" content="rant,blog,samsung,harddrive,storage,qnap,smart," /><meta property="og:title" content="Samsung Spinpoint und SMART" />
-<meta property="og:description" content="[[!meta title=&ldquo;Samsung Spinpoint und SMART&rdquo; ]]
-Samsung Spinpoint mit 1TB &ldquo;Naja, man gönnt sich ja sonst nix. Und Billig ist es heutzutage auch.&rdquo; dachte ich noch letztes Jahr, als ich beschloss, mir ein QNAP TS-409 zuzulegen.
+<meta property="og:description" content="Samsung Spinpoint mit 1TB &ldquo;Naja, man gönnt sich ja sonst nix. Und Billig ist es heutzutage auch.&rdquo; dachte ich noch letztes Jahr, als ich beschloss, mir ein QNAP TS-409 zuzulegen.
 Das ist so ein schönes, nettes, schniekes Netzwerk-Speicher-Gerät, welches Out-Of-Box einfach mal mit einer Menge Services funktioniert (OK, für NFS brauchte es mangels der Pro-Version einen kleinen Hack)
 Das Gerät unterstützt bis zu vier SATA-Festplatten und kann diese als Raid 0,1,5,6 oder JBOD betreiben. Ursprünglich hatte ich mit Raid6 geliebäugelt, aber damit ist der kleine Prozessor ein wenig überfordert und liefert mir schreibraten unterhalb der 1MB/s Grenze &hellip; sorry, das kann man sich sparen.
 Zähneknirschend nutze ich jetzt Raid5 mit einer (fehlenden) Spare. Warum fehlend? &hellip; genau deshalb schreibe ich grad &lsquo;den Artikel.
@@ -36,12 +34,11 @@ Und dann fing die Odyssee an &hellip; Die Samsungs melden sich dem Kernel soweit
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://github.amboss-zustellung.space/posts/samsung_spinpoint_und_smart/" /><meta property="article:section" content="posts" />
 
-<meta property="article:modified_time" content="2021-10-29T00:21:36+02:00" />
+<meta property="article:modified_time" content="2021-10-29T01:37:00+02:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Samsung Spinpoint und SMART"/>
-<meta name="twitter:description" content="[[!meta title=&ldquo;Samsung Spinpoint und SMART&rdquo; ]]
-Samsung Spinpoint mit 1TB &ldquo;Naja, man gönnt sich ja sonst nix. Und Billig ist es heutzutage auch.&rdquo; dachte ich noch letztes Jahr, als ich beschloss, mir ein QNAP TS-409 zuzulegen.
+<meta name="twitter:description" content="Samsung Spinpoint mit 1TB &ldquo;Naja, man gönnt sich ja sonst nix. Und Billig ist es heutzutage auch.&rdquo; dachte ich noch letztes Jahr, als ich beschloss, mir ein QNAP TS-409 zuzulegen.
 Das ist so ein schönes, nettes, schniekes Netzwerk-Speicher-Gerät, welches Out-Of-Box einfach mal mit einer Menge Services funktioniert (OK, für NFS brauchte es mangels der Pro-Version einen kleinen Hack)
 Das Gerät unterstützt bis zu vier SATA-Festplatten und kann diese als Raid 0,1,5,6 oder JBOD betreiben. Ursprünglich hatte ich mit Raid6 geliebäugelt, aber damit ist der kleine Prozessor ein wenig überfordert und liefert mir schreibraten unterhalb der 1MB/s Grenze &hellip; sorry, das kann man sich sparen.
 Zähneknirschend nutze ich jetzt Raid5 mit einer (fehlenden) Spare. Warum fehlend? &hellip; genau deshalb schreibe ich grad &lsquo;den Artikel.
@@ -259,8 +256,7 @@ Amboss-incoming
   </ul>
 </nav>
   </div>
-</div><div class="post-content mb-3"><p>[[!meta title=&ldquo;Samsung Spinpoint und SMART&rdquo; ]]</p>
-<h1 id="samsung-spinpoint-mit-1tb">Samsung Spinpoint mit 1TB</h1>
+</div><div class="post-content mb-3"><h1 id="samsung-spinpoint-mit-1tb">Samsung Spinpoint mit 1TB</h1>
 <p>&ldquo;Naja, man gönnt sich ja sonst nix. Und Billig ist es heutzutage auch.&rdquo; dachte ich noch letztes Jahr, als ich beschloss, mir ein QNAP TS-409 zuzulegen.</p>
 <p>Das ist so ein schönes, nettes, schniekes Netzwerk-Speicher-Gerät, welches Out-Of-Box einfach mal mit einer Menge Services funktioniert (OK, für NFS brauchte es mangels der Pro-Version einen kleinen Hack)</p>
 <p>Das Gerät unterstützt bis zu vier SATA-Festplatten und kann diese als Raid 0,1,5,6 oder JBOD betreiben. Ursprünglich hatte ich mit Raid6 geliebäugelt, aber damit ist der kleine Prozessor ein wenig überfordert und liefert mir schreibraten unterhalb der 1MB/s Grenze &hellip; sorry, das kann man sich sparen.</p>

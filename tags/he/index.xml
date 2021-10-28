@@ -13,8 +13,7 @@
       <pubDate>Fri, 28 May 2010 11:39:41 +0000</pubDate>
       
       <guid>https://github.amboss-zustellung.space/posts/now_with_ipv6/</guid>
-      <description>[[!meta title=&amp;ldquo;Now with IPv6&amp;rdquo; ]]
-This Blog is now available via IPv6 The Badge You might have realized the button on the left side of the Blog (if you&amp;rsquo;re not reading via RSS-Feed)
+      <description>This Blog is now available via IPv6 The Badge You might have realized the button on the left side of the Blog (if you&amp;rsquo;re not reading via RSS-Feed)
 Here is the full-size image:
 The Reason I just took the chance, to put an AAAA-Record for wa.lzer.net and took the certification on HE.net(Hurrican-Electric) and even an reverse PTR-Record. A friend reminded me of the HE-certification.
 The questions you have to answer are not tooo hard, if you worked a bit with IPv6 before. Hardest part for me was to supply an IPv6-Mailserver below my domain, because my email is handled by the provider at the moment. But another friend just supplied me with one, and I could redirect a subdomain simply to his mailserver.

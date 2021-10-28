@@ -13,8 +13,7 @@
       <pubDate>Wed, 10 Nov 2010 14:32:28 +0000</pubDate>
       
       <guid>https://github.amboss-zustellung.space/posts/upgrading_ubuntu_to_10.04_lts/</guid>
-      <description>[[!meta title=&amp;ldquo;Upgrading Ubuntu to version 10.04 LTS&amp;rdquo; ]]
-#Upgrading Ubuntu to version 10.04 LTS
+      <description>#Upgrading Ubuntu to version 10.04 LTS
 I have one laptop here(mjolnir), that I&amp;rsquo;m using for my work. I installed them ~2years ago, with an Ubuntu system, because it simply worked. I tried debian, but it didn&amp;rsquo;t support all the hardware.
 I did an upgrade to 9.* once and it worked quite well. Ubuntu has an Dist-Upgrade-Application, that does all the stuff for you.
 When Ubuntu 10 was released, I tried the same again, but because in the meantime I installed some 3rd-party Software, I couldn&amp;rsquo;t upgrade the system without conflicts.

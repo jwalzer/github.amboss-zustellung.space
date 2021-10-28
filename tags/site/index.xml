@@ -13,8 +13,7 @@
       <pubDate>Wed, 02 Jun 2010 16:20:34 +0000</pubDate>
       
       <guid>https://github.amboss-zustellung.space/posts/some_small_layout_changes/</guid>
-      <description>[[!meta title=&amp;ldquo;some small Layout changes&amp;rdquo; ]]
-This is not interesting for visitors, that are using a feedreader
+      <description>This is not interesting for visitors, that are using a feedreader
 I took the time to fix the pagetemplate so that in the layout the footer is seemless again. Also I changed the Font-Descriptions in the stylesheet, so that the reader can decide which fonts to use for rendering, because I only defined: &amp;ldquo;sans-serif&amp;rdquo; and no longer a specific typeface. Whats still annoying me is the search-inputbox at the top, thats hanging there around&amp;hellip; I&amp;rsquo;ll fix that later&amp;hellip;</description>
     </item>
     

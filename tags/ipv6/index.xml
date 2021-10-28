@@ -13,9 +13,8 @@
       <pubDate>Thu, 17 Feb 2011 13:20:17 +0000</pubDate>
       
       <guid>https://github.amboss-zustellung.space/posts/we_are_running_out_of_ip-adresses__33__/</guid>
-      <description>[[!meta title=&amp;ldquo;We are running out of IP-Adresses!&amp;rdquo; ]]
-We are running out of IP Adresses Are you ready for IPv6? A nice video &amp;hellip; and its even from Cisco &amp;hellip;
-[[!template id=youtube v=&amp;ldquo;eYffYT2y-Iw&amp;rdquo;]]</description>
+      <description>We are running out of IP Adresses Are you ready for IPv6? A nice video &amp;hellip; and its even from Cisco &amp;hellip;
+  </description>
     </item>
     
     <item>
@@ -24,8 +23,7 @@ We are running out of IP Adresses Are you ready for IPv6? A nice video &amp;hell
       <pubDate>Mon, 03 Jan 2011 00:00:15 +0000</pubDate>
       
       <guid>https://github.amboss-zustellung.space/posts/ipv6_-_for_the_kids/</guid>
-      <description>[[!meta title=&amp;ldquo;IPv6 - For the Kids&amp;rdquo; ]]
-APNIC - IPv6 for the Kids [[!template id=youtube v=&amp;ldquo;VNk8Frb9BcA&amp;rdquo;]]</description>
+      <description>APNIC - IPv6 for the Kids   </description>
     </item>
     
     <item>
@@ -34,8 +32,7 @@ APNIC - IPv6 for the Kids [[!template id=youtube v=&amp;ldquo;VNk8Frb9BcA&amp;rd
       <pubDate>Fri, 28 May 2010 11:39:41 +0000</pubDate>
       
       <guid>https://github.amboss-zustellung.space/posts/now_with_ipv6/</guid>
-      <description>[[!meta title=&amp;ldquo;Now with IPv6&amp;rdquo; ]]
-This Blog is now available via IPv6 The Badge You might have realized the button on the left side of the Blog (if you&amp;rsquo;re not reading via RSS-Feed)
+      <description>This Blog is now available via IPv6 The Badge You might have realized the button on the left side of the Blog (if you&amp;rsquo;re not reading via RSS-Feed)
 Here is the full-size image:
 The Reason I just took the chance, to put an AAAA-Record for wa.lzer.net and took the certification on HE.net(Hurrican-Electric) and even an reverse PTR-Record. A friend reminded me of the HE-certification.
 The questions you have to answer are not tooo hard, if you worked a bit with IPv6 before. Hardest part for me was to supply an IPv6-Mailserver below my domain, because my email is handled by the provider at the moment. But another friend just supplied me with one, and I could redirect a subdomain simply to his mailserver.

@@ -10,19 +10,17 @@
 <link rel="icon" href="https://github.amboss-zustellung.space/images/favicons/favicon.ico">
 <meta name="keywords" content="" />
 <meta name="description" content="" /><meta itemprop="name" content="Deep Linking images from foreign domains">
-<meta itemprop="description" content="[[!meta title=&ldquo;Deep Linking images from foreign domains&rdquo; ]]
-Deep Linking images from foreign domains  The theory The Webserver The Script   Last week I found in my webstatistics, that I had some spike in the traffic.
+<meta itemprop="description" content="Deep Linking images from foreign domains  The theory The Webserver The Script   Last week I found in my webstatistics, that I had some spike in the traffic.
 A foreign weblog or forum in hungarian language had one of the pictures on my site linked directly into their comments.
 I have no Problems with people using my pictures on their Website, even less if its not a workfrom me, but from someone else, and I also only have a copy.
 But what buggs me, is that other ones are reading forums and are seeing images on a foreign website and noone notices, that the image is delivered from my webserver, while on the other hand, my connection is filled up with 3000 requests in 2hours.
 The theory To limit this behaviour for the next time, I did some configuration of the webserver(lighttpd) and some php-scripting.
 In future I&rsquo;ll decide for every request to an image if the referrer is either empty or from my website (at least lzer.net). If thats the case, then normally either someone is reading my site, or he got a direct link to an article or an image. Thats fine with me. But if an image is embedded from another website, then the browser must have send (at least in 95% of the cases, geeks don&rsquo;t count) an referrer thats completely different.
 In this case I&rsquo;ll be redirecting them to another version of the image that will have the prefix &lsquo;/img/cached&rsquo; in front of the original image path.">
-<meta itemprop="dateModified" content="2021-10-29T00:21:36+02:00" />
-<meta itemprop="wordCount" content="1126">
+<meta itemprop="dateModified" content="2021-10-29T01:37:00+02:00" />
+<meta itemprop="wordCount" content="1118">
 <meta itemprop="keywords" content="script,php,lighttpd,webserver,image,generate,blog," /><meta property="og:title" content="Deep Linking images from foreign domains" />
-<meta property="og:description" content="[[!meta title=&ldquo;Deep Linking images from foreign domains&rdquo; ]]
-Deep Linking images from foreign domains  The theory The Webserver The Script   Last week I found in my webstatistics, that I had some spike in the traffic.
+<meta property="og:description" content="Deep Linking images from foreign domains  The theory The Webserver The Script   Last week I found in my webstatistics, that I had some spike in the traffic.
 A foreign weblog or forum in hungarian language had one of the pictures on my site linked directly into their comments.
 I have no Problems with people using my pictures on their Website, even less if its not a workfrom me, but from someone else, and I also only have a copy.
 But what buggs me, is that other ones are reading forums and are seeing images on a foreign website and noone notices, that the image is delivered from my webserver, while on the other hand, my connection is filled up with 3000 requests in 2hours.
@@ -32,12 +30,11 @@ In this case I&rsquo;ll be redirecting them to another version of the image that
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://github.amboss-zustellung.space/posts/deep-linking_images_from_foreign_domains/" /><meta property="article:section" content="posts" />
 
-<meta property="article:modified_time" content="2021-10-29T00:21:36+02:00" />
+<meta property="article:modified_time" content="2021-10-29T01:37:00+02:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Deep Linking images from foreign domains"/>
-<meta name="twitter:description" content="[[!meta title=&ldquo;Deep Linking images from foreign domains&rdquo; ]]
-Deep Linking images from foreign domains  The theory The Webserver The Script   Last week I found in my webstatistics, that I had some spike in the traffic.
+<meta name="twitter:description" content="Deep Linking images from foreign domains  The theory The Webserver The Script   Last week I found in my webstatistics, that I had some spike in the traffic.
 A foreign weblog or forum in hungarian language had one of the pictures on my site linked directly into their comments.
 I have no Problems with people using my pictures on their Website, even less if its not a workfrom me, but from someone else, and I also only have a copy.
 But what buggs me, is that other ones are reading forums and are seeing images on a foreign website and noone notices, that the image is delivered from my webserver, while on the other hand, my connection is filled up with 3000 requests in 2hours.
@@ -255,8 +252,7 @@ Amboss-incoming
   </ul>
 </nav>
   </div>
-</div><div class="post-content mb-3"><p>[[!meta title=&ldquo;Deep Linking images from foreign domains&rdquo; ]]</p>
-<h1 id="deep-linking-images-from-foreign-domains">Deep Linking images from foreign domains</h1>
+</div><div class="post-content mb-3"><h1 id="deep-linking-images-from-foreign-domains">Deep Linking images from foreign domains</h1>
 <nav id="TableOfContents">
   <ul>
     <li><a href="#the-theory">The theory</a></li>
